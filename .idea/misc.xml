@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/circle_white_and_appbar_color.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/create_account_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/full_time_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/industry_borders.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/login_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/no_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/pending_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/red_background.xml" value="0.2169230769230769" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/resume_numbers.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/drawable/text_here_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_account_type.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_add_education.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_add_team.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_add_work_experience.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_affinity_group.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_all_aplicants.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_all_listed_jobs.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_applicant_detail.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_applicant_value_prop.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_applicants.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_apply.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_bio.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_bio2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_company_value_prop.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_congratulation.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_congratulations.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_contact_us.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_deiinfo.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_deiprogramming.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_deistatement.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_deistatement2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_deitraining.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_demographic_information.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_demographic_information2.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_department.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_dob.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_dob2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_education.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_email_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_email_address2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_email_address3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_email_address4.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_employe_status.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_erg.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_ethnicity.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_ethnicity_one.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_find_company.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_flagged.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_full_name.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_full_name2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_full_name3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_gender_identity.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_gender_orientation.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_gender_proportion.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_headquaters.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_hire_and_continue.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_industry.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_interestin_size.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_interestin_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_invite.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_job.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_job_detail.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_job_search.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_jobs.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_lead.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_listed_jobs.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_location_permission.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_logo_upload.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_main_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_member_phone.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_members.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_more_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_name.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_no_company_found.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_notification_permission.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_password2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_password3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_password4.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_pending_companies.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_personal_info.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_phone.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_phone_number.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_phone_number2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_professional_information.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_professional_interest.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_profile_pic.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_profile_picture.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_race.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_reminder.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_resume.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_role.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_saved_jobs.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_sexual_orientation.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_sign_in.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_sign_in2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_sign_up2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_size.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_summary.xml" value="0.20839978734715578" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_team2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_thank_you.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_uitpending.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_verification.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_verification_code.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_verification_member.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_veteran_status.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_website.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/activity_work_experience.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/add_reference.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/add_refrence_bottom.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/admin_team_members_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/applicant_setfilter_reminder.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/applicant_standard_info_next.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/close_job_generic.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/company_listed_jobs_bottom_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/find_company_nav.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/fragment_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/fragment_job.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/fragment_post_job.xml" value="0.16" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/fragment_team.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/include_bottom_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/include_bottombar_uitmember.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/include_company_job.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/include_layout_for_status.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/item_applied_jobs.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/item_reference.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/recruiter_proff_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/recruiter_standard_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/save_cut.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/simple_next.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/layout/uit_member_maindashboard.xml" value="0.16" />
+        <entry key="..\:/4. Hasnain Haider/Naeem Projects/uit-android/uit-android-feature-merge/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/app_color_circle.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/create_account_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/full_time_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/industry_borders.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/login_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/no_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/pending_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/resume_numbers.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/search_user_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/text_here_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/upper_app_color_curve.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/verification_boxes_border.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/white_background.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/drawable/white_curve.xml" value="0.2203125" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_account_type.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_account_type2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_add_education.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_add_team.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_add_work_experience.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_affinity_group.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_all_aplicants.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_applicant_value_prop.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_applicants.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_bio.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_bio2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_community.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_company_size.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_company_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_company_value_prop.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_congratulation.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_congratulations.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_cover_letter.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_degree.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_deiprogramming.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_deistatement.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_deistatement2.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_deitraining.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_department.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_dob.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_dob2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_education.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_email_address.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_email_address2.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_email_address3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_email_address4.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_employe_status.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_erg.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_ethnicity.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_ethnicity_one.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_find_company.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_flagged.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_full_name.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_full_name2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_full_name3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_gender_identity.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_gender_orientation.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_gender_proportion.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_headquaters.xml" value="0.33" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_industry.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_interestin_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_invite.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_job.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_jobs.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_lead.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_location_permission.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_logo_upload.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_main_dashboard.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_members.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_more_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_name.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_no_company_found.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_notification_permission.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_password.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_password2.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_password3.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_password4.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_pending_companies.xml" value="0.19947916666666668" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_personal_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_phone_number.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_phone_number2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_professional_interest.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_profile_pic.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_profile_picture.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_race.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_reminder.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_resume.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_role.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_select_plan.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_sexual_orientation.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_sign_in.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_sign_in2.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_sign_up2.xml" value="0.18181818181818182" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_size.xml" value="0.16" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_splash.xml" value="0.14" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_standard_information.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_summary.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_team.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_team2.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_thank_you.xml" value="0.2" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_uitpending.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_verification.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_verification_code.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_verification_code2.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_veteran_status.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_website.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/activity_work_experience.xml" value="0.19010416666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/add_later_nav.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/add_refrence_bottom.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/admin_invite_item.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/admin_team_members.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/admin_team_members_item.xml" value="0.20102564102564102" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/app_background.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_demographic_info_next.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_demograpic_info_skip.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_education_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_proff_info.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_standard_info_next.xml" value="0.22" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/applicant_standard_info_skip.xml" value="0.14" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/back_applicant_proff_info.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/back_icon.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_accepted_item.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_account_next.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_account_profile.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_account_skip.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_demo_info.xml" value="0.16" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_invited_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/company_pending_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/find_company_nav.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/include_bottom_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/include_bottombar_uitmember.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_applicant_degree.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_applicant_department.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_applicant_jobs.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_applicant_professional_interest.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_applicant_race.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_approved.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_company_industry.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_company_invite.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_company_size.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_company_stage.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_members.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_pending.xml" value="0.19947916666666668" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/item_recruiter_find_company.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/members_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/more_detail_bottom.xml" value="0.18" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/more_detail_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/recruiter_proff_info.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/recruiter_standard_info.xml" value="0.25" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/reminder_bottom.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/sample_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/save_cut.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/simple_appbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/simple_next.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/simple_skip.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/skip_nav.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/uit_admin_bottom_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/uit_admin_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/uit_member_maindashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/4. Hasnain Haider/Salman Projects/UIT/app/src/main/res/layout/uit_member_srandard_info_next.xml" value="0.18" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/adobe_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/app_color_curved_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/applicant_border.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/circle_black.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/circle_white_and_appbar_color.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/close_job_background.xml" value="0.1895" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/closed_background.xml" value="0.1935" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/cover_background.xml" value="0.1895" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/create_account_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/filled_background.xml" value="0.1935" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/full_time_border.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1895" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/login_background.xml" value="0.12" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/notification_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/number_enter_background.xml" value="0.1935" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/password_toggle.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/pending_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/phone_number_background.xml" value="0.1935" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/red_background.xml" value="0.1935" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/required_background.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/search_user_border.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/text_here_border.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/white_background.xml" value="0.1895" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/drawable/white_curve.xml" value="0.194" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_account_type.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_account_type2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_add_education.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_add_team.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_add_work_experience.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_admin_job_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_admin_members.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_admin_message.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_affinity_group.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_all_aplicants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_all_companies.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_all_listed_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_applicant_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_applicant_value_prop.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_applicants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_apply.xml" value="0.2" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_bio.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_bio2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_community.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_community_all_channel.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_community_video_open.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_company_detail.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_company_profile.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_company_team.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_company_value_prop.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_congrats.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_congratulation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_congratulations.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_contact_us.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_cover_letter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_create_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_degree.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_dei_information.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_deiinfo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_deiprogramming.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_deistatement.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_deistatement2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_deitraining.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_demo_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_demographic_information.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_demographic_information2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_department.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_detail_applicants.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_dob.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_dob2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_education.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_email_address.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_email_address2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_email_address3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_email_address4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_employe_status.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_erg.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_ethnicity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_ethnicity_one.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_find_company.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_flag_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_flag_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_flagged.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_flagged_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_full_name.xml" value="0.25" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_full_name2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_full_name3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_gender_identity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_gender_orientation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_gender_proportion.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_generic_profile.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_headquaters.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_hire_and_continue.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_image_picker.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_industry.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_interestin_size.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_interestin_stage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_invite.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_detail.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_filter.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_posting.xml" value="0.2" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_posting_description.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_posting_experience.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_posting_review.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_job_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_lead.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_listed_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_location_permission.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_logo_upload.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_main_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_member_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_member_phone.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_members.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_members2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_more_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_name.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_no_company_found.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_notification_permission.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_password2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_password3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_password4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_pending_companies.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_pending_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_personal_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_phone.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_phone_number.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_phone_number2.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_professional_information.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_professional_interest.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_profile_pic.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_profile_picture.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_race.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_recruiter_listed_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_recruiter_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_reminder.xml" value="0.2" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_resume.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_role.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_saved_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_sexual_orientation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_sign_in2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_sign_up2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_size.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_stage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_standard_information.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_summary.xml" value="0.25697735650342285" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_team.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_team2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_team_member.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_terms.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_thank_you.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_uit_members.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_uitpending.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_verification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_verification_code.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_verification_code2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_verification_member.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_veteran_status.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_website.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/activity_work_experience.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_education_bottomsheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_later_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_member.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_reference.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_refrence_bottom.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/add_work_bottomsheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/admin_team_members_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/app_background.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_demographic_info_next.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_demograpic_info_skip.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_proff_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_setfilter_reminder.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_standard_info_next.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/applicant_standard_info_skip.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/back_applicant_proff_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/back_icon.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/back_send.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/bottom_sheet_job_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/close_job_generic.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_accepted_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_account_next.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_account_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_account_skip.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_demo_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_invited_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/company_listed_jobs_bottom_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/complete_profile_bottomsheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/find_company_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_admin_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_admin_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_applicant_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_chat.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_community.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_job2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_member_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_member_team.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_post_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/fragment_team.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/hire_option_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/include_bottom_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/include_bottombar_uitmember.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/include_company_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/include_layout_for_status.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/include_send_message.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_all_applicants.xml" value="0.264" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_all_members.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_degree.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_department.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_education.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_professional_interest.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_race.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applicant_saved_job_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_applied_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_approved.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_comment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_community.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_accepted.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_closed_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_filled_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_industry.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_invite.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_size.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_company_stage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_description.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_experience.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_experience_for_job_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_feature.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_flagged_jobs.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_flagged_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_latest_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_members.xml" value="0.2" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_more_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_notifications.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_pending.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_recruiter_find_company.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_recruiter_listed_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_reference.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/item_skill.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/job_post_success_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/job_posting_experience.xml" value="0.2" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/layout_skill.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/more_detail_bottom.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/new_channel_bottomsheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/recruiter_proff_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/recruiter_standard_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/reminder_bottom.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/sample_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/save_cut.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/simple_appbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/simple_next.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/simple_skip.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/skip_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/tag_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_admin_bottom_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_admin_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_member_maindashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_member_srandard_info_next.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/app_color_10dp_rounded.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/app_color_30dp_rounded.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/app_color_4dp_rounded.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/app_color_4dp_rounded_outline.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/app_color_5dp_rounded.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/app_color_6dp_rounded.xml" value="0.152" />
+        <entry key="app/src/main/res/drawable/app_color_7dp_rounded.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/app_color_edit_text_focused.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/app_color_outline_rounded_50dp.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/app_icon.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/applicant_border.xml" value="0.152" />
+        <entry key="app/src/main/res/drawable/bg_app_color_rounded_5dp.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/bg_chat_receiver.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_dark_jungle_green_outline_grey_rounded_70dp.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/bg_edit_text_rounded_15dp.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/bg_edittext_white.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/bg_grey_outline_rounded_100dp.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/bg_search_8sdp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_snow_drift_outline_rounded_10dp.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/bg_stroke_black_2dp.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_transparent_white_outline_rounded_5dp.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/bg_white_7sdp_rounded.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/bg_white_grey_outline_rounded_50dp.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/bg_white_red_outline_rounded_50dp.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/bg_white_rounded_10dp.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/bg_white_rounded_5dp_outline.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/bg_white_rounded_6dp.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/bg_white_rounded_8dp.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/bg_white_top_rounded_15dp.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/chat_sender_bg.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circular_progressbar_drawable.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/create_account_background.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/cross_ic.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/delete_ic.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/delete_job_ic.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/doted_rounded_10dp.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/drop_down_arrow.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/edit_ic.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/ic_add.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/ic_back_arrow.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_baseline_sentiment_satisfied.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_cancel.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic_comments.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_happiness.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_image_add_line.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/ic_menu_button.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_message_send_arrow.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/ic_placeholder.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_subtraction_5.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_warning_sign.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_white_circle.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/light_gray_20dp_rounded.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/location_ic.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/my_location_icon.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/new_app_icon.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/new_community_ic.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/no_location.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/notifications_ic.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/pick_location.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/post_placeholder_ic.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/search_background.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/share_ic.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/unlike_ic.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/white_background.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/white_background_10dp_rounded.xml" value="0.189" />
+        <entry key="app/src/main/res/layout-v26/activity_sign_in.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_account_type.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_applicant_reference.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_applicant_work_experience.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_education.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_admin_members.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_all_aplicants.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_all_companies.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_add_education.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_applicant_apply_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_apply_job_congrats.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_bottom_navigation.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_applicant_company_detail.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_date_of_birth.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_department.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_email_address.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_full_name.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_interestin_size.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_interestin_stage.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_job_detail.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_job_filter.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_applicant_job_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_location_permission.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_password.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_personal_info.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_phone_number.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_resume.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_saved_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_degree.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_gender_identity.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_race.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_sexual_orientation.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_thank_you.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_value_prop.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_veteran_status.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_applicants.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_application_verification_code.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_apply.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_comments.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_community_create_post.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_community_new_channel.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_community_video_open.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_bio.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_detail.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_name.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_value_prop.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_congrats.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_congratulations.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_cover_letter.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_deiinfo.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_demo_info.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_dob.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_education.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_email_address.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_employe_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_flag_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_flag_job_user.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_flagged.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_flagged_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_full_name.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_full_name2.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_gender_identity.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_image_picker.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_industry.xml" value="0.23725671918443003" />
+        <entry key="app/src/main/res/layout/activity_interestin_stage.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_detail.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_filter.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_posting_description.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_posting_experience.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_posting_review.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_job_search.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_listed_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_location_permission.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_logo_upload.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_main_dashboard.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_members.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_messages.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_notification_permission.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_password.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_password3.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_pending_companies.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_personal_info.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_phone_number.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_phone_number2.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_professional_information.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_professional_interest.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_profile_picture.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_race.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_select_applicant_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_select_industry.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_select_location.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sexual_orientation.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_in2.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up2.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_thank_you.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_admin_dashboard.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_email_address.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_full_name.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_password.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_pending.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_phone_number.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uit_member_verification.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_uit_members.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_uitpending.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_verification.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_verification_code.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_veteran_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_webview.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_work_experience.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/add_education_bottomsheet.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/add_later_nav.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/applicant_proff_info.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/applicant_setfilter_reminder.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/applicant_standard_info_next.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/bottom_sheet_post_admin.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/bottom_sheet_post_other_user.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/community_zero_index_list_item.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/company_listed_jobs_bottom_bar.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/complete_profile_bottomsheet.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/custom_banner.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/design_inbox.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_admin_home.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_admin_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_applicant_job.xml" value="0.21213836669921876" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_community.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_member_home.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_member_team.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/gallery_bottom_sheet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/include_bottombar_uitmember.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/include_company_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_applicant_department.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_applicant_education.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_applicant_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_applicant_race.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_comment.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_company_stage.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_latest_job.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_loading.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/item_reference.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/list_item_selected_job.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/popup_logout_user.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/popup_yes_no.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/receiver_item.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/sample_dashboard.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/save_cut.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/sender_item.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/simple_appbar.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/simple_next.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/simple_skip.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/single_item_add_channel_feed.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/single_item_channel_feed.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/single_item_comments.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/single_item_community_feed.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/single_item_horizontal_selection.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/single_item_industry.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/single_item_select_channel.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/single_item_select_degree.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/tag_item.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/uit_admin_bottom_bar.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/uit_admin_dashboard.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/uit_member_maindashboard.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/uit_member_srandard_info_next.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/xml/image_file_path.xml" value="0.18177083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

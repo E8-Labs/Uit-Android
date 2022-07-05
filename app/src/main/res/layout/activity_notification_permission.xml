@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantNotificationPermissionActivity"
+    android:background="@color/white"
+    >
+
+
+    <include
+        android:id="@+id/includeLocation"
+        layout="@layout/back_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/congratulationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:paddingRight="@dimen/_22sdp"
+        android:paddingLeft="@dimen/_22sdp"
+        android:paddingTop="@dimen/_11sdp"
+        android:paddingBottom="@dimen/_11sdp"
+        android:src="@drawable/notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeLocation" />
+
+
+        <TextView
+            android:id="@+id/locationPermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/notificationPermission"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITLargeTextSize"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/congratulationImage"/>
+
+        <TextView
+            android:id="@+id/allowLocationPermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/toEnsure"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITMediumTextSize"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationPermission" />
+
+
+        <TextView
+            android:id="@+id/please"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/latestEvent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITMediumTextSize"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allowLocationPermission" />
+
+
+    <TextView
+        android:id="@+id/allowLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/login_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_40sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingRight="@dimen/_40sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:text="@string/allowNotification"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/please" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

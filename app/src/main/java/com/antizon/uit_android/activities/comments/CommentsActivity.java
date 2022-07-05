@@ -1,0 +1,221 @@
+package com.antizon.uit_android.activities.comments;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.antizon.uit_android.R;
+import com.antizon.uit_android.adapters.community.CommentsAdapter;
+import com.antizon.uit_android.generic_utils.SessionManagement;
+import com.antizon.uit_android.models.chat.MessageModel;
+import com.antizon.uit_android.models.comments.CommentDataModel;
+import com.antizon.uit_android.models.comments.CommentsResponseModel;
+import com.antizon.uit_android.models.community.MainResponseModel;
+import com.antizon.uit_android.network.GetDataService;
+import com.antizon.uit_android.network.RetrofitClientInstance;
+import com.antizon.uit_android.utilities.CustomCookieToast;
+import com.antizon.uit_android.utilities.Utilities;
+import com.google.gson.Gson;
+import com.pusher.client.Pusher;
+import com.pusher.client.PusherOptions;
+import com.pusher.client.channel.Channel;
+
+import org.jetbrains.annotations.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class CommentsActivity extends AppCompatActivity implements CommentsAdapter.CommentsAdapterCallBack, SwipeRefreshLayout.OnRefreshListener {
+    GetDataService service;
+    Context context;
+    SessionManagement sessionManagement;
+
+    RelativeLayout btnBack;
+    SwipeRefreshLayout swipe;
+    RecyclerView recyclerview_comments;
+    List<CommentDataModel> commentsList;
+    CommentsAdapter commentsAdapter;
+
+    String postId;
+
+    EditText edit_comment;
+    RelativeLayout btn_send;
+
+    Pusher pusher;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_comments);
+        Utilities.setWhiteBars(CommentsActivity.this);
+        context = CommentsActivity.this;
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        sessionManagement = new SessionManagement(context);
+
+        postId = getIntent().getStringExtra("postId");
+
+        btnBack = findViewById(R.id.btnBack);
+        recyclerview_comments = findViewById(R.id.recyclerview_comments);
+        swipe = findViewById(R.id.swipe);
+        edit_comment = findViewById(R.id.edit_comment);
+        btn_send = findViewById(R.id.btn_send);
+
+
+        requestForPostComments("Bearer " + sessionManagement.getToken(), postId);
+
+        btnBack.setOnClickListener(v -> onBackPressed());
+
+        swipe.setOnRefreshListener(this);
+
+        btn_send.setOnClickListener(v -> {
+            String comment = edit_comment.getText().toString();
+            if (!TextUtils.isEmpty(comment)){
+                requestForAddComment("Bearer " + sessionManagement.getToken(), postId, comment);
+                edit_comment.setText("");
+            }
+        });
+    }
+
+    private void requestForPostComments(String authToken, String postId){
+        Call<CommentsResponseModel> call = service.getPostComments(authToken, postId);
+        call.enqueue(new Callback<>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onResponse(@NotNull Call<CommentsResponseModel> call, @NotNull Response<CommentsResponseModel> response) {
+
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    boolean status = response.body().isStatus();
+                    if (status) {
+                        commentsList = new ArrayList<>();
+
+                        commentsList = response.body().getCommentsList();
+                        showCommentsRecyclerview(recyclerview_comments, commentsList);
+
+                        setCommentsPusher();
+
+                    }else {
+                        CustomCookieToast.showRequiredToast(CommentsActivity.this, response.body().getMessage());
+                    }
+                }else {
+                    CustomCookieToast.showRequiredToast(CommentsActivity.this, response.message());
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<CommentsResponseModel> call, @NotNull Throwable t) {
+                CustomCookieToast.showRequiredToast(CommentsActivity.this, t.getMessage());
+            }
+        });
+
+    }
+
+    private void showCommentsRecyclerview(RecyclerView recyclerView, List<CommentDataModel> commentsList) {
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        commentsAdapter = new CommentsAdapter(context, commentsList ,this);
+        recyclerView.setAdapter(commentsAdapter);
+    }
+
+    @Override
+    public void onLikeClicked(String commentId) {
+        requestForLikePost("Bearer " + sessionManagement.getToken(), commentId);
+    }
+
+    private void requestForLikePost(String authToken, String postId) {
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<MainResponseModel> call = service.likeComment(authToken, postId);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MainResponseModel> call, @NonNull Response<MainResponseModel> response) {
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MainResponseModel> call, @NonNull Throwable t) {
+                t.printStackTrace();
+            }
+        });
+
+    }
+
+    @Override
+    public void onRefresh() {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
+        } else {
+            //deprecated in API 26
+            v.vibrate(100);
+        }
+        new Handler(Looper.getMainLooper()).postDelayed(() -> swipe.setRefreshing(false), 400);
+        requestForPostComments("Bearer " + sessionManagement.getToken(), postId);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+    }
+
+    private void requestForAddComment(String authToken, String postId, String message) {
+        Call<MainResponseModel> call = service.addComment(authToken, postId, message);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MainResponseModel> call, @NonNull Response<MainResponseModel> response) {
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MainResponseModel> call, @NonNull Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    public void setCommentsPusher() {
+        // pusher
+        PusherOptions options = new PusherOptions();
+        options.setCluster("us3").setUseTLS(false);
+        pusher = new Pusher("785126dad3606ac09387", options);
+        Channel channel = pusher.subscribe("Community");
+
+        channel.bind("NewComment"+postId, event -> {
+            Gson gson = new Gson();
+            CommentDataModel comment = gson.fromJson(event.getData(), CommentDataModel.class);
+            runOnUiThread(() -> {
+                if (comment != null) {
+                    if (commentsList.size()==0){
+                        commentsList.add(comment);
+                    }else {
+                        commentsList.add(commentsList.size()-1, comment);
+                    }
+                    Toast.makeText(context, "adding new message!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "message is null", Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+
+        pusher.connect();
+    }
+}

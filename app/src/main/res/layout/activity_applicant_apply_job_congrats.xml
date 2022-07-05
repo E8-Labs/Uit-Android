@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".applicant.activities.ActivityApplicantApplyJobCongrats"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/congratulation"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/companyImage"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:src="@color/app_color"
+        app:riv_oval="true"
+        />
+
+    <TextView
+        android:id="@+id/text_jobSuccessfullySubmitted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/congratulation_detail"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/browseOtherJob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_background"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/_48sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingRight="@dimen/_48sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:text="@string/browseOtherJobs"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_14sdp"
+        />
+
+
+</LinearLayout>
