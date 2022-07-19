@@ -229,25 +229,21 @@ public class ApplicantSavedJobsActivity extends BaseActivity {
     }
 
 
-    void setPendingLayout() {
-        applied_jobs_recyclerview.setVisibility(View.VISIBLE);
-        saved_jobs_recyclerview.setVisibility(View.GONE);
-
+    private void setPendingLayout() {
         pendingLayout.setBackgroundResource(R.drawable.app_color_curved_background);
         approvedLayout.setBackgroundResource(R.drawable.white_curved_background);
         pending.setTextColor(getColor(R.color.white));
         approved.setTextColor(getColor(R.color.black));
-
+        sendServerRequestGET(AppConstants.GET_APPLIED_JOBS + "?job_status=" + 1 + "&off_set=0", sessionManagement.getToken());
     }
 
-    void setApprovedLayout() {
-        applied_jobs_recyclerview.setVisibility(View.GONE);
-        saved_jobs_recyclerview.setVisibility(View.VISIBLE);
-
+    private void setApprovedLayout() {
         pendingLayout.setBackgroundResource(R.drawable.white_curved_background);
         approvedLayout.setBackgroundResource(R.drawable.app_color_curved_background);
         pending.setTextColor(getColor(R.color.black));
         approved.setTextColor(getColor(R.color.white));
+
+        sendServerRequestGET(AppConstants.GET_SAVED_JOBS, sessionManagement.getToken());
     }
 
     @Override

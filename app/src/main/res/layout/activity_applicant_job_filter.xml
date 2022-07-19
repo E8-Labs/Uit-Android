@@ -226,10 +226,10 @@
                 android:id="@+id/rv_employment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:overScrollMode="never"
                 android:layout_below="@id/text_employmentType"
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:overScrollMode="never"
                 android:scrollbarThumbHorizontal="@null"
                 tools:itemCount="1"
                 tools:listitem="@layout/single_item_horizontal_selection" />
@@ -288,8 +288,7 @@
                 app:trackColorActive="@color/app_color"
                 app:trackColorInactive="@color/half_white"
                 app:trackHeight="@dimen/_9sdp"
-                app:values="@array/initial_range_slider_values"
-                />
+                app:values="@array/initial_range_slider_values" />
 
 
             <TextView

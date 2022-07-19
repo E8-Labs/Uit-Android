@@ -1,7 +1,5 @@
 package com.antizon.uit_android.company.welcome;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,7 +53,7 @@ public class AffinityGroup extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(AffinityGroup.this,DEIProgramming.class);
+                Intent intent = new Intent(AffinityGroup.this, CompanyDEIProgrammingActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
@@ -64,7 +62,7 @@ public class AffinityGroup extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(AffinityGroup.this,DEIProgramming.class);
+                Intent intent = new Intent(AffinityGroup.this, CompanyDEIProgrammingActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.left_out,R.anim.left_out);
             }

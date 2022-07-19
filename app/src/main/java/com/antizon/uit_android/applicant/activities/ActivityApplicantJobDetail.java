@@ -2,6 +2,7 @@ package com.antizon.uit_android.applicant.activities;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
@@ -20,6 +22,10 @@ import com.antizon.uit_android.company.utility.BaseActivity;
 import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.models.applicant.home.ApplicantHomeJobDataModel;
+import com.antizon.uit_android.models.community.MainResponseModel;
+import com.antizon.uit_android.network.GetDataService;
+import com.antizon.uit_android.network.RetrofitClientInstance;
+import com.antizon.uit_android.utilities.CustomCookieToast;
 import com.antizon.uit_android.utilities.Utilities;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -27,14 +33,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ActivityApplicantJobDetail extends BaseActivity {
     Context context;
+    GetDataService service;
     private static final String TAG = ActivityApplicantJobDetail.class.getSimpleName();
     RoundedImageView reminder;
-    TextView text_locationType, text_employmentStatus, pending, approved, paused, applyNow, detail, responseDetail, educationDetail, threeYear, sales, market, aboutDetail, web, jobTitle, address, dollar, twoDays, job, airBnb, btnFlagThisUser;
-    ConstraintLayout firstLayout, secondLayout, thirdLayout;
+    TextView text_locationType, text_employmentStatus, pending, approved, paused, applyNow, detail, responseDetail, educationDetail, threeYear, sales, market, aboutDetail, web, jobTitle, address, dollar, twoDays, job, airBnb, btnFlagThisJob;
+    ConstraintLayout thirdLayout;
+    LinearLayout firstLayout, secondLayout;
     ConstraintLayout pendingLayout, approvedLayout, pausedLayout;
-    ImageView btnFlag;
+    ImageView btnFlag, cross, btn_saveThisJob;
 
     SessionManagement sessionManagement;
     ProgressDialog progressDialog;
@@ -48,15 +60,17 @@ public class ActivityApplicantJobDetail extends BaseActivity {
         setContentView(R.layout.activity_applicant_job_detail);
         Utilities.setCustomStatusAndNavColor(ActivityApplicantJobDetail.this, R.color.white_dash, R.color.white_dash);
         context = ActivityApplicantJobDetail.this;
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
 
         initViews();
-
         sendServerRequestGET(AppConstants.GET_JOB_DETAIL + jobDataModel.getId(), sessionManagement.getToken());
     }
     
     void initViews() {
         jobDataModel = getIntent().getParcelableExtra("jobDataModel");
 
+        cross = findViewById(R.id.cross);
+        btn_saveThisJob = findViewById(R.id.btn_saveThisJob);
         twoDays = findViewById(R.id.twoDays);
         job = findViewById(R.id.job);
         pending = findViewById(R.id.pending);
@@ -83,13 +97,13 @@ public class ActivityApplicantJobDetail extends BaseActivity {
         dollar = findViewById(R.id.dollar);
         airBnb = findViewById(R.id.airBnb);
         btnFlag = findViewById(R.id.btnFlag);
-        btnFlagThisUser = findViewById(R.id.btnFlagThisUser);
+        btnFlagThisJob = findViewById(R.id.btnFlagThisJob);
         text_employmentStatus = findViewById(R.id.text_employmentStatus);
         text_locationType = findViewById(R.id.text_locationType);
 
-        pending.setText("Description");
-        approved.setText("Requirement");
-        paused.setText("Company");
+        pending.setText(context.getString(R.string.description));
+        approved.setText(context.getString(R.string.requirement));
+        paused.setText(context.getString(R.string.company));
         progressDialog = new ProgressDialog(this);
         sessionManagement = new SessionManagement(ActivityApplicantJobDetail.this);
 
@@ -107,7 +121,6 @@ public class ActivityApplicantJobDetail extends BaseActivity {
         });
 
         pendingLayout.setOnClickListener(view -> {
-
             firstLayout.setVisibility(View.VISIBLE);
             secondLayout.setVisibility(View.GONE);
             thirdLayout.setVisibility(View.GONE);
@@ -139,10 +152,12 @@ public class ActivityApplicantJobDetail extends BaseActivity {
             overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
         });
 
-        btnFlagThisUser.setOnClickListener(v -> {
+        btnFlagThisJob.setOnClickListener(v -> {
             Intent flagJobIntent = new Intent(context, FlagJobUserActivity.class);
-            flagJobIntent.putExtra("type", "flag_user");
-            flagJobIntent.putExtra("flagDataModel", jobDataModel.getUserDataModel());
+            flagJobIntent.putExtra("type", "flag_job");
+            flagJobIntent.putExtra("flagDataModel", jobDataModel.getCompanyDataModel());
+            flagJobIntent.putExtra("jobTitle", jobDataModel.getJob_title());
+            flagJobIntent.putExtra("jobId", String.valueOf(jobDataModel.getId()));
             startActivity(flagJobIntent);
             overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
         });
@@ -179,6 +194,38 @@ public class ActivityApplicantJobDetail extends BaseActivity {
         dollar.setText(salaryRange);
         job.setText(total_applications);
 
+        cross.setOnClickListener(v -> onBackPressed());
+
+        btn_saveThisJob.setOnClickListener(v -> requestForSaveJob("Bearer " + sessionManagement.getToken(), String.valueOf(jobDataModel.getId())));
+    }
+
+    private void requestForSaveJob(String authToken, String jobId) {
+        Call<MainResponseModel> call = service.saveThisJob(authToken, jobId);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MainResponseModel> call, @NonNull Response<MainResponseModel> response) {
+                progressDialog.dismiss();
+                if (response.isSuccessful()){
+                    if (response.body()!=null){
+                        if (response.body().isStatus()){
+                            CustomCookieToast.showSuccessToast(ActivityApplicantJobDetail.this, "Job Saved Successfully.");
+                        }else {
+                            CustomCookieToast.showFailureToast(ActivityApplicantJobDetail.this, response.body().getMessage());
+                        }
+                    }else {
+                        CustomCookieToast.showFailureToast(ActivityApplicantJobDetail.this, response.message());
+                    }
+                }else {
+                    CustomCookieToast.showFailureToast(ActivityApplicantJobDetail.this, response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MainResponseModel> call, @NonNull Throwable t) {
+                progressDialog.dismiss();
+                CustomCookieToast.showFailureToast(ActivityApplicantJobDetail.this, t.getLocalizedMessage());
+            }
+        });
     }
 
     @Override
@@ -248,8 +295,8 @@ public class ActivityApplicantJobDetail extends BaseActivity {
                     JSONObject jsonObject1 = experienceArray.getJSONObject(i);
                     String years = jsonObject1.getString("years");
                     Log.d(TAG, "onResponse: years " + years);
-
-                    threeYear.setText(years + " +years");
+                    String totalYears = years + " +years";
+                    threeYear.setText(totalYears);
                 }
 
 

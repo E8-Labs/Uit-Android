@@ -8,7 +8,7 @@ public class AppConstants {
     public static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
 
     //    GET REQUESTS
-    public static String BASEURL = "http://www.zorroapp.tech/uit/api/";
+    public static String BASEURL = "https://uitdev.com/uitapis/api/";
     public static final int REQUEST_CODE_For_IMAGE = 100;
 
     //  Get My Job List
@@ -51,7 +51,7 @@ public class AppConstants {
 
     //  Get Saved Jobs
     //off_set=0,token
-    public static final String GET_SAVED_JOBS = BASEURL + "saved_jobs_list?off_set=1";
+    public static final String GET_SAVED_JOBS = BASEURL + "saved_jobs_list?off_set=0";
 
     //Get Flagged User
     //off_set=0,token

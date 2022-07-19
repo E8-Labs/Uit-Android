@@ -1,272 +1,126 @@
 package com.antizon.uit_android.applicant.welcome;
 
-import android.app.ProgressDialog;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.volley.VolleyError;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.utility.BaseActivity;
-import com.antizon.uit_android.generic.model.ModelApplicantJobs;
-import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
+import com.antizon.uit_android.models.community.MainResponseModel;
+import com.antizon.uit_android.network.GetDataService;
+import com.antizon.uit_android.network.RetrofitClientInstance;
+import com.antizon.uit_android.utilities.CustomCookieToast;
+import com.antizon.uit_android.utilities.FileUtils;
+import com.antizon.uit_android.utilities.ProgressBarAnimation;
+import com.antizon.uit_android.utilities.ProgressRequestBody;
 import com.antizon.uit_android.utilities.Utilities;
-import com.bumptech.glide.Glide;
-import com.greentoad.turtlebody.docpicker.DocPicker;
-import com.greentoad.turtlebody.docpicker.core.DocPickerConfig;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import okhttp3.MultipartBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class ApplicantResumeActivity extends BaseActivity {
+public class ApplicantResumeActivity extends BaseActivity implements ProgressRequestBody.UploadCallbacks {
+    private static final int PICK_FILE_RESULT_CODE = 1;
 
-    private static final String TAG = ApplicantResumeActivity.class.getSimpleName();
-    ImageView addResume, backIcon, redNoah2;
+    Context context;
+    GetDataService service;
+
+    ImageView backIcon, redNoah2;
     SessionManagement sessionManagement;
-    ProgressDialog progressDialog;
     TextView next;
-    File file;
-    String resumeValue;
 
-    String companyValue="", jobValue="",  roleTextValue="",
-            nameOfReferenceValue="", selectJobValue="", phoneValue="";
-
-    String employeValue = "", encodedImageData = "", educationValue = "",professionalValue="",companyDetailValue=""
-            ,fieldOfStudyValue="", universityNameValue = "",degreeSpinnerValue="",startYearValue="";
-    private ArrayList<ModelApplicantJobs> departmentList, jobList, locationList, interestedJobTypeList, companyStageList,
-            companySizeList;
+    String pdfFilePath = "";
+    RoundedImageView addResume, ic_pdfFile;
+    RelativeLayout layout_pdfSelected, layout_doneIc;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_resume);
         Utilities.setWhiteBars(ApplicantResumeActivity.this);
-        setIds();
-        getIntentData();
-        initialize();
-        setListener();
+        context = ApplicantResumeActivity.this;
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+
+        initViews();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume: ");
-        addResume();
-    }
+    private void initViews() {
 
-    void setIds() {
-        Log.d(TAG, "setIds: ");
         next = findViewById(R.id.next);
         addResume = findViewById(R.id.addResume);
         redNoah2 = findViewById(R.id.redNoah2);
         backIcon = findViewById(R.id.backIcon);
-    }
+        layout_pdfSelected = findViewById(R.id.layout_pdfSelected);
+        progressBar = findViewById(R.id.progressBar);
+        ic_pdfFile = findViewById(R.id.ic_pdfFile);
+        layout_doneIc = findViewById(R.id.layout_doneIc);
 
-
-    void getIntentData() {
-        if (getIntent() != null) {
-            encodedImageData = getIntent().getStringExtra("profilePic");
-            employeValue = getIntent().getStringExtra("employeStatus");
-            educationValue = getIntent().getStringExtra("education");
-            companyDetailValue = getIntent().getStringExtra("companyDetail");
-
-
-            fieldOfStudyValue = getIntent().getStringExtra("fieldOfStudy");
-            startYearValue = getIntent().getStringExtra("startYear");
-            universityNameValue = getIntent().getStringExtra("universityName");
-            degreeSpinnerValue = getIntent().getStringExtra("degreeSpinner");
-
-            Log.d(TAG, "getIntentData: image:" + encodedImageData);
-            Log.d(TAG, "getIntentData: employeStatus:" + employeValue);
-            Log.d(TAG, "getIntentData: education:" + educationValue);
-            Log.d(TAG, "getIntentData: companyDetail:" + companyDetailValue);
-
-            Log.d(TAG, "getIntentData: education:" + fieldOfStudyValue);
-            Log.d(TAG, "getIntentData: education:" + startYearValue);
-            Log.d(TAG, "getIntentData: education:" + universityNameValue);
-            Log.d(TAG, "getIntentData: education:" + degreeSpinnerValue);
-
-            Bundle bundle = getIntent().getExtras();
-            departmentList = bundle.getParcelableArrayList("departmentList");
-            jobList = bundle.getParcelableArrayList("jobList");
-            locationList = bundle.getParcelableArrayList("locationList");
-            interestedJobTypeList = bundle.getParcelableArrayList("interestedJobTypeList");
-            companyStageList = bundle.getParcelableArrayList("companyStageList");
-            companySizeList = bundle.getParcelableArrayList("companySizeList");
-
-            Log.d(TAG, "getIntentData: departmentList: " + departmentList.size());
-            Log.d(TAG, "getIntentData: jobList: " + jobList.size());
-            Log.d(TAG, "getIntentData: locationList: " + locationList.size());
-            Log.d(TAG, "getIntentData: interestedJobTypeList: " + interestedJobTypeList.size());
-            Log.d(TAG, "getIntentData: companyStageList: " + companyStageList.size());
-            Log.d(TAG, "getIntentData: companySizeList: " + companySizeList.size());
-        }
-    }
-    void initialize() {
-        Log.d(TAG, "initialize: ");
-        progressDialog = new ProgressDialog(ApplicantResumeActivity.this);
         sessionManagement = new SessionManagement(ApplicantResumeActivity.this);
         loadProfile(ApplicantResumeActivity.this, sessionManagement.getProfileImage(), redNoah2);
 
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
 
         backIcon.setOnClickListener(view -> onBackPressed());
 
         addResume.setOnClickListener(view -> {
-
-            ArrayList<String> docs = new ArrayList<>();
-            docs.add(DocPicker.DocTypes.PDF);
-            docs.add(DocPicker.DocTypes.MS_POWERPOINT);
-            docs.add(DocPicker.DocTypes.MS_EXCEL);
-            docs.add(DocPicker.DocTypes.TEXT);
-
-            DocPickerConfig pickerConfig = new DocPickerConfig()
-                    .setAllowMultiSelection(false)
-                    .setShowConfirmationDialog(true)
-                    .setExtArgs(docs);
-
-            DocPicker.with(ApplicantResumeActivity.this)
-                    .setConfig(pickerConfig)
-                    .onResult()
-                    .subscribe(new Observer<>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            Log.d(TAG, "onSubscribe: d: " + d.toString());
-                        }
-
-                        @Override
-                        public void onNext(ArrayList<Uri> uris) {
-                            Log.d(TAG, "onNext: uris: " + uris.size());
-                            Uri uri = uris.get(0);
-                            file = new File(uris.get(0).getPath());
-                            String mimeType = getContentResolver().getType(uri);
-                            Glide.with(ApplicantResumeActivity.this)
-                                    .load(uri)
-                                    .into(addResume);
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Log.d(TAG, "onError: throwable: " + e.getMessage());
-                        }
-
-                        @Override
-                        public void onComplete() {
-                            Log.d(TAG, "onComplete: ");
-
-                        }
-                    });
+            Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+            chooseFile.setType("*/*");
+            String[] mimeTypes = {"application/pdf"};
+            chooseFile.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
+            startActivityIfNeeded(chooseFile, PICK_FILE_RESULT_CODE);
         });
 
         next.setOnClickListener(view -> {
-            if (file != null) {
+            if (pdfFilePath.isEmpty()) {
                 openNextScreen();
-//                    sendServerRequestPOST("",);
             } else {
-                Toast.makeText(ApplicantResumeActivity.this, "Please attach your resume.", Toast.LENGTH_SHORT).show();
+                next.setEnabled(false);
+                uploadPdfFile("Bearer " + sessionManagement.getToken(), pdfFilePath);
             }
         });
-
     }
 
-    void addResume() {
-        HashMap<String, String> params = new HashMap<>();
-        params.put("resume", resumeValue);
-
-        Log.d(TAG, "getDocumentData: params: " + params);
-        sendServerRequestPOST(AppConstants.UPLOAD_RESUME, params, sessionManagement.getToken());
-    }
 
     @Override
-    public void requestStarted() {
-        super.requestStarted();
-        Log.d(TAG, "requestStarted: running");
-        progressDialog.setMessage(" Uploading Resume...");
-        progressDialog.show();
-    }
-
-    @Override
-    public void onResponseReceived(String response, String urlCalled) {
-        super.onResponseReceived(response, urlCalled);
-        progressDialog.dismiss();
-
-        JSONObject jsonObject;
-        try {
-            jsonObject = new JSONObject(response);
-            boolean status = jsonObject.getBoolean("status");
-            String message = jsonObject.getString("message");
-            Log.d(TAG, "onResponse: status: " + message);
-            Log.d(TAG, "onResponse: status: " + status);
-            Log.d(TAG, "onResponseReceived: response: " + response);
-
-            Toast.makeText(this, "" + message, Toast.LENGTH_SHORT).show();
-            if (status) {
-
-                JSONObject dataObject = jsonObject.getJSONObject("data");
-                Log.d(TAG, "onResponse: data: size: " + dataObject.length());
-
-                int id = dataObject.getInt("id");
-                Log.d(TAG, "onResponse: id " + id);
-
-                Log.d(TAG, "onResponseReceived: response: " + response);
-                Log.d(TAG, "onResponseReceived: urlCalled: " + urlCalled);
-
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode == PICK_FILE_RESULT_CODE){
+            assert data != null;
+            Uri pdfFileUri = data.getData();
+            pdfFilePath = FileUtils.getPath(context, pdfFileUri);
+            if (pdfFilePath !=null){
+                if (pdfFilePath.isEmpty()){
+                    Toast.makeText(context, "Pdf is Not Selected", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    addResume.setVisibility(View.GONE);
+                    layout_pdfSelected.setVisibility(View.VISIBLE);
+                }
+            }else {
+                Toast.makeText(context, "Pdf file path is null", Toast.LENGTH_LONG).show();
             }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
     }
 
-    @Override
-    public void requestEndedWithError(VolleyError error) {
-        super.requestEndedWithError(error);
-        progressDialog.dismiss();
-        Log.d(TAG, "requestEndedWithError: error: " + error);
-    }
-
-    void openNextScreen() {
-
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("departmentList", departmentList);
-        bundle.putParcelableArrayList("jobList", jobList);
-        bundle.putParcelableArrayList("locationList", locationList);
-        bundle.putParcelableArrayList("interestedJobTypeList", interestedJobTypeList);
-        bundle.putParcelableArrayList("companyStageList", companyStageList);
-        bundle.putParcelableArrayList("companySizeList", companySizeList);
-//        bundle.putParcelableArrayList("professionalInterestList", list);
-
+    private void openNextScreen() {
         Intent intent = new Intent(ApplicantResumeActivity.this, ApplicantAddCoverLetterActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
-        intent.putExtra("employeStatus", employeValue);
-        intent.putExtra("education", educationValue);
-        intent.putExtra("companyDetail", companyDetailValue);
-        intent.putExtra("interest", professionalValue);
-
-        intent.putExtra("fieldOfStudy", fieldOfStudyValue);
-        intent.putExtra("startYear", startYearValue);
-        intent.putExtra("universityName", universityNameValue);
-        intent.putExtra("degreeSpinner", degreeSpinnerValue);
-
-        intent.putExtra("companyName", companyValue);
-        intent.putExtra("job", jobValue);
-        intent.putExtra("role", roleTextValue);
-        intent.putExtra("selectJob", selectJobValue);
-        intent.putExtra("nameOfReference", nameOfReferenceValue);
-        intent.putExtra("phone", phoneValue);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        onProfileUpdateLauncher.launch(intent);
         overridePendingTransition(R.anim.left_in,R.anim.left_out);
     }
 
@@ -274,5 +128,66 @@ public class ApplicantResumeActivity extends BaseActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+    }
+
+
+    public void uploadPdfFile(String authToken, String pdfFilePath) {
+        File file = new File(pdfFilePath);
+        ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
+        MultipartBody.Part mediasToUpload = MultipartBody.Part.createFormData("resume", file.getName(), fileBody);
+        Call<MainResponseModel> call = service.uploadApplicantResume(authToken, mediasToUpload);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MainResponseModel> call, @NonNull Response<MainResponseModel> response) {
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    if (response.body().isStatus()) {
+                        progressBar.setProgress(100);
+                        ic_pdfFile.setVisibility(View.GONE);
+                        layout_doneIc.setVisibility(View.VISIBLE);
+
+                        new Handler(Looper.getMainLooper()).postDelayed(() -> openNextScreen(), 500);
+                    }else {
+                        next.setEnabled(true);
+                        CustomCookieToast.showFailureToast(ApplicantResumeActivity.this, "Failure!", response.body().getMessage());
+                    }
+                } else {
+                    next.setEnabled(true);
+                    CustomCookieToast.showFailureToast(ApplicantResumeActivity.this, "Failure!", response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MainResponseModel> call, @NonNull Throwable t) {
+                next.setEnabled(true);
+                CustomCookieToast.showFailureToast(ApplicantResumeActivity.this, "Failure!", t.getMessage());
+            }
+        });
+
+    }
+
+    ActivityResultLauncher<Intent> onProfileUpdateLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent intent = new Intent();
+            setResult(RESULT_OK, intent);
+            finish();
+            overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+        }
+    });
+
+    @Override
+    public void onProgressUpdate(int percentage) {
+        ProgressBarAnimation anim = new ProgressBarAnimation(progressBar, progressBar.getProgress(), percentage);
+        anim.setDuration(500);
+        progressBar.startAnimation(anim);
+    }
+
+    @Override
+    public void onError() {
+        CustomCookieToast.showFailureToast(ApplicantResumeActivity.this, "Failure!", "Some Error occurred");
+    }
+
+    @Override
+    public void onFinish() {
     }
 }

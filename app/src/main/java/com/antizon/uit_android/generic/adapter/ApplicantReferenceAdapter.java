@@ -39,7 +39,7 @@ public class ApplicantReferenceAdapter extends RecyclerView.Adapter<ApplicantRef
             String phoneNumber = applicantReferenceModel.getCountryCode() + applicantReferenceModel.getPhoneNumber();
 
             holder.name.setText(applicantReferenceModel.getName());
-            holder.designation.setText(applicantReferenceModel.getJobTitle());
+            holder.designation.setText(applicantReferenceModel.getApplicantJobDataModel().getName());
             holder.number.setText(phoneNumber);
 
             holder.remove.setOnClickListener(view -> callBack.onRemoveClicked(position));

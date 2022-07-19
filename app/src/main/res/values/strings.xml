@@ -17,6 +17,7 @@
     <string name="connectDirectly">Connect directly with qualified applicants whose background and experience match your needs.</string>
     <string name="instantDiscover">Instantly discover and apply to opportunities that match your intrests.</string>
     <string name="connect">CONNECT</string>
+
     <string name="connectWith">Connect with our community for support along the way!</string>
     <string name="app_name">UIT</string>
     <string name="uiDesigner">UI/UX Designer</string>
@@ -144,7 +145,7 @@
     <string name="nameOfReference">Name of reference</string>
     <string name="addReference">Add Reference</string>
     <string name="remove">Remove</string>
-    <string name="addRefrence"><u>Add Reference (optional)</u></string>
+    <string name="text_addReference"><u>Add Reference (optional)</u></string>
     <string name="signUp">Sign up now</string>
     <string name="pending">Pending</string>
     <string name="approved">Approved</string>
@@ -282,6 +283,7 @@
     <string name="productDeveloper">Product Developer</string>
     <string name="closed">Closed</string>
     <string name="flagThisUser">Flag this user</string>
+    <string name="flagThisJob">Flag this job</string>
     <string name="reject">Reject</string>
     <string name="skillRequired">Skills Required</string>
     <string name="responsibilities">Responsibilities</string>
@@ -452,6 +454,18 @@
     <string name="text_uitMember">Uit Member</string>
     <string name="text_companyMember">Company Member</string>
     <string name="text_applicant">Applicant</string>
+    <string name="text_resume">Resume.pdf</string>
+    <string name="text_notAvailable">Not Available</string>
+    <string name="text_notAvailableShort">N/A</string>
+    <string name="text_cover_letter_pdf">CoverLetter.pdf</string>
+    <string name="description">Description</string>
+    <string name="requirement">Requirement</string>
+
+    <string name="connect_your_green_house">Connect your greenhouse account to UIT.</string>
+
+    <string name="inviteTeam">Invite Team\nMembers</string>
+    <string name="addTeam">Add Team Member</string>
+    <string name="longLoremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec pretium velit. Quisque tempus congue elit eget pharetra. Vestibulum purus urna, ornare quis faucibus ut, accumsan et lacus. Pellentesque congue nec mauris id ultricies. Duis auctor odio nec finibus efficitur. Phasellus quis efficitur lacus, ut euismod ipsum. Nam porttitor aliquet sagittis. Sed elementum diam luctus, commodo mi vel, fringilla ex. Nulla pharetra et eros a gravida. Fusce vel erat ut ipsum venenatis tristique quis eu nisi. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam vitae suscipit leo, sit amet feugiat lacus.</string>
 
     <string-array name="selectMonth">
         <item>BS (Physics)</item>

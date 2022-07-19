@@ -17,9 +17,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.adapters.ViewPagerFragmentAdapter;
 import com.antizon.uit_android.applicant.fragment.ApplicantJobFragment;
+import com.antizon.uit_android.applicant.fragment.ApplicantProfileFragment;
 import com.antizon.uit_android.applicant.fragment.CommunityFragment;
 import com.antizon.uit_android.company.fragment.ChatFragment;
-import com.antizon.uit_android.company.fragment.ProfileFragment;
 import com.antizon.uit_android.generic.activities.SignInActivity;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.utilities.Utilities;
@@ -92,10 +92,11 @@ public class ApplicantBottomNavigationActivity extends AppCompatActivity {
         Glide.with(ApplicantBottomNavigationActivity.this).load(sessionManagement.getProfileImage()).placeholder(R.drawable.uit_app_icon_for_background).into(profileIcon);
 
         fragmentsList = new ArrayList<>();
+
         jobsFrag = new ApplicantJobFragment();
         communityFragment = new CommunityFragment();
         chatFragment = new ChatFragment();
-        profileFragment = new ProfileFragment();
+        profileFragment = new ApplicantProfileFragment();
 
         fragmentsList.add(jobsFrag);
         fragmentsList.add(communityFragment);

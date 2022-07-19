@@ -4,18 +4,18 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-
 import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
+import com.antizon.uit_android.applicant.welcome.ApplicantAddCoverLetterActivity;
+import com.antizon.uit_android.applicant.welcome.ApplicantResumeActivity;
 import com.antizon.uit_android.company.utility.BaseActivity;
 import com.antizon.uit_android.generic.model.ModelAdminApplicants;
 import com.antizon.uit_android.generic.model.ModelApplicantDepartment;
@@ -25,19 +25,10 @@ import com.antizon.uit_android.models.applicant.home.ApplicantHomeJobDataModel;
 import com.antizon.uit_android.uit_admin.welcome.ProfessionalInformation;
 import com.antizon.uit_android.utilities.CustomCookieToast;
 import com.antizon.uit_android.utilities.Utilities;
-import com.greentoad.turtlebody.docpicker.DocPicker;
-import com.greentoad.turtlebody.docpicker.core.DocPickerConfig;
 import com.makeramen.roundedimageview.RoundedImageView;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 public class ActivityApplicantApplyJob extends BaseActivity {
     Context context;
@@ -45,11 +36,11 @@ public class ActivityApplicantApplyJob extends BaseActivity {
     private static final String TAG = ActivityApplicantApplyJob.class.getSimpleName();
     SessionManagement sessionManagement;
     ProgressDialog progressDialog;
-    TextView submitMyApplication, text_location, text_companyName, text_jobTitle, text_salary, text_locationType, text_userName, text_personalJob, addResume, addCover;
-    ImageView backIcon, arrow;
+    TextView submitMyApplication, text_location, text_companyName, text_jobTitle, text_salary, text_locationType, text_userName, text_personalJob,
+            text_resume, text_coverLetter,
+            addResume, addCover;
+    ImageView backIcon, arrow, resumeIcon, coverIcon;
     RoundedImageView companyImage, user_ProfileImage;
-
-    File file;
 
     ApplicantHomeJobDataModel jobDataModel;
 
@@ -85,6 +76,10 @@ public class ActivityApplicantApplyJob extends BaseActivity {
         text_userName = findViewById(R.id.text_userName);
         text_personalJob = findViewById(R.id.text_personalJob);
         user_ProfileImage = findViewById(R.id.user_ProfileImage);
+        text_resume = findViewById(R.id.text_resume);
+        resumeIcon = findViewById(R.id.resumeIcon);
+        text_coverLetter = findViewById(R.id.text_coverLetter);
+        coverIcon = findViewById(R.id.coverIcon);
 
 
         String location =  jobDataModel.getCity() + ", " + jobDataModel.getState();
@@ -134,88 +129,37 @@ public class ActivityApplicantApplyJob extends BaseActivity {
 
         backIcon.setOnClickListener(view -> onBackPressed());
 
-        addResume.setOnClickListener(view -> {
-            ArrayList<String> docs = new ArrayList<>();
-            docs.add(DocPicker.DocTypes.PDF);
-            docs.add(DocPicker.DocTypes.MS_POWERPOINT);
-            docs.add(DocPicker.DocTypes.MS_EXCEL);
-            docs.add(DocPicker.DocTypes.TEXT);
+        if (sessionManagement.getKeyResumeSaved().equals("true")){
+            resumeIcon.setVisibility(View.VISIBLE);
+            text_resume.setText(R.string.text_resume);
+            addResume.setText(R.string.view);
+        }else {
+            resumeIcon.setVisibility(View.GONE);
+            text_resume.setText(context.getString(R.string.text_notAvailableShort));
+            addResume.setText(context.getString(R.string.addResume));
+            addResume.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ApplicantResumeActivity.class);
+                onResumeAddedLauncher.launch(intent);
+                overridePendingTransition(R.anim.right_to_left,R.anim.left_to_right);
+            });
+        }
 
-            DocPickerConfig pickerConfig = new DocPickerConfig()
-                    .setAllowMultiSelection(false)
-                    .setShowConfirmationDialog(true)
-                    .setExtArgs(docs);
+        if (sessionManagement.getKeyCoverLetterSaved().equals("true")){
+            coverIcon.setVisibility(View.VISIBLE);
+            text_coverLetter.setText(R.string.coverLetter);
+            addCover.setText(R.string.view);
+        }else {
+            coverIcon.setVisibility(View.GONE);
+            text_coverLetter.setText(context.getString(R.string.text_notAvailableShort));
+            addCover.setText(context.getString(R.string.addCoverLetter));
+            addCover.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ApplicantAddCoverLetterActivity.class);
+                onCoverLetterAddedLauncher.launch(intent);
+                overridePendingTransition(R.anim.right_to_left,R.anim.left_to_right);
+            });
+        }
 
-            DocPicker.with(ActivityApplicantApplyJob.this)
-                    .setConfig(pickerConfig)
-                    .onResult()
-                    .subscribe(new Observer<>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            Log.d(TAG, "onSubscribe: d: " + d.toString());
-                        }
 
-                        @Override
-                        public void onNext(ArrayList<Uri> uris) {
-                            Log.d(TAG, "onNext: uris: " + uris.size());
-                            Uri uri = uris.get(0);
-                            file = new File(uris.get(0).getPath());
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Log.d(TAG, "onError: throwable: " + e.getMessage());
-                        }
-
-                        @Override
-                        public void onComplete() {
-                            Log.d(TAG, "onComplete: ");
-
-                        }
-                    });
-        });
-        addCover.setOnClickListener(view -> {
-
-            ArrayList<String> docs = new ArrayList<>();
-            docs.add(DocPicker.DocTypes.PDF);
-            docs.add(DocPicker.DocTypes.MS_POWERPOINT);
-            docs.add(DocPicker.DocTypes.MS_EXCEL);
-            docs.add(DocPicker.DocTypes.TEXT);
-
-            DocPickerConfig pickerConfig = new DocPickerConfig()
-                    .setAllowMultiSelection(false)
-                    .setShowConfirmationDialog(true)
-                    .setExtArgs(docs);
-
-            DocPicker.with(ActivityApplicantApplyJob.this)
-                    .setConfig(pickerConfig)
-                    .onResult()
-                    .subscribe(new Observer<>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            Log.d(TAG, "onSubscribe: d: " + d.toString());
-                        }
-
-                        @Override
-                        public void onNext(ArrayList<Uri> uris) {
-                            Log.d(TAG, "onNext: uris: " + uris.size());
-                            Uri uri = uris.get(0);
-                            file = new File(uris.get(0).getPath());
-
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Log.d(TAG, "onError: throwable: " + e.getMessage());
-                        }
-
-                        @Override
-                        public void onComplete() {
-                            Log.d(TAG, "onComplete: ");
-
-                        }
-                    });
-        });
     }
 
     void applyToJob() {
@@ -275,6 +219,26 @@ public class ActivityApplicantApplyJob extends BaseActivity {
             setResult(RESULT_OK, intent);
             finish();
             overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+        }
+    });
+
+    ActivityResultLauncher<Intent> onResumeAddedLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            resumeIcon.setVisibility(View.VISIBLE);
+            text_resume.setText(R.string.text_resume);
+            addResume.setText(R.string.view);
+            addResume.setEnabled(false);
+            sessionManagement.setResumeSaved("true");
+        }
+    });
+
+    ActivityResultLauncher<Intent> onCoverLetterAddedLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            coverIcon.setVisibility(View.VISIBLE);
+            text_coverLetter.setText(R.string.coverLetter);
+            addCover.setText(R.string.view);
+            addCover.setEnabled(false);
+            sessionManagement.setCoverLetterSaved("true");
         }
     });
 }

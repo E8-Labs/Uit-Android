@@ -56,40 +56,25 @@ public class ActivityApplicantSelectRace extends BaseActivity implements Applica
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_select_race);
         Utilities.setWhiteBars(ActivityApplicantSelectRace.this);
-        setIds();
-        getIntentData();
-        initialize();
-        setListener();
+        initViews();
+
         getRaces();
     }
     
 
-    void setIds() {
-        Log.d(TAG, "setIds: ");
+    void initViews() {
         backIcon = findViewById(R.id.backIcon);
         next = findViewById(R.id.next);
         menYellow = findViewById(R.id.menYellow);
-
         applicantRaceRecyclerView = findViewById(R.id.race_recyclerview);
 
-    }
+        encodedImageData = getIntent().getStringExtra("profilePic");
 
-    void getIntentData() {
-        if (getIntent() != null) {
-            encodedImageData = getIntent().getStringExtra("profilePic");
-        }
-
-    }
-
-
-    void initialize() {
         sessionManagement=new SessionManagement(ActivityApplicantSelectRace.this);
         progressDialog = new ProgressDialog(ActivityApplicantSelectRace.this);
         list = new ArrayList<>();
         loadProfile(ActivityApplicantSelectRace.this, sessionManagement.getProfileImage(), menYellow);
-    }
 
-    void setListener() {
         backIcon.setOnClickListener(v -> onBackPressed());
 
         next.setOnClickListener(view -> {
@@ -106,11 +91,9 @@ public class ActivityApplicantSelectRace extends BaseActivity implements Applica
                 CustomCookieToast.showRequiredToast(ActivityApplicantSelectRace.this, "Please select minimum one Race.");
             }
         });
-
     }
 
-    void getRaces() {
-        Log.d(TAG, "getCompanySize: ");
+    private void getRaces() {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 

@@ -1,93 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".company.welcome.Congratulation">
+    tools:context=".company.welcome.CompanyCreationCongratulationActivity"
+    android:background="@color/white"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@null"
+        android:overScrollMode="never"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
+            <ImageView
+                android:id="@+id/congratulationImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/company_congratulation_ic"
+                android:layout_centerHorizontal="true"
+                />
 
-    <ImageView
-        android:id="@+id/congratulationImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:paddingLeft="@dimen/_22sdp"
-        android:paddingTop="@dimen/_11sdp"
-        android:paddingRight="@dimen/_22sdp"
-        android:paddingBottom="@dimen/_11sdp"
-        android:src="@drawable/company_congratulation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/verificationCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/congratulation"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/UITLargeTextSize"
+                android:layout_below="@id/congratulationImage"
+                android:layout_centerHorizontal="true"
+                />
 
-
-    <TextView
-        android:id="@+id/verificationCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/congratulation"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-
-        android:textSize="@dimen/UITLargeTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/congratulationImage" />
-
-    <TextView
-        android:id="@+id/verificationEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/reviewingYourAccount"
-        android:textAlignment="center"
-        android:textColor="@color/congrats"
-        android:textSize="@dimen/UITMediumTextSize"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verificationCode" />
-
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="info@usintechnology.com"
-        android:textAlignment="center"
-        android:textColor="@color/app_color"
-
-        android:textSize="@dimen/UITSmallTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verificationEmail" />
+            <TextView
+                android:id="@+id/verificationEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/reviewingYourAccount"
+                android:textAlignment="center"
+                android:textColor="@color/congrats"
+                android:textSize="@dimen/UITMediumTextSize"
+                android:layout_below="@id/verificationCode"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                />
 
 
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_42sdp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="@dimen/_42sdp"
-        android:background="@drawable/login_background"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:paddingLeft="@dimen/_36sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:paddingRight="@dimen/_36sdp"
-        android:paddingBottom="@dimen/_12sdp"
-        android:text="@string/logout"
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="info@usintechnology.com"
+                android:textAlignment="center"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/UITSmallTextSize"
+                android:layout_below="@id/verificationEmail"
+                android:layout_centerInParent="true"
+                />
 
-        android:textColor="@color/white"
-        android:textSize="@dimen/UITNormalTextSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/login_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_50sdp"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/logout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/UITNormalTextSize"
+                android:layout_below="@id/email"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

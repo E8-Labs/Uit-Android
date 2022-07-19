@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,7 +13,10 @@ import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,8 +50,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class SelectLocationActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerDragListener, GoogleMap.OnMapLongClickListener, GoogleMap.OnMarkerClickListener, View.OnClickListener{
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0;
-    Boolean locationPermissionGranted = false;
+    Context context;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 10;
+    boolean locationPermissionGranted = false;
     GoogleMap mMap;
     Location lastKnownLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -67,13 +73,15 @@ public class SelectLocationActivity extends AppCompatActivity implements OnMapRe
 
     Double oldLatitude, oldLongitude;
 
-    RelativeLayout layout_btnBack;
+    RelativeLayout layout_btnBack,  layout_main, layout_permissionDenied, btnSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_location);
+        context = SelectLocationActivity.this;
         // Construct a FusedLocationProviderClient.
         Utilities.setCustomStatusAndNavColor(SelectLocationActivity.this, R.color.white_dash, R.color.white_dash);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         oldLatitude = getIntent().getDoubleExtra("latitude", 0);
         oldLongitude = getIntent().getDoubleExtra("longitude", 0);
@@ -81,78 +89,108 @@ public class SelectLocationActivity extends AppCompatActivity implements OnMapRe
         imageMyLocation = findViewById(R.id.imageMyLocation);
         btnPickLocation = findViewById(R.id.btnPickLocation);
         layout_btnBack = findViewById(R.id.layout_btnBack);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-            getLocationPermission();
-            //Search Places Code
-            apiKey = "AIzaSyDGe23sEjTcgvDIu_afjIsmhlFSvxOCNEA";
-            if (!Places.isInitialized()) {
-                Places.initialize(SelectLocationActivity.this, apiKey);
-            }
-            placesClient = Places.createClient(SelectLocationActivity.this);
-
-            autocompleteSupportFragment1 = (AutocompleteSupportFragment) getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment1);
-            if (autocompleteSupportFragment1 != null) {
-                autocompleteSupportFragment1.setHint("Search Location");
-                autocompleteSupportFragment1.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
-                autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-                    @Override
-                    public void onPlaceSelected(@NonNull Place place) {
-                        latlng1 = place.getLatLng();
-                        markerOptions = new MarkerOptions();
-                        mMap.clear();
-                        markerOptions.position(latlng1);
-                        markerOptions.title("Location");
-                        markerOptions.icon((BitmapDescriptorFactory.fromResource(R.drawable.location_ic)));
-                        placeLocation = new LocationHelper(
-                                latlng1.longitude,
-                                latlng1.latitude
-                        );
-
-                        latitude = latlng1.latitude;
-                        longitude = latlng1.longitude;
-                        selectedLocationAddress = getAddress(SelectLocationActivity.this, placeLocation.getLatitude(), placeLocation.getLongitude());
-                        placeLocation = new LocationHelper(placeLocation.getLatitude(), placeLocation.getLongitude());
-
-                        mMap.clear();
-                        moveMap(latitude, longitude, "searchPlaces");
-                    }
-
-                    @Override
-                    public void onError(@NonNull Status status) {
-                    }
-                });
-            }
-        }
+        layout_main = findViewById(R.id.layout_main);
+        layout_permissionDenied = findViewById(R.id.layout_permissionDenied);
+        btnSettings = findViewById(R.id.btnSettings);
 
         layout_btnBack.setOnClickListener(v -> onBackPressed());
-        btnPickLocation.setOnClickListener(v -> moveMap(latitude, longitude, "pickLocation"));
-        imageMyLocation.setOnClickListener(v -> getDeviceLocation());
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                locationPermissionGranted = true;
+                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                if (mapFragment != null) {
+                    mapFragment.getMapAsync(this);
+                    //Search Places Code
+                    apiKey = "AIzaSyDGe23sEjTcgvDIu_afjIsmhlFSvxOCNEA";
+                    if (!Places.isInitialized()) {
+                        Places.initialize(SelectLocationActivity.this, apiKey);
+                    }
+                    placesClient = Places.createClient(SelectLocationActivity.this);
+
+                    autocompleteSupportFragment1 = (AutocompleteSupportFragment) getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment1);
+                    if (autocompleteSupportFragment1 != null) {
+                        autocompleteSupportFragment1.setHint("Search Location");
+                        autocompleteSupportFragment1.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.LAT_LNG, Place.Field.NAME));
+                        autocompleteSupportFragment1.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+                            @Override
+                            public void onPlaceSelected(@NonNull Place place) {
+                                latlng1 = place.getLatLng();
+                                markerOptions = new MarkerOptions();
+                                mMap.clear();
+                                markerOptions.position(latlng1);
+                                markerOptions.title("Location");
+                                markerOptions.icon((BitmapDescriptorFactory.fromResource(R.drawable.location_ic)));
+                                placeLocation = new LocationHelper(
+                                        latlng1.longitude,
+                                        latlng1.latitude
+                                );
+
+                                latitude = latlng1.latitude;
+                                longitude = latlng1.longitude;
+                                selectedLocationAddress = getAddress(SelectLocationActivity.this, placeLocation.getLatitude(), placeLocation.getLongitude());
+                                placeLocation = new LocationHelper(placeLocation.getLatitude(), placeLocation.getLongitude());
+
+                                mMap.clear();
+                                moveMap(latitude, longitude, "searchPlaces");
+                            }
+
+                            @Override
+                            public void onError(@NonNull Status status) {
+                            }
+                        });
+                    }
+                }
+                btnPickLocation.setOnClickListener(v -> moveMap(latitude, longitude, "pickLocation"));
+                imageMyLocation.setOnClickListener(v -> getDeviceLocation());
+
+            } else {
+                locationPermissionGranted = false;
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+            }
+        }else {
+            Utilities.setWhiteBars(SelectLocationActivity.this);
+            layout_main.setVisibility(View.GONE);
+            layout_permissionDenied.setVisibility(View.VISIBLE);
+            btnSettings.setOnClickListener(v -> startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)));
+        }
 
     }
 
 
     private void getLocationPermission() {
-        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationPermissionGranted = true;
         } else {
+            locationPermissionGranted = false;
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        locationPermissionGranted = false;
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults[0] + grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                Utilities.setCustomStatusAndNavColor(SelectLocationActivity.this, R.color.white_dash, R.color.white_dash);
                 locationPermissionGranted = true;
+                layout_main.setVisibility(View.VISIBLE);
+                layout_permissionDenied.setVisibility(View.GONE);
+                updateLocationUI();
+            }else {
+                Utilities.setWhiteBars(SelectLocationActivity.this);
+                locationPermissionGranted = false;
+                layout_main.setVisibility(View.GONE);
+                layout_permissionDenied.setVisibility(View.VISIBLE);
+                btnSettings.setOnClickListener(v -> {
+                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
+                    intent.setData(uri);
+                    startActivity(intent);
+                });
             }
         }
-        updateLocationUI();
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override
@@ -196,9 +234,7 @@ public class SelectLocationActivity extends AppCompatActivity implements OnMapRe
         try {
             // Customise the styling of the base map using a JSON object defined
             // in a raw resource file.
-            boolean success = googleMap.setMapStyle(
-                    MapStyleOptions.loadRawResourceStyle(
-                            this, R.raw.style_json));
+            boolean success = googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json));
 
             if (!success) {
                 Log.e("TAG", "Style parsing failed.");
@@ -206,8 +242,14 @@ public class SelectLocationActivity extends AppCompatActivity implements OnMapRe
         } catch (Resources.NotFoundException e) {
             Log.e("TAG", "Can't find style. Error: ", e);
         }
-        getDeviceLocation();
-        getMarkerPosition();
+
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            getDeviceLocation();
+            getMarkerPosition();
+        }else {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
+
 
     }
 

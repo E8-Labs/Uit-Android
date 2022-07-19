@@ -17,9 +17,9 @@ import com.antizon.uit_android.utilities.Utilities;
 public class ApplicantThankYouActivity extends AppCompatActivity {
     Context context;
 
-    private static final String TAG = ApplicantThankYouActivity.class.getSimpleName();
     ProgressDialog progressDialog;
     TextView continueCongratsFive,notNowFive;
+    SessionManagement sessionManagement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,31 +27,16 @@ public class ApplicantThankYouActivity extends AppCompatActivity {
         setContentView(R.layout.activity_applicant_thank_you);
         Utilities.setWhiteBars(ApplicantThankYouActivity.this);
         context = ApplicantThankYouActivity.this;
-
-        setIds();
-        initialize();
-
-        setListener();
+        sessionManagement = new SessionManagement(context);
+        sessionManagement.setApplicationStatus("2");
+        initViews();
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-    }
-    void setIds() {
-        Log.d(TAG, "setIds: ");
+    void initViews() {
         continueCongratsFive = findViewById(R.id.continueCongratsFive);
         notNowFive = findViewById(R.id.notNowFive);
-    }
 
-    void initialize(){
-        Log.d(TAG, "initialize: ");
         progressDialog = new ProgressDialog(ApplicantThankYouActivity.this);
-    }
-
-    void setListener()
-    {
-        Log.d(TAG, "setListener: ");
 
         continueCongratsFive.setOnClickListener(v -> {
             Intent intent = new Intent(ApplicantThankYouActivity.this, ActivityApplicantJobStatus.class);
@@ -60,8 +45,6 @@ public class ApplicantThankYouActivity extends AppCompatActivity {
         });
 
         notNowFive.setOnClickListener(v -> {
-            SessionManagement sessionManagement = new SessionManagement(context);
-            sessionManagement.setApplicationStatus("2");
             Intent intent = new Intent();
             setResult(RESULT_OK, intent);
             finish();

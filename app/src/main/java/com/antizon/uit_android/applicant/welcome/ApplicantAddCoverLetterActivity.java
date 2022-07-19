@@ -1,190 +1,191 @@
 package com.antizon.uit_android.applicant.welcome;
 
-import android.app.ProgressDialog;
+
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.utility.BaseActivity;
-import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
+import com.antizon.uit_android.models.community.MainResponseModel;
+import com.antizon.uit_android.network.GetDataService;
+import com.antizon.uit_android.network.RetrofitClientInstance;
+import com.antizon.uit_android.utilities.CustomCookieToast;
+import com.antizon.uit_android.utilities.FileUtils;
+import com.antizon.uit_android.utilities.ProgressBarAnimation;
+import com.antizon.uit_android.utilities.ProgressRequestBody;
 import com.antizon.uit_android.utilities.Utilities;
-import com.bumptech.glide.Glide;
-import com.greentoad.turtlebody.docpicker.DocPicker;
-import com.greentoad.turtlebody.docpicker.core.DocPickerConfig;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
+import okhttp3.MultipartBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+public class ApplicantAddCoverLetterActivity extends BaseActivity implements ProgressRequestBody.UploadCallbacks {
+    private static final int PICK_FILE_RESULT_CODE = 1;
+    Context context;
+    GetDataService service;
 
-public class ApplicantAddCoverLetterActivity extends BaseActivity {
-    private static final String TAG = ApplicantAddCoverLetterActivity.class.getSimpleName();
-    ImageView addCoverLetter ,backIcon;
-
+    ImageView backIcon, redNoah2;
     SessionManagement sessionManagement;
+    TextView next;
 
-    ProgressDialog progressDialog;
-    ImageView redNoah2;
-    String coverLetterValue;
-    File file;
+    String pdfFilePath = "";
+    RoundedImageView addCover, ic_pdfFile;
+    RelativeLayout layout_pdfSelected, layout_doneIc;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_add_cover_letter);
         Utilities.setWhiteBars(ApplicantAddCoverLetterActivity.this);
-        setIds();
-        initialize();
-        setListener();
+
+        context = ApplicantAddCoverLetterActivity.this;
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+
+        initViews();
+
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume: ");
-        uploadCoverLetter();
-    }
+    void initViews() {
 
-    void setIds() {
-        Log.d(TAG, "setIds: ");
-        addCoverLetter = findViewById(R.id.companyLogoImage);
         backIcon = findViewById(R.id.backIcon);
         redNoah2 = findViewById(R.id.redNoah2);
-    }
 
-    void initialize() {
-        Log.d(TAG, "initialize: ");
-        progressDialog = new ProgressDialog(ApplicantAddCoverLetterActivity.this);
+        addCover = findViewById(R.id.addCover);
+        layout_pdfSelected = findViewById(R.id.layout_pdfSelected);
+        progressBar = findViewById(R.id.progressBar);
+        ic_pdfFile = findViewById(R.id.ic_pdfFile);
+        layout_doneIc = findViewById(R.id.layout_doneIc);
+        next = findViewById(R.id.next);
+
         sessionManagement = new SessionManagement(ApplicantAddCoverLetterActivity.this);
-
         loadProfile(ApplicantAddCoverLetterActivity.this, sessionManagement.getProfileImage(), redNoah2);
-
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
 
         backIcon.setOnClickListener(view -> onBackPressed());
 
-
-        addCoverLetter.setOnClickListener(view -> {
-
-            ArrayList<String> docs = new ArrayList<>();
-            docs.add(DocPicker.DocTypes.PDF);
-            docs.add(DocPicker.DocTypes.MS_POWERPOINT);
-            docs.add(DocPicker.DocTypes.MS_EXCEL);
-            docs.add(DocPicker.DocTypes.TEXT);
-
-            DocPickerConfig pickerConfig = new DocPickerConfig()
-                    .setAllowMultiSelection(false)
-                    .setShowConfirmationDialog(true)
-                    .setExtArgs(docs);
-
-            DocPicker.with(ApplicantAddCoverLetterActivity.this)
-                    .setConfig(pickerConfig)
-                    .onResult()
-                    .subscribe(new Observer<>() {
-                        @Override
-                        public void onSubscribe(Disposable d) {
-                            Log.d(TAG, "onSubscribe: d: " + d.toString());
-                        }
-
-                        @Override
-                        public void onNext(ArrayList<Uri> uris) {
-                            Log.d(TAG, "onNext: uris: " + uris.size());
-                            Uri uri = uris.get(0);
-                            file = new File(uris.get(0).getPath());
-                            getContentResolver().getType(uri);
-                            Glide.with(ApplicantAddCoverLetterActivity.this)
-                                    .load(uri)
-                                    .into(addCoverLetter);
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Log.d(TAG, "onError: throwable: " + e.getMessage());
-                        }
-
-                        @Override
-                        public void onComplete() {
-                            Log.d(TAG, "onComplete: ");
-
-                        }
-                    });
+        addCover.setOnClickListener(view -> {
+            Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+            chooseFile.setType("application/pdf");
+            chooseFile.addCategory(Intent.CATEGORY_OPENABLE);
+            chooseFile = Intent.createChooser(chooseFile, "Choose a pdf file");
+            startActivityIfNeeded(chooseFile, PICK_FILE_RESULT_CODE);
         });
-    }
 
-
-    void uploadCoverLetter() {
-        HashMap<String, String> params = new HashMap<>();
-        params.put("cover_letter", coverLetterValue);
-
-        Log.d(TAG, "getDocumentData: params: " + params);
-        sendServerRequestPOST(AppConstants.UPLOAD_COVER_LETTER, params, sessionManagement.getToken());
-    }
-
-    @Override
-    public void requestStarted() {
-        super.requestStarted();
-        Log.d(TAG, "requestStarted: running");
-        progressDialog.setMessage(" Uploading Cover Letter...");
-        progressDialog.show();
-    }
-
-    @Override
-    public void onResponseReceived(String response, String urlCalled) {
-        super.onResponseReceived(response, urlCalled);
-        progressDialog.dismiss();
-
-        JSONObject jsonObject;
-        try {
-            jsonObject = new JSONObject(response);
-            boolean status = jsonObject.getBoolean("status");
-            String message = jsonObject.getString("message");
-            Log.d(TAG, "onResponse: status: " + message);
-            Log.d(TAG, "onResponse: status: " + status);
-            Log.d(TAG, "onResponseReceived: response: " + response);
-
-            Toast.makeText(this, "" + message, Toast.LENGTH_SHORT).show();
-            if (status) {
-
-                JSONObject dataObject = jsonObject.getJSONObject("data");
-                Log.d(TAG, "onResponse: data: size: " + dataObject.length());
-
-                int id = dataObject.getInt("id");
-                Log.d(TAG, "onResponse: id " + id);
-
-                Log.d(TAG, "onResponseReceived: response: " + response);
-                Log.d(TAG, "onResponseReceived: urlCalled: " + urlCalled);
-
-
+        next.setOnClickListener(view -> {
+            if (pdfFilePath.isEmpty()) {
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
+                finish();
+                overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+            } else {
+                next.setEnabled(false);
+                uploadCoverLetter("Bearer " + sessionManagement.getToken(), pdfFilePath);
             }
+        });
 
-        } catch (JSONException e) {
-            e.printStackTrace();
+
+        backIcon.setOnClickListener(view -> onBackPressed());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode == PICK_FILE_RESULT_CODE){
+            assert data != null;
+            Uri pdfFileUri = data.getData();
+            pdfFilePath = FileUtils.getPath(context, pdfFileUri);
+            if (pdfFilePath !=null){
+                if (pdfFilePath.isEmpty()){
+                    Toast.makeText(context, "Pdf is Not Selected", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    addCover.setVisibility(View.GONE);
+                    layout_pdfSelected.setVisibility(View.VISIBLE);
+                }
+            }else {
+                Toast.makeText(context, "Pdf file path is null", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
-    @Override
-    public void requestEndedWithError(VolleyError error) {
-        super.requestEndedWithError(error);
-        progressDialog.dismiss();
-        Log.d(TAG, "requestEndedWithError: error: " + error);
+    public void uploadCoverLetter(String authToken, String pdfFilePath) {
+        File file = new File(pdfFilePath);
+        ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
+        MultipartBody.Part mediasToUpload = MultipartBody.Part.createFormData("cover_letter", file.getName(), fileBody);
+        Call<MainResponseModel> call = service.uploadApplicantCoverLetter(authToken, mediasToUpload);
+        call.enqueue(new Callback<>() {
+            @Override
+            public void onResponse(@NonNull Call<MainResponseModel> call, @NonNull Response<MainResponseModel> response) {
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    if (response.body().isStatus()) {
+                        progressBar.setProgress(100);
+                        ic_pdfFile.setVisibility(View.GONE);
+                        layout_doneIc.setVisibility(View.VISIBLE);
+
+                        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                            Intent intent = new Intent();
+                            setResult(RESULT_OK, intent);
+                            finish();
+                            overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+                        },500);
+                    }else {
+                        next.setEnabled(true);
+                        CustomCookieToast.showFailureToast(ApplicantAddCoverLetterActivity.this, "Failure!", response.body().getMessage());
+                    }
+                } else {
+                    next.setEnabled(true);
+                    CustomCookieToast.showFailureToast(ApplicantAddCoverLetterActivity.this, "Failure!", response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MainResponseModel> call, @NonNull Throwable t) {
+                next.setEnabled(true);
+                CustomCookieToast.showFailureToast(ApplicantAddCoverLetterActivity.this, "Failure!", t.getMessage());
+            }
+        });
+
     }
+
+    @Override
+    public void onProgressUpdate(int percentage) {
+        ProgressBarAnimation anim = new ProgressBarAnimation(progressBar, progressBar.getProgress(), percentage);
+        anim.setDuration(500);
+        progressBar.startAnimation(anim);
+    }
+
+    @Override
+    public void onError() {
+        CustomCookieToast.showFailureToast(ApplicantAddCoverLetterActivity.this, "Failure!", "Some Error occurred");
+    }
+
+    @Override
+    public void onFinish() {
+    }
+
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
     }
+
+
 }

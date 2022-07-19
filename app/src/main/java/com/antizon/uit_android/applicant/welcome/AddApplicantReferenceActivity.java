@@ -77,8 +77,9 @@ public class AddApplicantReferenceActivity extends AppCompatActivity {
             }else if (phone.isEmpty()){
                 CustomCookieToast.showRequiredToast(AddApplicantReferenceActivity.this, "Please enter phone number");
             }else {
+                Utilities.hideKeyboard(v, context);
                 Intent intent = new Intent();
-                intent.putExtra("applicantReferenceModel", new ApplicantReferenceModel(name, jobTitle, selectedCountryCode, phone));
+                intent.putExtra("applicantReferenceModel", new ApplicantReferenceModel(name, selectedCountryCode, phone, applicantJobDataModel));
                 setResult(RESULT_OK, intent);
                 finish();
                 overridePendingTransition(R.anim.slide_out_up, R.anim.slide_bottom);

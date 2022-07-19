@@ -8,8 +8,7 @@ import java.util.List;
 
 public class ModelUitAdminApproved implements Parcelable {
 
-    int id = 0, userId = 0, active_members = 0,team_lead=0
-            ,programming=0,training=0, men=0, women=0,lgbt=0, erg=0;
+    int id = 0, userId = 0, active_members = 0,team_lead=0,programming=0,training=0, men=0, women=0,lgbt=0, erg=0;
     String name = "", email = "", city = "", state = "", profile_image = "", deistatement="",phone="";
 
     public ModelUitAdminApproved() {

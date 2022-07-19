@@ -4,16 +4,21 @@ package com.antizon.uit_android.utilities;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.URLUtil;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.antizon.uit_android.R;
 import com.bumptech.glide.Glide;
@@ -27,6 +32,8 @@ import com.bumptech.glide.signature.MediaStoreSignature;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -167,14 +174,30 @@ public class Utilities {
 
     }
 
+    public static void loadCircleImage(Context context, String image, ImageView imageView) {
+        try {
+            Glide.with(context)
+                    .load(image)
+                    .diskCacheStrategy(DiskCacheStrategy.DATA)
+                    .placeholder(R.drawable.post_placeholder_ic)
+                    .error(R.drawable.post_placeholder_ic)
+                    .apply(new RequestOptions().circleCrop())
+                    .signature(new MediaStoreSignature("*/*", Calendar.DATE,0))
+                    .into(imageView);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void loadThumbnailViaGlide(Context context, String videoUrl, ImageView imageView) {
         if (videoUrl.isEmpty()){
-            imageView.setImageResource(R.drawable.ic_image_add_line);
+            imageView.setImageResource(R.drawable.post_placeholder_ic);
         }
         else {
             try {
                 RequestOptions requestOptions = new RequestOptions();
-
                 Glide.with(context).setDefaultRequestOptions(requestOptions).load(videoUrl).diskCacheStrategy(DiskCacheStrategy.DATA).skipMemoryCache(false).dontAnimate().into(imageView);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -265,4 +288,25 @@ public class Utilities {
     }
 
 
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+    public static void shareAppLink(Context context, String url) {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Swiit");
+            //String shareMessage = "Let me recommend you this application\n";
+            //+ BuildConfig.APPLICATION_ID
+            shareIntent.putExtra(Intent.EXTRA_TEXT, url);
+            context.startActivity(Intent.createChooser(shareIntent, "choose one"));
+        } catch (Exception e) {
+            //e.toString();
+        }
+    }
+
+    public static boolean isValidUrl(String urlString) {
+        return URLUtil.isValidUrl(urlString) && Patterns.WEB_URL.matcher(urlString).matches();
+    }
 }

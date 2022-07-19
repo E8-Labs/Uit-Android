@@ -125,7 +125,7 @@ public class ApplicantPhoneNumberActivity extends BaseActivity {
     }
 
 
-    void openNextScreen() {
+    private void openNextScreen() {
         Intent intent = new Intent(ApplicantPhoneNumberActivity.this, ApplicantDateOfBirthActivity.class);
         intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("applicantName", applicantNameValue);

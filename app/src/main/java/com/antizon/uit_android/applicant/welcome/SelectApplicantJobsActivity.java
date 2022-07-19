@@ -63,7 +63,7 @@ public class SelectApplicantJobsActivity extends AppCompatActivity implements Ap
 
     ArrayList<ApplicantJobDataModel> jobsList;
     ArrayList<String> dropDownJobsList = new ArrayList<>();
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
     int mPosition;
 
     TagContainerLayout tagContainerLayout;
@@ -96,7 +96,7 @@ public class SelectApplicantJobsActivity extends AppCompatActivity implements Ap
         menYellow = findViewById(R.id.menYellow);
         multiAutoCompleteTextView = findViewById(R.id.searchJobAutoCompleteView);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
+
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedDepartmentList = getIntent().getParcelableArrayListExtra("selectedDepartmentList");
@@ -172,7 +172,6 @@ public class SelectApplicantJobsActivity extends AppCompatActivity implements Ap
         }else {
             Intent intent = new Intent(SelectApplicantJobsActivity.this, ApplicantCompanyDetailActivity.class);
             intent.putExtra("employeStatus", employeValue);
-            intent.putExtra("profilePic", encodedImageData);
             intent.putParcelableArrayListExtra("educationList", educationList);
             intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);
             intent.putParcelableArrayListExtra("selectedDepartmentList", selectedDepartmentList);

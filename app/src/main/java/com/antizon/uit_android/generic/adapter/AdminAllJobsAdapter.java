@@ -3,45 +3,45 @@ package com.antizon.uit_android.generic.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.generic.activities.AdminJobDetail;
+import com.antizon.uit_android.generic.activities.AdminJobDetailActivity;
 import com.antizon.uit_android.generic.model.ModelAllJobs;
-import com.antizon.uit_android.generic.model.ModelUitAdminPending;
-import com.antizon.uit_android.generic_utils.TimeAgo;
-import com.antizon.uit_android.uit_admin.welcome.PendingProfile;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 
+import net.time4j.Moment;
+import net.time4j.PrettyTime;
+import net.time4j.format.expert.Iso8601Format;
+
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
 
 public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapter.MyViewHolder> {
 
     private static final String TAG = "PendingCompanies: AdminAllJobsAdapter";
 
-    List<ModelAllJobs> list;
     Context context;
+    List<ModelAllJobs> list;
+    AdminAllJobsAdapterCallBack callBack;
 
-    public AdminAllJobsAdapter(List<ModelAllJobs> list, Context context) {
-        this.list = list;
+    public AdminAllJobsAdapter( Context context, List<ModelAllJobs> list, AdminAllJobsAdapterCallBack callBack) {
         this.context = context;
-
+        this.list = list;
+        this.callBack = callBack;
     }
 
     @NonNull
@@ -49,7 +49,7 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
     public AdminAllJobsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recruiter_listed_job, parent, false);
         Log.d(TAG, "onCreateViewHolder: ");
-        return new AdminAllJobsAdapter.MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -60,37 +60,38 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
         holder.jobPostedByTitle.setText("By " + dataModel.getUserDataModel().getName());
         holder.postedByRole.setText("Role " + dataModel.getUserDataModel().getRole());
 
-        holder.timeAgo.setText("2 Days Ago");
+
+        if (dataModel.getCreated_at() !=null){
+            Moment moment;
+            try {
+                moment = Iso8601Format.EXTENDED_DATE_TIME_OFFSET.parse(dataModel.getCreated_at());
+                String ago = PrettyTime.of(Locale.getDefault()).printRelativeInStdTimezone(moment);
+                ago = ago.replace("moments", "sec");
+                ago = ago.replace("minutes", "min");
+                ago = ago.replace("seconds", "sec");
+                ago = ago.replace("hours", "hrs");
+                ago = ago.replace("days", "d");
+                holder.timeAgo.setText(ago);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
+
 
         holder.jobTitle.setText(dataModel.getJob_title());
         holder.companyTitle.setText(dataModel.getCompanyDataModel().getName());
         holder.address.setText(dataModel.getCity() + ", " + dataModel.getState());
 
-        holder.salary.setText("$" + prettyCount(dataModel.getMin_salary()) + " - $" +
-                prettyCount(dataModel.getMin_salary()));
-
-//        holder.jobType.setText("" + dataModel.getEmployment_type());
-//        holder.timeRange.setText(dataModel.getIndustryDataModel().getName());
-
-//        java.util.Date dActive = dateConverterToLocal.parse(dataModel.getCreated_at());
-//        holder.timeAgo.setText(TimeAgo.getTimeAgo(dActive.getTime()));
-//        holder.timeAgo.setText(dataModel.getCreated_at());
+        holder.salary.setText("$" + prettyCount(dataModel.getMin_salary()) + " - $" + prettyCount(dataModel.getMin_salary()));
 
         showImage(holder.postedByImage, dataModel.getUserDataModel().getProfile_image());
         showImage(holder.companyLogo, dataModel.getCompanyDataModel().getProfile_image());
 
         setApplicants(holder, dataModel);
 
-
-        holder.adminJobsLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: accept: ");
-                Intent intent = new Intent(context, AdminJobDetail.class);
-                intent.putExtra("dataModel", dataModel);
-                context.startActivity(intent);
-
-            }
+        holder.itemView.setOnClickListener(view -> {
+            callBack.onItemClick(position);
         });
     }
 
@@ -104,12 +105,12 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView jobPostedByTitle, postedByRole, timeAgo, address, salary, jobType, jobTitle, companyTitle, timeRange, totalApplicantsCount,
                 hiredText, moreHiredCountTitle, feature, filled, closed;
         ImageView postedByImage, companyLogo, firstApplicant, secondApplicant, thirdApplicant, fourthApplicant, fifthApplicant, sixthApplicant, seventhApplicant, totalApplicantCount, hiredApplicant, moreHiredCount;
-        ConstraintLayout adminJobsLayout, applicantList, totalApplicantsLayout;
+        ConstraintLayout applicantList, totalApplicantsLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -148,7 +149,6 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
             timeRange = itemView.findViewById(R.id.timeRange);
             jobType = itemView.findViewById(R.id.jobType);
 
-            adminJobsLayout = itemView.findViewById(R.id.adminJobsLayout);
             applicantList = itemView.findViewById(R.id.applicantList);
             totalApplicantsLayout = itemView.findViewById(R.id.totalApplicantsLayout);
 
@@ -168,7 +168,7 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
         }
     }
 
-    void setApplicants(AdminAllJobsAdapter.MyViewHolder holder, ModelAllJobs dataModel) {
+    private void setApplicants(AdminAllJobsAdapter.MyViewHolder holder, ModelAllJobs dataModel) {
 
         if (dataModel.getSelectedJobStatus().equalsIgnoreCase("1")) {
             holder.totalApplicantsLayout.setVisibility(View.GONE);
@@ -193,7 +193,6 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
                 } else if (i == 6) {
                     showImage(holder.seventhApplicant, dataModel.getApplicationsList().get(i).getProfile_image());
                 } else if (i == 8) {
-
                     holder.totalApplicantsCount.setText("+3" + dataModel.getApplicationsList().size());
                 }
             }
@@ -238,12 +237,16 @@ public class AdminAllJobsAdapter extends RecyclerView.Adapter<AdminAllJobsAdapte
         }
     }
 
-    void showImage(ImageView imageView, String imageUrl) {
+    private void showImage(ImageView imageView, String imageUrl) {
 
         Glide.with(context)
                 .load(imageUrl)
                 .apply(new RequestOptions().circleCrop().placeholder(R.drawable.ic_baseline_image_24))
                 .into(imageView);
 
+    }
+
+    public interface AdminAllJobsAdapterCallBack{
+        void onItemClick(int position);
     }
 }

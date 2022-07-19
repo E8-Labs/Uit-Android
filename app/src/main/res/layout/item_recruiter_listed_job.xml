@@ -13,9 +13,8 @@
         android:id="@+id/postedByImage"
         android:layout_width="60dp"
         android:layout_height="58dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="12dp"
-        android:paddingLeft="@dimen/_8sdp"
         android:src="@drawable/noah"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +80,7 @@
         android:id="@+id/jobTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="left"
@@ -96,87 +95,95 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/uiDesign"
         android:textColor="@color/grayShadeFour"
         android:textSize="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="@+id/jobTitle"
         app:layout_constraintTop_toBottomOf="@+id/jobTitle" />
 
-    <TextView
-        android:id="@+id/filled"
-        android:layout_width="0dp"
+    <RelativeLayout
+        android:id="@+id/layout_address"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="left"
-        android:text="Filled"
-        android:paddingLeft="@dimen/_14sdp"
-        android:visibility="gone"
-        android:paddingTop="@dimen/_2sdp"
-        android:paddingRight="@dimen/_14sdp"
-        android:paddingBottom="@dimen/_2sdp"
-        android:textColor="@color/white"
-        android:background="@drawable/filled_background"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address" />
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/companyTitle"
+        >
 
-    <TextView
-        android:id="@+id/closed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/closed_background"
-        android:fontFamily="@font/poppins_medium"
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/layout_jobStatus"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="2"
+            android:text="@string/longLoremIpsum"
+            android:textColor="@color/grayShadeFour"
+            android:textSize="@dimen/_12sdp" />
+        <RelativeLayout
+            android:id="@+id/layout_jobStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            >
+            <TextView
+                android:id="@+id/filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Filled"
+                android:paddingLeft="@dimen/_14sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingRight="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:background="@drawable/filled_background"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
 
-        android:gravity="left"
-        android:paddingLeft="@dimen/_14sdp"
-        android:paddingTop="@dimen/_2sdp"
-        android:paddingRight="@dimen/_14sdp"
-        android:paddingBottom="@dimen/_2sdp"
-        android:text="Closed"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_12sdp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address" />
+            <TextView
+                android:id="@+id/closed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/closed_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:paddingLeft="@dimen/_14sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingRight="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Closed"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="left"
-        android:text=""
-        android:textColor="@color/grayShadeFour"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintStart_toStartOf="@+id/companyTitle"
-        app:layout_constraintTop_toBottomOf="@+id/companyTitle" />
+            <TextView
+                android:id="@+id/feature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:text="Featured"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/feature"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="left"
-        android:text="Featured"
-        android:visibility="gone"
-        android:textColor="@color/yellow"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/address" />
+    </RelativeLayout>
+
 
 
     <TextView
         android:id="@+id/salary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="16dp"
         android:background="@drawable/white_background"
         android:fontFamily="@font/poppins_medium"
@@ -189,7 +196,7 @@
         android:textColor="@color/grayShadeFour"
         android:textSize="@dimen/UITSmallTextSize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_address" />
 
     <TextView
         android:id="@+id/jobType"

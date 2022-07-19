@@ -34,6 +34,8 @@ public class SessionManagement {
     public static final String KEY_APPLICATION_STATUS = "application_status";
     public static final String KEY_ROLE = "role";
     public static final String KEY_ACCESS_TOKEN = "access_token";
+    public static final String KEY_RESUME_SAVED = "resume_saved";
+    public static final String KEY_COVER_LETTER_SAVED = "cover_letter_saved";
 
     public SessionManagement(Context context) {
         this._context = context;
@@ -133,7 +135,6 @@ public class SessionManagement {
     }
 
     public String getKeyId() {
-
         return pref.getString(KEY_ID, null);
 
     }
@@ -180,7 +181,25 @@ public class SessionManagement {
     }
 
     public void setApplicationStatus(String account_status){
-        editor.putString(KEY_ACCOUNT_STATUS, account_status);
+        editor.putString(KEY_APPLICATION_STATUS, account_status);
+        editor.commit();
+    }
+
+    public String getKeyResumeSaved(){
+        return pref.getString(KEY_RESUME_SAVED, "");
+    }
+
+    public void setResumeSaved(String resumeSaved){
+        editor.putString(KEY_RESUME_SAVED, resumeSaved);
+        editor.commit();
+    }
+
+    public String getKeyCoverLetterSaved(){
+        return pref.getString(KEY_COVER_LETTER_SAVED, "");
+    }
+
+    public void setCoverLetterSaved(String coverLetterSaved){
+        editor.putString(KEY_COVER_LETTER_SAVED, coverLetterSaved);
         editor.commit();
     }
 }

@@ -234,7 +234,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="By allowing location you will be able to see \n nearby products"
+                android:text="By allowing location you will be able to see \n nearby jobs"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_10sdp" />

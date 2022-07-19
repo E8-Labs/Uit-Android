@@ -1,246 +1,136 @@
 package com.antizon.uit_android.company.welcome;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.company.utility.BaseActivity;
-import com.antizon.uit_android.generic.adapter.CompanyIndustryAdapter;
-import com.antizon.uit_android.generic.model.ModelCompanySize;
-import com.antizon.uit_android.generic_utils.AppConstants;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.antizon.uit_android.models.applicant.degree.ApplicantDegreeDataModel;
+import com.antizon.uit_android.utilities.CustomCookieToast;
+import com.antizon.uit_android.utilities.Utilities;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
+import co.lujun.androidtagview.TagContainerLayout;
+import co.lujun.androidtagview.TagView;
 
-public class CompanyIndustryActivity extends BaseActivity {
-    private static final String TAG = CompanyIndustryActivity.class.getSimpleName();
+public class CompanyIndustryActivity extends AppCompatActivity {
+    Context context;
 
-    ProgressDialog progressDialog;
-    ImageView backIcon,redNoah2;
-    TextView next;
-    EditText search;
+    ImageView backIcon;
+    RoundedImageView redNoah2;
+    TextView btn_selectIndustries, next;
     String typeHereValue = "", companyNameHintValue = "", encodedImageData = "";
-
-    RecyclerView companyIndustryRecyclerView;
-    CompanyIndustryAdapter companyIndustryAdapter;
-    private ArrayList<ModelCompanySize> list;
-    private ModelCompanySize dataModel;
+    TagContainerLayout tagContainerLayout;
+    ArrayList<ApplicantDegreeDataModel> selectedCompanyIndustries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_industry);
-
-        setIds();
-        getIntentData();
-        initialize();
-        setListener();
-
-        setUpCompanyIndustryRecyclerView();
+        setContentView(R.layout.activity_company_industry);
+        Utilities.setWhiteBars(CompanyIndustryActivity.this);
+        context = CompanyIndustryActivity.this;
+        initViews();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume: ");
 
-        getCompanyIndustry();
-    }
+    void initViews() {
+        selectedCompanyIndustries = new ArrayList<>();
 
-    void setIds() {
-        Log.d(TAG, "setIds: ");
         backIcon = findViewById(R.id.backIcon);
         next = findViewById(R.id.next);
         redNoah2 = findViewById(R.id.redNoah2);
-        search = findViewById(R.id.searchIndustry);
-        companyIndustryRecyclerView = findViewById(R.id.company_industry_recyclerview);
-    }
-    void getIntentData() {
+        btn_selectIndustries = findViewById(R.id.btn_selectIndustries);
+        tagContainerLayout = findViewById(R.id.tag_container_industries);
 
         if (getIntent() != null) {
             encodedImageData = getIntent().getStringExtra("profilePic");
             companyNameHintValue = getIntent().getStringExtra("companyName");
             typeHereValue = getIntent().getStringExtra("bio");
-            Log.d(TAG, "getIntentData: image: "+encodedImageData);
-            Log.d(TAG, "getIntentData: companyName: "+companyNameHintValue);
-            Log.d(TAG, "getIntentData: bio: "+typeHereValue);
+            Utilities.loadImage(CompanyIndustryActivity.this, encodedImageData, redNoah2);
         }
-    }
 
-    void initialize() {
-        Log.d(TAG, "initialize: ");
+        backIcon.setOnClickListener(v -> onBackPressed());
 
-        progressDialog = new ProgressDialog(CompanyIndustryActivity.this);
-        list = new ArrayList<>();
-        loadProfile(CompanyIndustryActivity.this, encodedImageData, redNoah2);
-    }
-
-
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
-        backIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                onBackPressed();
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);
-            }
-        });
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+        next.setOnClickListener(v -> {
+            if (selectedCompanyIndustries.size() == 0){
+                CustomCookieToast.showRequiredToast(CompanyIndustryActivity.this, "Please select minimum one company industry");
+            }else {
                 openNextScreen();
             }
         });
 
-        search.addTextChangedListener(new TextWatcher() {
+        tagContainerLayout.setOnTagClickListener(new TagView.OnTagClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+            public void onTagClick(int position, String text) {
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                String searchedString = search.getText().toString().toLowerCase(Locale.getDefault());
-                companyIndustryAdapter.search(searchedString);
-                Log.d(TAG, "onTextChanged: " + searchedString);
+            public void onTagLongClick(int position, String text) {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void onSelectedTagDrag(int position, String text) {
+            }
 
+            @Override
+            public void onTagCrossClick(int position) {
+                if (selectedCompanyIndustries != null && selectedCompanyIndustries.size() > position) {
+                    tagContainerLayout.removeTag(position);
+                    selectedCompanyIndustries.remove(position);
+
+                    if (selectedCompanyIndustries.size() == 0){
+                        tagContainerLayout.setVisibility(View.GONE);
+                    }else{
+                        tagContainerLayout.setVisibility(View.VISIBLE);
+                    }
+                }
             }
         });
 
-    }
 
-    void setUpCompanyIndustryRecyclerView() {
-        Log.d(TAG, "setUpRecyclerViewLinearLayoutForChat: ");
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(CompanyIndustryActivity.this);
-        companyIndustryRecyclerView.setLayoutManager(linearLayoutManager);
-
-        companyIndustryAdapter = new CompanyIndustryAdapter(list, CompanyIndustryActivity.this,
-
-                new CompanyIndustryAdapter.SelectionListener() {
-                    @Override
-                    public void selectedCompanyIndustry(int position) {
-//                        ModelCompanySize modelCompanySize,
-                        Log.d(TAG, "selectedApplicantRace: position: " + position);
-                        for (int i = 0; i < list.size(); i++) {
-                            if (i == position) {
-                                list.get(i).setSelected(true);
-//                                selectedDataModel = list.get(i);
-                            } else {
-                                list.get(i).setSelected(false);
-                            }
-                        }
-                        companyIndustryAdapter.notifyDataSetChanged();
-                    }
-                });
-
-        companyIndustryRecyclerView.setAdapter(companyIndustryAdapter);
-    }
-
-    void getCompanyIndustry() {
-        Log.d(TAG, "getCompanySize: ");
-        progressDialog.setMessage("Loading...");
-        progressDialog.show();
-
-        RequestQueue requestQueue = Volley.newRequestQueue(CompanyIndustryActivity.this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConstants.GET_COMPANY_INDUSTRY,
-                new com.android.volley.Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d(TAG, "onResponse: " + response);
-                        try {
-
-                            progressDialog.dismiss();
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            Boolean status = jsonObject.getBoolean("status");
-                            if (status) {
-                                JSONArray dataArray = jsonObject.getJSONArray("data");
-                                if (dataArray.length() > 0) {
-                                    list.clear();
-
-                                    for (int i = 0; i < dataArray.length(); i++) {
-                                        JSONObject dataObject = dataArray.getJSONObject(i);
-
-                                        int id;
-                                        String name = "";
-                                        id = dataObject.getInt("id");
-                                        name = dataObject.getString("name");
-
-                                        dataModel = new ModelCompanySize();
-                                        dataModel.setId(id);
-                                        dataModel.setName(name);
-
-                                        list.add(dataModel);
-                                    }
-                                }
-                            }
-                            companyIndustryAdapter.notifyDataSetChanged();
-                            companyIndustryAdapter.setFilterArrayListValue(list);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                },
-                new com.android.volley.Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        progressDialog.dismiss();
-                        Log.d(TAG, "onErrorResponse: error: " + error);
-                    }
-                });
+        btn_selectIndustries.setOnClickListener(v -> {
+            Intent selectIndustries = new Intent(context, SelectCompanyIndustryActivity.class);
+            onSelectedIndustriesLauncher.launch(selectIndustries);
+            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+        });
 
 
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy((int) TimeUnit.SECONDS.toMillis(120), //After the set time elapses the request will timeout
-                0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        requestQueue.add(stringRequest);
     }
 
 
-    void openNextScreen() {
+    ActivityResultLauncher<Intent> onSelectedIndustriesLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent intent = result.getData();
+            if (intent != null) {
+                ApplicantDegreeDataModel selectedIndustry = intent.getParcelableExtra("degreeDataModel");
+                tagContainerLayout.setVisibility(View.VISIBLE);
+                tagContainerLayout.addTag(selectedIndustry.getName());
+                selectedCompanyIndustries.add(selectedIndustry);
+            }
+        }
+    });
 
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("industries", list);
-
-        Intent intent = new Intent(CompanyIndustryActivity.this, Stage.class);
+    private void openNextScreen() {
+        Intent intent = new Intent(CompanyIndustryActivity.this, SelectCompanyStageActivity.class);
         intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("companyName", companyNameHintValue);
         intent.putExtra("bio", typeHereValue);
-        intent.putExtras(bundle);
+        intent.putParcelableArrayListExtra("selectedCompanyIndustries", selectedCompanyIndustries);
         startActivity(intent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
     }
 }

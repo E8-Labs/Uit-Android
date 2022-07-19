@@ -58,22 +58,19 @@ public class ApplicantDegreeAdapter extends RecyclerView.Adapter<ApplicantDegree
             holder.applicantDegree.setPadding(20, 40, 20, 40);
         }
 
-        holder.applicantDegreeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        holder.applicantDegreeLayout.setOnClickListener(view -> {
 
-                Intent intent = new Intent(context, AddEducation.class);
-                context.startActivity(intent);
+            Intent intent = new Intent(context, AddEducation.class);
+            context.startActivity(intent);
 //
 //                Toast.makeText(context, "" + dataModel.getName(), Toast.LENGTH_SHORT).show();
 
-                holder.applicantDegree.setBackground(context.getResources().getDrawable(R.drawable.app_color_curved_background));
-                holder.applicantDegree.setTextColor(context.getResources().getColor(R.color.white));
-                holder.applicantDegree.setPadding(20, 40, 20, 40);
-                selectionListener.selectedapplicantDegree(position);
+            holder.applicantDegree.setBackground(context.getResources().getDrawable(R.drawable.app_color_curved_background));
+            holder.applicantDegree.setTextColor(context.getResources().getColor(R.color.white));
+            holder.applicantDegree.setPadding(20, 40, 20, 40);
+            selectionListener.selectedapplicantDegree(position);
 
 
-            }
         });
     }
 

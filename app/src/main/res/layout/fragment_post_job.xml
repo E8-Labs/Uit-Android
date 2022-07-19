@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".company.fragment.PostJob">
+    tools:context=".company.fragment.CompanyPostJobFragment">
 
     <include
         android:id="@+id/includeEmailAddress"
@@ -621,10 +621,6 @@
                 app:rsb_progress_height="@dimen/_4sdp"
                 app:rsb_thumb_drawable="@drawable/circle_white_and_appbar_color" />
 
-<!--            rsb_tick_mark_number-->
-            <!--            app:rsb_progress_color="@color/goldenColor"-->
-            <!--            app:rsb_thumb_drawable="@drawable/golden_circle_with_white_background"-->
-
 
             <TextView
                 android:id="@+id/min"
@@ -637,7 +633,9 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/UITSmallTextSize"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/salarySeekbar" />
+                app:layout_constraintTop_toBottomOf="@+id/salarySeekbar"
+                android:layout_marginTop="@dimen/_minus25sdp"
+                />
 
 
             <TextView
@@ -651,7 +649,9 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/UITSmallTextSize"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/salarySeekbar" />
+                app:layout_constraintTop_toBottomOf="@+id/salarySeekbar"
+                android:layout_marginTop="@dimen/_minus25sdp"
+                />
 
             <TextView
                 android:id="@+id/education"

@@ -44,7 +44,7 @@ public class ApplicantInterestInStageActivity extends AppCompatActivity implemen
     CompanyStageAdapter companyStageAdapter;
     ArrayList<ModelCompanySize> companyStagesList;
 
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
     ArrayList<ModelCompanySize> selectedCompanyInterestInStageList;
     ArrayList<ModelApplicantJobs> locationList, interestedJobTypeList;
@@ -76,7 +76,6 @@ public class ApplicantInterestInStageActivity extends AppCompatActivity implemen
         companyStageRecyclerView = findViewById(R.id.company_stage_recyclerview);
         redNoah2 = findViewById(R.id.redNoah2);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedJobsList = getIntent().getParcelableArrayListExtra("selectedJobsList");
@@ -143,7 +142,6 @@ public class ApplicantInterestInStageActivity extends AppCompatActivity implemen
         }
 
         Intent intent = new Intent(ApplicantInterestInStageActivity.this, ApplicantInterestInSizeActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeValue);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);

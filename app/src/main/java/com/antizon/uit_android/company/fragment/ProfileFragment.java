@@ -114,7 +114,8 @@ public class ProfileFragment extends Fragment {
         startActivity(intent);
         requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
     }
-        private void doYouWantToLogout(){
+
+    private void doYouWantToLogout(){
 
         AlertDialog reportPostPopup;
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.CustomDialog);

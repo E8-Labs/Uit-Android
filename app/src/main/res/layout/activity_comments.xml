@@ -71,19 +71,23 @@
             android:id="@+id/btn_logo"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
-            android:background="@drawable/app_color_30dp_rounded"
-            android:layout_marginStart="@dimen/_8sdp"
             android:layout_centerVertical="true"
-            >
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/app_color_30dp_rounded">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/user_ProfileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:riv_oval="true" />
 
             <ImageView
-                android:id="@+id/horizontalLine"
+                android:id="@+id/uitImage"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
-                android:src="@drawable/new_app_icon"
                 android:layout_centerInParent="true"
                 android:contentDescription="@string/text_todo"
-                />
+                android:src="@drawable/new_app_icon" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -107,7 +111,7 @@
                 android:layout_toStartOf="@id/btn_send"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Type your message"
+                android:hint="Write comment"
                 android:paddingVertical="@dimen/_7sdp"
                 android:textColor="@color/codGrey"
                 android:textColorHint="@color/smokey_grey"

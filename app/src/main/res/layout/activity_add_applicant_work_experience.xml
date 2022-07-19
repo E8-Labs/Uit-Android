@@ -64,9 +64,7 @@
                 android:text="@string/addExperience"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_20sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/includeEducation" />
+                 />
 
 
             <LinearLayout
@@ -86,7 +84,7 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
-                    android:id="@+id/editText_fieldOfStudy"
+                    android:id="@+id/editText_companyName"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -238,6 +236,7 @@
                     android:layout_weight="1" />
 
                 <LinearLayout
+                    android:id="@+id/btn_currentlyWorking"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
@@ -248,7 +247,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:contentDescription="@string/text_todo"
-                        android:src="@drawable/checked_ic" />
+                        android:src="@drawable/not_checked_ic" />
 
                     <TextView
                         android:id="@+id/applicant_department"
@@ -280,7 +279,7 @@
                     tools:ignore="HardcodedText" />
 
                 <EditText
-                    android:id="@+id/editText_role"
+                    android:id="@+id/editText_responsibilities"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_120sdp"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -309,7 +308,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Degree or Certification"
+                    android:text="Department"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_10sdp"
                     tools:ignore="HardcodedText" />
@@ -328,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:hint="Select Degree or Certification"
+                        android:hint="Select Department"
                         android:textColor="@color/black"
                         android:textColorHint="@color/codGrey"
                         android:textSize="@dimen/_9sdp" />
@@ -361,64 +360,64 @@
                     android:textSize="@dimen/_10sdp"
                     tools:ignore="HardcodedText" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_3sdp"
-                    android:background="@drawable/bg_edittext_white">
+                    android:background="@drawable/bg_edittext_white"
+                    android:orientation="vertical">
 
-                    <MultiAutoCompleteTextView
-                        android:id="@+id/searchJobAutoCompleteView"
+                    <TextView
+                        android:id="@+id/btn_selectSkills"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
-                        android:background="@color/transparent"
-                        android:drawableEnd="@drawable/drop_down_arrow"
-                        android:hint="@string/search_hint"
-                        android:paddingStart="@dimen/_16sdp"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:paddingEnd="@dimen/_8sdp"
-                        android:paddingBottom="@dimen/_8sdp" />
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center_vertical"
+                        android:hint="Select Skills"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_10sdp" />
 
-                    <EditText
-                        android:id="@+id/searchJob"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/text_here_border"
-                        android:drawableRight="@drawable/ic_baseline_search_24"
-                        android:hint="@string/search_hint"
-                        android:maxLines="1"
-                        android:paddingStart="@dimen/_16sdp"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:paddingRight="@dimen/_32sdp"
-                        android:paddingBottom="@dimen/_8sdp"
-                        android:visibility="gone" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/staggeredRecyclerview"
+                    <co.lujun.androidtagview.TagContainerLayout
+                        android:id="@+id/tag_container_skills"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/searchJobAutoCompleteView"
-                        tools:itemCount="0"
-                        tools:listitem="@layout/list_item_selected_job"
+                        android:layout_marginHorizontal="@dimen/_2sdp"
+                        android:layout_marginVertical="@dimen/_4sdp"
+                        android:background="@android:color/transparent"
+                        android:visibility="gone"
+                        app:container_background_color="@android:color/transparent"
+                        app:container_border_color="@android:color/transparent"
+                        app:container_border_radius="0dp"
+                        app:container_enable_drag="false"
+                        app:horizontal_interval="@dimen/_6sdp"
+                        app:tag_background_color="@color/app_color"
+                        app:tag_border_color="@color/app_color"
+                        app:tag_clickable="false"
+                        app:tag_corner_radius="@dimen/_5sdp"
+                        app:tag_cross_color="@color/white"
+                        app:tag_enable_cross="true"
+                        app:tag_horizontal_padding="@dimen/_11sdp"
+                        app:tag_text_color="@color/white"
+                        app:tag_text_size="@dimen/_10sdp"
+                        app:tag_theme="none"
+                        app:tag_vertical_padding="@dimen/_8sdp"
+                        app:vertical_interval="@dimen/_8sdp" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:nestedScrollingEnabled="false"
-                        >
+                        android:overScrollMode="never"
+                        android:visibility="gone"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/list_item_selected_job" />
 
-                    </androidx.recyclerview.widget.RecyclerView>
-                </RelativeLayout>
+                </LinearLayout>
 
-                <View
-                    android:id="@+id/viewForRecyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/applicant_jobs_recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -426,15 +425,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                >
+                android:layout_marginTop="@dimen/_15sdp">
 
                 <TextView
-                    android:id="@+id/text_addWorkExperience"
+                    android:id="@+id/text_addReference"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="@string/addRefrence"
+                    android:text="@string/text_addReference"
                     android:textColor="@color/app_color" />
             </RelativeLayout>
 
@@ -442,11 +440,10 @@
                 android:id="@+id/recyclerview_references"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/item_reference"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false"
                 tools:itemCount="1"
-                />
+                tools:listitem="@layout/item_reference" />
 
         </LinearLayout>
 

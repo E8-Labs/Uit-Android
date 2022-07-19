@@ -36,22 +36,13 @@ public class UploadCompanyLogoActivity extends BaseActivity {
         setContentView(R.layout.activity_upload_company_logo);
         Utilities.setWhiteBars(UploadCompanyLogoActivity.this);
 
-        setIds();
-        initialize();
-        setListener();
+        initViews();
     }
 
-    void setIds() {
+    void initViews() {
         changePicture = findViewById(R.id.changePicture);
         companyLogoImage = findViewById(R.id.companyLogoImage);
         next = findViewById(R.id.next);
-    }
-
-    void initialize() {
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
 
         companyLogoImage.setOnClickListener(view -> pickImage(UploadCompanyLogoActivity.this));
 
@@ -82,12 +73,11 @@ public class UploadCompanyLogoActivity extends BaseActivity {
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
                     encodedImageData = getEncoded64ImageStringFromBitmap(bitmap);
-                    Log.d(TAG, "onActivityResult: encodedImageData: " + encodedImageData);
 
                     loadProfile(UploadCompanyLogoActivity.this, uri.toString(), companyLogoImage);
                     changePicture.setText(getResources().getString(R.string.changePicture));
-                } catch (IOException e) {
-                    Log.d(TAG, "onActivityResult: IOException: " + e.getMessage());
+                } catch (IOException ignored) {
+
                 }
             }
         }

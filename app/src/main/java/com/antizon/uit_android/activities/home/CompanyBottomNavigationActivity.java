@@ -1,202 +1,217 @@
 package com.antizon.uit_android.activities.home;
 
-import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 import com.antizon.uit_android.R;
+import com.antizon.uit_android.adapters.ViewPagerFragmentAdapter;
+import com.antizon.uit_android.company.activities.postjob.CompanyPostJobActivity;
 import com.antizon.uit_android.company.fragment.ChatFragment;
 import com.antizon.uit_android.company.fragment.CompanyJobsFragment;
-import com.antizon.uit_android.company.fragment.PostJob;
-import com.antizon.uit_android.company.fragment.ProfileFragment;
-import com.antizon.uit_android.company.fragment.Team;
+import com.antizon.uit_android.company.fragment.CompanyProfileFragment;
+import com.antizon.uit_android.company.fragment.CompanyTeamFragment;
 import com.antizon.uit_android.company.utility.BaseActivity;
+import com.antizon.uit_android.generic.activities.SignInActivity;
 import com.antizon.uit_android.generic_utils.SessionManagement;
+import com.antizon.uit_android.utilities.Utilities;
+import com.bumptech.glide.Glide;
+import com.makeramen.roundedimageview.RoundedImageView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompanyBottomNavigationActivity extends BaseActivity {
-    private static final String TAG = CompanyBottomNavigationActivity.class.getSimpleName();
-    ProgressDialog progressDialog;
+    Context context;
+    ViewPager2 viewPager2;
+    RelativeLayout layout_jobs, layout_team, layout_chat, layout_profile, layout_postJob;
+    TextView text_jobs, text_team, text_chat, text_profile;
+    ImageView jobs_ic, team_ic, chat_ic;
+    RoundedImageView profileIcon;
+
     SessionManagement sessionManagement;
 
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    LinearLayout jobLayout, teamLayout, postJobLayout, chatLayout, profileLayout;
-    TextView job, team, postJob, chat, profile;
-    ImageView jobIcon, teamIcon, postJobIcon, chatIcon, profileIcon;
-    String lastOpenedFragment = "";
+    List<Fragment> fragmentsList;
+    ViewPagerFragmentAdapter myAdapter;
+    int current = 0;
 
+    boolean isAtHomeFragment = false;
+    boolean backPressedOnce = false;
+
+
+    Fragment jobsFrag, teamFragment, chatFragment, profileFragment;
+
+    public static boolean touchEnabled = true;
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_bottom_navigation_activity);
+        Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.white_dash, R.color.white);
+        context = CompanyBottomNavigationActivity.this;
 
-        setIds();
-        initialize();
-        setListener();
+        boolean finish = getIntent().getBooleanExtra("finish", false);
+        if (finish) {
+            startActivity(new Intent(CompanyBottomNavigationActivity.this, SignInActivity.class));
+            overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+            finish();
+        }
+
+        initViews();
     }
+
+    void initViews() {
+
+        viewPager2 = findViewById(R.id.viewPager2);
+        layout_jobs = findViewById(R.id.layout_jobs);
+        text_jobs = findViewById(R.id.text_jobs);
+        jobs_ic = findViewById(R.id.jobs_ic);
+        
+        layout_team = findViewById(R.id.layout_team);
+        text_team = findViewById(R.id.text_team);
+        team_ic = findViewById(R.id.team_ic);
+
+        layout_chat = findViewById(R.id.layout_chat);
+        text_chat = findViewById(R.id.text_chat);
+        chat_ic = findViewById(R.id.chat_ic);
+
+        layout_profile = findViewById(R.id.layout_profile);
+        profileIcon = findViewById(R.id.profileIcon);
+        text_profile = findViewById(R.id.text_profile);
+
+        layout_postJob = findViewById(R.id.layout_postJob);
+
+        sessionManagement = new SessionManagement(CompanyBottomNavigationActivity.this);
+        Glide.with(CompanyBottomNavigationActivity.this).load(sessionManagement.getProfileImage()).placeholder(R.drawable.uit_app_icon_for_background).into(profileIcon);
+
+        fragmentsList = new ArrayList<>();
+
+        jobsFrag = new CompanyJobsFragment();
+        teamFragment = new CompanyTeamFragment();
+        chatFragment = new ChatFragment();
+        profileFragment = new CompanyProfileFragment();
+
+        fragmentsList.add(jobsFrag);
+        fragmentsList.add(teamFragment);
+        fragmentsList.add(chatFragment);
+        fragmentsList.add(profileFragment);
+
+
+        myAdapter = new ViewPagerFragmentAdapter(CompanyBottomNavigationActivity.this, fragmentsList);
+        viewPager2.setUserInputEnabled(false);
+        viewPager2.setAdapter(myAdapter);
+        viewPager2.setOffscreenPageLimit(5);
+        setDrawableIcon(0);
+
+        layout_jobs.setOnClickListener(v -> {
+            touchEnabled = true;
+            if (current != 0) {
+                Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.white_dash, R.color.white);
+                viewPager2.setCurrentItem(0, false);
+                current = 0;
+                setDrawableIcon(0);
+                isAtHomeFragment = true;
+            }
+        });
+
+        layout_team.setOnClickListener(v -> {
+            if (current != 1) {
+                Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.white_dash, R.color.white);
+                viewPager2.setCurrentItem(1, false);
+                current = 1;
+                setDrawableIcon(1);
+                isAtHomeFragment = false;
+            }
+
+        });
+
+        layout_chat.setOnClickListener(v -> {
+            if (current != 2) {
+                Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.white_dash, R.color.white);
+                viewPager2.setCurrentItem(2, false);
+                current = 2;
+                setDrawableIcon(2);
+                isAtHomeFragment = false;
+            }
+        });
+
+        layout_profile.setOnClickListener(v -> {
+            if (current != 3) {
+                Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.app_color, R.color.white);
+                viewPager2.setCurrentItem(3, false);
+                current = 3;
+                setDrawableIcon(3);
+                isAtHomeFragment = false;
+            }
+        });
+
+        layout_postJob.setOnClickListener(v -> {
+            Intent postJobIntent = new Intent(context, CompanyPostJobActivity.class);
+            startActivity(postJobIntent);
+            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+        });
+    }
+
+    public void setDrawableIcon(int selected) {
+
+        if (selected == 0) {
+            jobs_ic.setColorFilter(ContextCompat.getColor(context, R.color.app_color));
+            text_jobs.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.app_color));
+        } else {
+            jobs_ic.setColorFilter(ContextCompat.getColor(context, R.color.gray));
+            text_jobs.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.gray));
+        }
+
+        if (selected == 1) {
+            team_ic.setColorFilter(ContextCompat.getColor(context, R.color.app_color));
+            text_team.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.app_color));
+        } else {
+            team_ic.setColorFilter(ContextCompat.getColor(context, R.color.gray));
+            text_team.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.gray));
+        }
+        if (selected == 2) {
+            chat_ic.setColorFilter(ContextCompat.getColor(context, R.color.app_color));
+            text_chat.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.app_color));
+        } else {
+            chat_ic.setColorFilter(ContextCompat.getColor(context, R.color.gray));
+            text_chat.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.gray));
+        }
+
+        if (selected == 3) {
+            text_profile.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.app_color));
+        } else {
+            text_profile.setTextColor(ContextCompat.getColor(CompanyBottomNavigationActivity.this, R.color.gray));
+        }
+
+    }
+
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        setBottomBar("Job");
-        setJobFragment();
-    }
-
-    void setIds() {
-        Log.d(TAG, "setIds: ");
-
-        jobIcon = findViewById(R.id.jobIcon);
-        teamIcon = findViewById(R.id.teamIcon);
-        postJobIcon = findViewById(R.id.postJobIcon);
-        chatIcon = findViewById(R.id.chatIcon);
-        profileIcon = findViewById(R.id.profileIcon);
-        job = findViewById(R.id.job);
-        team = findViewById(R.id.team);
-        postJob = findViewById(R.id.postJob);
-        chat = findViewById(R.id.chat);
-        profile = findViewById(R.id.profile);
-        jobLayout = findViewById(R.id.jobLayout);
-        teamLayout = findViewById(R.id.teamLayout);
-        postJobLayout = findViewById(R.id.postJobLayout);
-        chatLayout = findViewById(R.id.chatLayout);
-        profileLayout = findViewById(R.id.profileLayout);
-    }
-
-    void initialize() {
-        Log.d(TAG, "initialize: ");
-
-        progressDialog = new ProgressDialog(CompanyBottomNavigationActivity.this);
-        sessionManagement = new SessionManagement(CompanyBottomNavigationActivity.this);
-        loadProfile(CompanyBottomNavigationActivity.this, sessionManagement.getProfileImage(), profileIcon);
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
-
-        jobLayout.setOnClickListener(view -> {
-            setBottomBar("Job");
-            setJobFragment();
-        });
-        teamLayout.setOnClickListener(view -> {
-            setBottomBar("Team");
-            setTeamFragment();
-        });
-
-        postJobLayout.setOnClickListener(view -> {
-            setBottomBar("PostJob");
-            setPostJobFragment();
-        });
-
-        chatLayout.setOnClickListener(view -> {
-            setBottomBar("Chat");
-            setChatFragment();
-        });
-
-        profileLayout.setOnClickListener(view -> {
-            setBottomBar("Profile");
-            setProfileFragment();
-        });
-    }
-
-    void setLastOpenedFragment(String lastOpenedFragment) {
-        this.lastOpenedFragment = lastOpenedFragment;
-
-    }
-
-
-    void setJobFragment() {
-        Log.d(TAG, "setHomeFragment: ");
-        setLastOpenedFragment("Job");
-        if (fragmentManager == null)
-            fragmentManager = getSupportFragmentManager();
-
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new CompanyJobsFragment());
-        fragmentTransaction.commit();
-    }
-
-    void setTeamFragment() {
-        Log.d(TAG, "setHomeFragment: ");
-        setLastOpenedFragment("Team");
-        if (fragmentManager == null)
-            fragmentManager = getSupportFragmentManager();
-
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new Team());
-        fragmentTransaction.commit();
-    }
-
-    void setChatFragment() {
-        Log.d(TAG, "setHomeFragment: ");
-        setLastOpenedFragment("Chat");
-
-        if (fragmentManager == null)
-            fragmentManager = getSupportFragmentManager();
-
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new ChatFragment());
-        fragmentTransaction.commit();
-    }
-
-    void setProfileFragment() {
-        Log.d(TAG, "setProfileFragment: ");
-        setLastOpenedFragment("Profile");
-        if (fragmentManager == null)
-            fragmentManager = getSupportFragmentManager();
-
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new ProfileFragment());
-        fragmentTransaction.commit();
-    }
-
-    void setPostJobFragment() {
-        Log.d(TAG, "setProfileFragment: ");
-        setLastOpenedFragment("PostJob");
-        if (fragmentManager == null)
-            fragmentManager = getSupportFragmentManager();
-
-        fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, new PostJob());
-        fragmentTransaction.commit();
-    }
-
-
-    void setBottomBar(String selectedFragment) {
-
-        job.setTextColor(getColor(R.color.grayShadeThree));
-        team.setTextColor(getResources().getColor(R.color.grayShadeThree));
-        postJob.setTextColor(getResources().getColor(R.color.grayShadeThree));
-        chat.setTextColor(getResources().getColor(R.color.grayShadeThree));
-        profile.setTextColor(getResources().getColor(R.color.grayShadeThree));
-
-        jobIcon.setColorFilter(ContextCompat.getColor(this, R.color.grayShadeThree));
-        teamIcon.setColorFilter(ContextCompat.getColor(this, R.color.grayShadeThree));
-        postJobIcon.setColorFilter(ContextCompat.getColor(this, R.color.grayShadeThree));
-        chatIcon.setColorFilter(ContextCompat.getColor(this, R.color.grayShadeThree));
-
-
-        if (selectedFragment.equalsIgnoreCase("Job")) {
-            job.setTextColor(getColor(R.color.app_color));
-            jobIcon.setColorFilter(ContextCompat.getColor(this, R.color.app_color));
-        } else if (selectedFragment.equalsIgnoreCase("Team")) {
-            team.setTextColor(getColor(R.color.app_color));
-            teamIcon.setColorFilter(ContextCompat.getColor(this, R.color.app_color));
-        } else if (selectedFragment.equalsIgnoreCase("PostJob")) {
-            postJob.setTextColor(getColor(R.color.app_color));
-            postJobIcon.setColorFilter(ContextCompat.getColor(this, R.color.app_color));
-        } else if (selectedFragment.equalsIgnoreCase("Chat")) {
-            chat.setTextColor(getColor(R.color.app_color));
-            chatIcon.setColorFilter(ContextCompat.getColor(this, R.color.app_color));
-        } else if (selectedFragment.equalsIgnoreCase("Profile")) {
-            profile.setTextColor(getColor(R.color.app_color));
+    public void onBackPressed() {
+        if (isAtHomeFragment) {
+            if (backPressedOnce) {
+                overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+                finish();
+            }
+            Toast.makeText(context, "Back press again to exit", Toast.LENGTH_SHORT).show();
+            backPressedOnce = true;
+            new Handler(Looper.getMainLooper()).postDelayed(() -> backPressedOnce = false, 2000);
+        } else {
+            Utilities.setCustomStatusAndNavColor(CompanyBottomNavigationActivity.this, R.color.white_dash, R.color.white);
+            viewPager2.setCurrentItem(0, false);
+            current = 0;
+            setDrawableIcon(0);
+            touchEnabled = true;
+            isAtHomeFragment = true;
         }
     }
+
 }

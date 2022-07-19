@@ -127,7 +127,6 @@ public class ChatFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onItemClick(InboxModel inboxModel) {
         InboxUser user = inboxModel.getUsers().get(1);
-
         Intent intent = new Intent(context, MessagesActivity.class);
         intent.putExtra("CHAT_ID", String.valueOf(inboxModel.getId()));
         intent.putExtra("second_user_id", String.valueOf(user.getUserId()));

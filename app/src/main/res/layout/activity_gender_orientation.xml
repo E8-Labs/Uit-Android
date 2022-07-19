@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".company.welcome.GenderOrientation">
+    tools:context=".company.welcome.CompanyGenderOrientationActivity"
+    android:background="@color/white_dash"
+    >
 
     <include
         android:id="@+id/include_gender_orientation"
         layout="@layout/simple_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,7 @@
             android:layout_width="@dimen/_48sdp"
             android:layout_height="@dimen/_48sdp"
             android:layout_marginStart="8dp"
-            android:paddingLeft="@dimen/_8sdp"
+            android:paddingStart="@dimen/_8sdp"
             android:src="@drawable/red_noah"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -220,8 +221,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doesYour9" />
 
-    <com.jaygoo.widget.RangeSeekBar
-        android:id="@+id/LGBTQ_seekbar"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_lgbtq"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -230,18 +231,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LGBTQ"
-
-        app:rsb_gravity="center"
-        app:rsb_indicator_background_color="@color/white"
-        app:rsb_indicator_show_mode="alwaysShow"
-        app:rsb_indicator_text_color="@color/black"
-        app:rsb_indicator_text_size="@dimen/_12sdp"
-        app:rsb_max="100"
-        app:rsb_min="1"
-        app:rsb_mode="single"
-        app:rsb_progress_color="@color/app_color"
-        app:rsb_progress_height="@dimen/_4sdp"
-        app:rsb_thumb_drawable="@drawable/circle_white_and_appbar_color" />
+        android:theme="@style/ThemeOverlay.App.Slider"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:haloColor="@color/grey"
+        app:thumbColor="@color/app_color"
+        app:thumbElevation="@dimen/_2sdp"
+        app:thumbRadius="@dimen/_12sdp"
+        app:thumbStrokeColor="@color/white"
+        app:thumbStrokeWidth="@dimen/_4sdp"
+        app:trackColorActive="@color/app_color"
+        app:trackColorInactive="@color/half_white"
+        app:trackHeight="@dimen/_9sdp"/>
 
     <TextView
         android:id="@+id/notSure"
@@ -257,7 +258,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

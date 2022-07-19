@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.fragment.BaseFragment;
 import com.antizon.uit_android.company.welcome.AdminFlaggedJobsActivity;
+import com.antizon.uit_android.generic.activities.AdminJobDetailActivity;
 import com.antizon.uit_android.generic.adapter.AdminAllJobsAdapter;
 import com.antizon.uit_android.generic.model.ModelAllJobs;
 import com.antizon.uit_android.generic.model.ModelApplicantDepartment;
@@ -38,7 +39,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class AdminJobsFragment extends BaseFragment {
+public class AdminJobsFragment extends BaseFragment implements AdminAllJobsAdapter.AdminAllJobsAdapterCallBack {
     Context context;
 
     private static final String TAG = AdminJobsFragment.class.getSimpleName();
@@ -174,7 +175,7 @@ public class AdminJobsFragment extends BaseFragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         jobsRecyclerview.setLayoutManager(linearLayoutManager);
 
-        adminAllJobsAdapter = new AdminAllJobsAdapter(list, getContext());
+        adminAllJobsAdapter = new AdminAllJobsAdapter(requireContext(), list, this);
         jobsRecyclerview.setAdapter(adminAllJobsAdapter);
     }
 
@@ -423,5 +424,13 @@ public class AdminJobsFragment extends BaseFragment {
         filled.setTextColor(context.getColor(R.color.black));
         closed.setTextColor(context.getColor(R.color.white));
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(context, AdminJobDetailActivity.class);
+        intent.putExtra("dataModel", list.get(position));
+        startActivity(intent);
+        requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
     }
 }

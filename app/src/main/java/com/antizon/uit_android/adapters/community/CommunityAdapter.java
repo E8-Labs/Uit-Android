@@ -12,10 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.activities.home.ApplicantBottomNavigationActivity;
-import com.antizon.uit_android.activities.home.CompanyBottomNavigationActivity;
-import com.antizon.uit_android.activities.home.UitAdminDashboardActivity;
-import com.antizon.uit_android.activities.home.UitMemberMainDashboardActivity;
 import com.antizon.uit_android.models.UitUserModel;
 import com.antizon.uit_android.models.community.ChannelDataModel;
 import com.antizon.uit_android.models.community.CommunityPostDataModel;
@@ -83,10 +79,14 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
                     String comments = post.getComments() + "";
                     String likes = post.getLikes() +  " ";
 
-                    if (post.getImage_path() != null){
-                        Utilities.loadImage(context, post.getImage_path() , holder.post_image, holder.loading_image);
+                    if (post.getVideo_url() != null){
+                        holder.video_ic.setVisibility(View.VISIBLE);
+                        holder.loading_image.setVisibility(View.GONE);
+                        Utilities.loadThumbnailViaGlide(context, post.getVideo_url() , holder.post_image);
                     }else {
-                        Utilities.loadImage(context, post.getThumbnail() , holder.post_image, holder.loading_image);
+                        holder.video_ic.setVisibility(View.GONE);
+                        Utilities.loadImage(context, post.getImage_path() , holder.post_image, holder.loading_image);
+
                     }
 
                     if (post.isIs_liked()) {
@@ -145,6 +145,9 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
 
                     holder.btn_comment.setOnClickListener(v -> callBack.onCommentClicked(String.valueOf(post.getId())));
 
+                    holder.itemView.setOnClickListener(v -> callBack.onItemClicked(position-1));
+
+                    holder.btnShare.setOnClickListener(v -> callBack.onPostShareClicked(position));
                 }
             }
         }
@@ -202,10 +205,11 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView text_title, text_description, posted_by, text_likesCounting, text_shareCounting, text_commentsCounting, text_engagedCount, text_role;
-        ImageView post_image, like_ic;
-        RelativeLayout btn_menu, layout_admin, btn_comment, btn_like;
+        ImageView post_image, like_ic, video_ic;
+        RelativeLayout btn_menu, layout_admin, btn_comment, btn_like, btnShare;
         RoundedImageView civOne, civTwo, civThree, civFour;
         AVLoadingIndicatorView loading_image;
+
         // Channels
         RecyclerView recyclerview_channels;
         TextView text_activePosts;
@@ -225,13 +229,14 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
             btn_like = itemView.findViewById(R.id.btn_like);
             layout_admin = itemView.findViewById(R.id.layout_admin);
             btn_comment = itemView.findViewById(R.id.btn_comment);
+            btnShare = itemView.findViewById(R.id.btnShare);
             civOne = itemView.findViewById(R.id.civOne);
             civTwo = itemView.findViewById(R.id.civTwo);
             civThree = itemView.findViewById(R.id.civThree);
             civFour = itemView.findViewById(R.id.civFour);
             like_ic = itemView.findViewById(R.id.like_ic);
             text_role = itemView.findViewById(R.id.text_role);
-
+            video_ic = itemView.findViewById(R.id.video_ic);
             loading_image = itemView.findViewById(R.id.loading_image);
 
             // Channels
@@ -249,5 +254,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.View
         void onAddChannelClick();
         void onNewPostClicked();
         void onOptionMenuClicked(int postUserId);
+        void onItemClicked(int position);
+        void onPostShareClicked(int position);
     }
 }

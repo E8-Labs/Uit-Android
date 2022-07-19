@@ -23,7 +23,7 @@ public class ApplicantNotificationPermissionActivity extends BaseActivity {
 
     ImageView backIcon;
     TextView allowNotificationPermissions;
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
     ArrayList<ModelCompanySize> selectedProfessionalInterestList;
     ArrayList<ModelCompanySize> selectedCompanyInterestInSizeList;
@@ -46,7 +46,6 @@ public class ApplicantNotificationPermissionActivity extends BaseActivity {
         allowNotificationPermissions = findViewById(R.id.allowLocation);
         backIcon = findViewById(R.id.backIcon);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedJobsList = getIntent().getParcelableArrayListExtra("selectedJobsList");
@@ -65,7 +64,6 @@ public class ApplicantNotificationPermissionActivity extends BaseActivity {
 
     void openNextActivity() {
         Intent intent = new Intent(ApplicantNotificationPermissionActivity.this, ApplicantWorkExperienceActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeValue);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);

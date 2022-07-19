@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClientInstance {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "http://zorroapp.tech/uit/api/";
+    private static final String BASE_URL = "https://uitdev.com/uitapis/api/";
 
     //force set cookie from the client
     public static Retrofit getRetrofitInstance() {

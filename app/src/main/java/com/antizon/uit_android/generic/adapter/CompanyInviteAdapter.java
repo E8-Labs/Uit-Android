@@ -5,67 +5,47 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.generic.model.ModelCompanyInvite;
-
+import com.antizon.uit_android.models.company.invite.InviteMemberModel;
 
 import java.util.List;
 
-public class CompanyInviteAdapter extends RecyclerView.Adapter<CompanyInviteAdapter.MyViewHolder> {
+public class CompanyInviteAdapter extends RecyclerView.Adapter<CompanyInviteAdapter.ViewHolder> {
 
-    private static final String TAG = CompanyInviteAdapter.class.getSimpleName();
-    List<ModelCompanyInvite> list;
     Context context;
-    SelectionListener selectionListener;
+    List<InviteMemberModel> list;
+    CompanyInviteAdapterCallBack callBack;
 
-    public CompanyInviteAdapter(List<ModelCompanyInvite> list, Context context, SelectionListener selectionListener) {
-
-        this.list = list;
+    public CompanyInviteAdapter(Context context, List<InviteMemberModel> list, CompanyInviteAdapterCallBack callBack) {
         this.context = context;
-        this.selectionListener = selectionListener;
+        this.list = list;
+        this.callBack = callBack;
     }
 
     @NonNull
     @Override
-    public CompanyInviteAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_company_invite, parent, false);
-        return new CompanyInviteAdapter.MyViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item_company_invite_team_member, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CompanyInviteAdapter.MyViewHolder holder, final int position) {
-        final ModelCompanyInvite dataModel = list.get(getItemViewType(position));
-
-        holder.name.setText(dataModel.getName());
-        holder.email.setText(dataModel.getEmail());
-        holder.edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectionListener.edit(dataModel);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        InviteMemberModel inviteMemberModel = list.get(position);
+        if (inviteMemberModel != null) {
+            if (inviteMemberModel.getMemberName().length()>1){
+                holder.text_firstLetter.setText(inviteMemberModel.getMemberName().substring(0,1));
+            }else {
+                holder.text_firstLetter.setText(inviteMemberModel.getMemberName());
             }
-        });
+            holder.text_memberName.setText(inviteMemberModel.getMemberName());
+            holder.text_memberEmail.setText(inviteMemberModel.getMemberEmail());
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectionListener.delete(position);
-            }
-        });
-
-        holder.companyInviteItemLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectionListener.edit(dataModel);
-            }
-        });
+            holder.btnEdit.setOnClickListener(v -> callBack.onEditBtnClicked(position));
+        }
     }
 
     @Override
@@ -79,29 +59,20 @@ public class CompanyInviteAdapter extends RecyclerView.Adapter<CompanyInviteAdap
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView name, email, edit;
-        ImageView profileImage, delete;
-        ConstraintLayout companyInviteItemLayout;
-
-        public MyViewHolder(View itemView) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView text_firstLetter, text_memberName, text_memberEmail, btnEdit;
+        public ViewHolder(View itemView) {
             super(itemView);
 
-            email = itemView.findViewById(R.id.email);
-            name = itemView.findViewById(R.id.name);
-            edit = itemView.findViewById(R.id.edit);
-            delete = itemView.findViewById(R.id.delete);
-            profileImage = itemView.findViewById(R.id.profile_image);
-
-            companyInviteItemLayout = itemView.findViewById(R.id.company_invite_item_layout);
+            text_firstLetter = itemView.findViewById(R.id.text_firstLetter);
+            text_memberName = itemView.findViewById(R.id.text_memberName);
+            text_memberEmail = itemView.findViewById(R.id.text_memberEmail);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
         }
     }
 
-    public interface SelectionListener {
-        void edit(ModelCompanyInvite dataModel);
-
-        void delete(int position);
+    public interface CompanyInviteAdapterCallBack {
+        void onEditBtnClicked(int position);
     }
 
 }

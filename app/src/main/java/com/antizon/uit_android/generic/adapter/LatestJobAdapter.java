@@ -66,6 +66,12 @@ public class LatestJobAdapter extends RecyclerView.Adapter<LatestJobAdapter.MyVi
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    public void filterList(ArrayList<ApplicantHomeJobDataModel> filteredList) {
+        latestJobsList = filteredList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemViewType(int position) {
         return position;

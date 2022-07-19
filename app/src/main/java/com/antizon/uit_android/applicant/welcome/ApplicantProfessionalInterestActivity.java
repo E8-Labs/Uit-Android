@@ -44,7 +44,7 @@ public class ApplicantProfessionalInterestActivity extends BaseActivity implemen
     RecyclerView applicantProfessionalInterestRecyclerview;
     SessionManagement sessionManagement;
 
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
     CompanyStageAdapter companyStageAdapter;
     ArrayList<ModelCompanySize> professionInterestList;
@@ -81,7 +81,6 @@ public class ApplicantProfessionalInterestActivity extends BaseActivity implemen
         backIcon = findViewById(R.id.backIcon);
         redNoah2 = findViewById(R.id.redNoah2);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
         employeValue = getIntent().getStringExtra("employeStatus");
 
         educationList = getIntent().getParcelableArrayListExtra("educationList");
@@ -154,7 +153,6 @@ public class ApplicantProfessionalInterestActivity extends BaseActivity implemen
 
     void openNextScreen() {
         Intent intent = new Intent(ApplicantProfessionalInterestActivity.this, ApplicantLocationPermissionActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeValue);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);

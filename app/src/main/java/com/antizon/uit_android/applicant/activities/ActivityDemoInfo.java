@@ -54,8 +54,8 @@ public class ActivityDemoInfo extends BaseActivity {
         pause = findViewById(R.id.pause);
     }
     void getIntentData() {
-        if (getIntent().getExtras().getParcelable("dataModel") != null) {
-            dataModel = (ModelUitAdminApproved) getIntent().getExtras().getParcelable("dataModel");
+        if (getIntent().getParcelableExtra("dataModel") != null) {
+            dataModel = getIntent().getExtras().getParcelable("dataModel");
             name.setText(dataModel.getName());
 
             Glide.with(ActivityDemoInfo.this)

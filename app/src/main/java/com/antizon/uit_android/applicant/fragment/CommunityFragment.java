@@ -22,6 +22,7 @@ import com.antizon.uit_android.R;
 import com.antizon.uit_android.activities.comments.CommentsActivity;
 import com.antizon.uit_android.activities.community.CommunityCreatePostActivity;
 import com.antizon.uit_android.activities.community.CommunityNewChannelActivity;
+import com.antizon.uit_android.activities.community.CommunityPostDetailActivity;
 import com.antizon.uit_android.adapters.community.CommunityAdapter;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.models.community.AllChannelsResponseModel;
@@ -33,6 +34,7 @@ import com.antizon.uit_android.models.community.MainResponseModel;
 import com.antizon.uit_android.network.GetDataService;
 import com.antizon.uit_android.network.RetrofitClientInstance;
 import com.antizon.uit_android.utilities.CustomCookieToast;
+import com.antizon.uit_android.utilities.Utilities;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
 import com.pusher.client.Pusher;
@@ -224,6 +226,25 @@ public class CommunityFragment extends Fragment implements CommunityAdapter.Comm
 
             btnCancel.setOnClickListener(v -> bottomSheetDialog.dismiss());
         }
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+        Intent intent = new Intent(context, CommunityPostDetailActivity.class);
+        intent.putExtra("postData", communityList.get(position));
+        startActivity(intent);
+        requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
+    }
+
+    @Override
+    public void onPostShareClicked(int position) {
+        String postUrl;
+        if (communityList.get(position).getVideo_url() != null){
+            postUrl = communityList.get(position).getVideo_url();
+        }else {
+            postUrl = communityList.get(position).getImage_path();
+        }
+        Utilities.shareAppLink(context, postUrl);
     }
 
     private void requestForLikePost(String authToken, String postId) {

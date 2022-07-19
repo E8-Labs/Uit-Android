@@ -40,7 +40,7 @@ public class ApplicantLocationPermissionActivity extends BaseActivity {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     boolean mLocationPermissionGranted = false;
 
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
     ArrayList<ModelCompanySize> selectedProfessionalInterestList;
     ArrayList<ModelCompanySize> selectedCompanyInterestInSizeList;
@@ -65,7 +65,6 @@ public class ApplicantLocationPermissionActivity extends BaseActivity {
         allowLocation = findViewById(R.id.allowLocation);
         backIcon = findViewById(R.id.backIcon);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedJobsList = getIntent().getParcelableArrayListExtra("selectedJobsList");
@@ -107,7 +106,6 @@ public class ApplicantLocationPermissionActivity extends BaseActivity {
             showSettingsAlert();
         } else {
             Intent intent = new Intent(ApplicantLocationPermissionActivity.this, ApplicantNotificationPermissionActivity.class);
-            intent.putExtra("profilePic", encodedImageData);
             intent.putExtra("employeStatus", employeValue);
             intent.putParcelableArrayListExtra("educationList", educationList);
             intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);

@@ -36,7 +36,6 @@
         android:gravity="left"
         android:text=""
         android:textColor="@color/blackShadeOne"
-
         android:textSize="@dimen/_14sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
@@ -53,7 +52,7 @@
         android:gravity="left"
         android:text=""
         android:textColor="@color/grayShadeFour"
-
+        android:visibility="gone"
         android:textSize="@dimen/_11sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profile_image"

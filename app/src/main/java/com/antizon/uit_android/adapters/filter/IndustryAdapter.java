@@ -16,9 +16,9 @@ import java.util.List;
 
 public class IndustryAdapter extends RecyclerView.Adapter<IndustryAdapter.ViewHolder> {
 
-    private final Context context;
-    private List<IndustryModel> list;
-    private OnSelectionListener onSelectionListener;
+    Context context;
+    List<IndustryModel> list;
+    OnSelectionListener onSelectionListener;
 
     public IndustryAdapter(Context context, List<IndustryModel> list) {
         this.context = context;

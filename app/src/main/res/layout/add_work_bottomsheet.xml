@@ -437,7 +437,7 @@
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="@string/addRefrence"
+                android:text="@string/text_addReference"
                 android:textColor="@color/app_color"
                 android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"

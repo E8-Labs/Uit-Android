@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.activities.jobs.ApplicantJobFilterActivity;
+import com.antizon.uit_android.adapters.filter.JobFilterAdapter;
 import com.antizon.uit_android.applicant.activities.ActivityApplicantJobDetail;
 import com.antizon.uit_android.company.utility.BaseActivity;
 import com.antizon.uit_android.generic.adapter.LatestJobAdapter;
@@ -38,7 +38,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ApplicantJobSearchActivity extends BaseActivity implements LatestJobAdapter.LatestJobAdapterCallBack {
-    private static final String TAG = ApplicantJobSearchActivity.class.getSimpleName();
+
     Context context;
     GetDataService service;
 
@@ -48,11 +48,15 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
     RecyclerView listed_companies_recyclerview;
     LatestJobAdapter latestJobAdapter;
     List<ApplicantHomeJobDataModel> latestList;
-
-    TextView jobFound;
+    TextView text_jobsFound;
     EditText searchOffer;
-
     RelativeLayout layout_noJobs;
+
+    RecyclerView recyclerview_appliedFilter;
+    List<String> filtersList;
+    JobFilterAdapter jobFilterAdapter;
+
+    boolean filterApplied;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,8 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
         progressDialog = new ProgressDialog(context);
         sessionManagement = new SessionManagement(context);
 
+        filterApplied = getIntent().getBooleanExtra("filterApplied", false);
+
         initViews();
 
         progressDialog.setMessage("Loading...");
@@ -72,18 +78,20 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
         getApplicantHomeData("Bearer " + sessionManagement.getToken(), "10", "10");
     }
 
-    void initViews() {
-        Log.d(TAG, "setIds: ");
+    private void initViews() {
+        filtersList = new ArrayList<>();
         listed_companies_recyclerview = findViewById(R.id.listed_companies_recyclerview);
         backWhite = findViewById(R.id.backWhite);
         filterIcon = findViewById(R.id.filterIcon);
         searchOffer = findViewById(R.id.searchOffer);
         layout_noJobs = findViewById(R.id.layout_noJobs);
-        jobFound = findViewById(R.id.job);
+        text_jobsFound = findViewById(R.id.text_jobsFound);
+        recyclerview_appliedFilter = findViewById(R.id.recyclerview_appliedFilter);
 
         backWhite.setOnClickListener(view -> onBackPressed());
 
         filterIcon.setOnClickListener(v -> {
+            Utilities.hideKeyboard(filterIcon, context);
             Intent intent = new Intent(context, ApplicantJobFilterActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
@@ -105,6 +113,13 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
                 filter(s.toString());
             }
         });
+
+        if (filterApplied){
+            filtersList = getIntent().getStringArrayListExtra("filtersList");
+            showAppliedFilterRecyclerview(recyclerview_appliedFilter, filtersList);
+        }else {
+            recyclerview_appliedFilter.setVisibility(View.GONE);
+        }
     }
 
 
@@ -116,16 +131,16 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
             }
         }
         if (filteredList.size() == 0){
-            jobFound.setVisibility(View.GONE);
+            text_jobsFound.setVisibility(View.GONE);
             listed_companies_recyclerview.setVisibility(View.GONE);
             layout_noJobs.setVisibility(View.VISIBLE);
         }else {
             String jobsFound = filteredList.size() + " jobs found";
-
-            jobFound.setVisibility(View.VISIBLE);
+            text_jobsFound.setVisibility(View.VISIBLE);
             listed_companies_recyclerview.setVisibility(View.VISIBLE);
             layout_noJobs.setVisibility(View.GONE);
-            jobFound.setText(jobsFound);
+            text_jobsFound.setText(jobsFound);
+            latestJobAdapter.filterList(filteredList);
         }
 
     }
@@ -147,7 +162,7 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
                             latestList = new ArrayList<>();
                             latestList = applicantHomeResponseDataModel.getLatestJobsList();
                             String jobsFound = latestList.size() + " jobs found";
-                            jobFound.setText(jobsFound);
+                            text_jobsFound.setText(jobsFound);
                             setUpLatestJobRecyclerview(listed_companies_recyclerview, latestList);
                         }
 
@@ -196,4 +211,11 @@ public class ApplicantJobSearchActivity extends BaseActivity implements LatestJo
         }
     });
 
+    private void showAppliedFilterRecyclerview(RecyclerView recyclerView, List<String> filtersList){
+        recyclerView.setVisibility(View.VISIBLE);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        jobFilterAdapter = new JobFilterAdapter(context, filtersList);
+        recyclerview_appliedFilter.setAdapter(jobFilterAdapter);
+    }
 }

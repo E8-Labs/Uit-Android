@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:fontFamily="@font/poppins_medium"
-                        android:hint="Select Degree or Certification"
+                        android:hint="Professional or University Certification "
                         android:textColor="@color/black"
                         android:textColorHint="@color/codGrey"
                         android:textSize="@dimen/_9sdp" />

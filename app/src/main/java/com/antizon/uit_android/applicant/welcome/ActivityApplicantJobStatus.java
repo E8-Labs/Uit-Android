@@ -1,10 +1,13 @@
 package com.antizon.uit_android.applicant.welcome;
 
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.antizon.uit_android.R;
@@ -14,12 +17,11 @@ import com.antizon.uit_android.utilities.CustomCookieToast;
 import com.antizon.uit_android.utilities.Utilities;
 
 public class ActivityApplicantJobStatus extends BaseActivity {
-    private static final String TAG = ActivityApplicantVeteranStatus.class.getSimpleName();
     ImageView backIcon, menYellow;
     SessionManagement sessionManagement;
     TextView unEmployed, employed, notLooking, next;
     ConstraintLayout approvedLayout, pausedLayout, pendingLayout;
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
 
     @Override
@@ -27,14 +29,10 @@ public class ActivityApplicantJobStatus extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_job_status);
         Utilities.setWhiteBars(ActivityApplicantJobStatus.this);
-        setIds();
-        getIntentData();
-        initialize();
-        setListener();
+        initViews();
     }
 
-    void setIds() {
-        Log.d(TAG, "setIds: ");
+    void initViews() {
         backIcon = findViewById(R.id.backIcon);
         next = findViewById(R.id.next);
         unEmployed = findViewById(R.id.unEmployed);
@@ -44,24 +42,9 @@ public class ActivityApplicantJobStatus extends BaseActivity {
         pausedLayout = findViewById(R.id.pausedLayout);
         pendingLayout = findViewById(R.id.pendingLayout);
         approvedLayout = findViewById(R.id.approvedLayout);
-    }
 
-    void getIntentData() {
-        if (getIntent() != null) {
-            encodedImageData = getIntent().getStringExtra("profilePic");
-            Log.d(TAG, "getIntentData: image:" + encodedImageData);
-        }
-
-    }
-
-    void initialize() {
-        Log.d(TAG, "initialize: ");
         sessionManagement = new SessionManagement(ActivityApplicantJobStatus.this);
         loadProfile(ActivityApplicantJobStatus.this, sessionManagement.getProfileImage(), menYellow);
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
 
         next.setOnClickListener(v -> openNextScreen());
         approvedLayout.setOnClickListener(v -> setApprovedOneLayout());
@@ -69,8 +52,9 @@ public class ActivityApplicantJobStatus extends BaseActivity {
         pendingLayout.setOnClickListener(v -> setPendingOneLayout());
 
         backIcon.setOnClickListener(v -> onBackPressed());
-
     }
+
+
 
     void setApprovedOneLayout() {
         approvedLayout.setBackgroundResource(R.drawable.login_background);
@@ -112,12 +96,21 @@ public class ActivityApplicantJobStatus extends BaseActivity {
             CustomCookieToast.showRequiredToast(ActivityApplicantJobStatus.this, "Please select Employment Status");
         } else {
             Intent intent = new Intent(ActivityApplicantJobStatus.this, ApplicantEducationActivity.class);
-            intent.putExtra("profilePic", encodedImageData);
             intent.putExtra("employeStatus", employeValue);
-            startActivity(intent);
+            onProfileUpdateLauncher.launch(intent);
             overridePendingTransition(R.anim.left_in,R.anim.left_out);
         }
     }
+
+
+    ActivityResultLauncher<Intent> onProfileUpdateLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent intent = new Intent();
+            setResult(RESULT_OK, intent);
+            finish();
+            overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+        }
+    });
 
     @Override
     public void onBackPressed() {

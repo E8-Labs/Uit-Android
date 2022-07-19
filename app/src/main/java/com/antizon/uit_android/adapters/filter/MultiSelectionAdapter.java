@@ -1,5 +1,6 @@
 package com.antizon.uit_android.adapters.filter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -18,9 +19,9 @@ import java.util.List;
 
 public class MultiSelectionAdapter extends RecyclerView.Adapter<MultiSelectionAdapter.ViewHolder> {
 
-    private final Context context;
-    private List<MultiSelectionModel> list;
-    private OnSelectionListener onSelectionListener;
+    final Context context;
+    List<MultiSelectionModel> list;
+    OnSelectionListener onSelectionListener;
 
     public MultiSelectionAdapter(Context context, List<MultiSelectionModel> list) {
         this.context = context;
@@ -69,6 +70,7 @@ public class MultiSelectionAdapter extends RecyclerView.Adapter<MultiSelectionAd
         return list == null ? 0 : list.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void unselectAll() {
         if (list != null) {
             for (MultiSelectionModel model : list) {

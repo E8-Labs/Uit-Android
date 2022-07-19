@@ -25,7 +25,7 @@ public class ApplicantCompanyDetailActivity extends BaseActivity {
     TextView skip;
     ImageView backIcon;
     SessionManagement sessionManagement;
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
     ConstraintLayout asianLayout, blackLayout, nativeLayout, whiteLayout, pacificLayout, latinoLayout, preferLayout, internshipLayout;
     CheckBox remote_checkbox, hybrid_checkbox, in_personCheckBox, checkbox_fullTime, checkbox_partTime, contract_checkBox, freelance_checkBox, internship_checkbox;
 
@@ -67,7 +67,7 @@ public class ApplicantCompanyDetailActivity extends BaseActivity {
         freelance_checkBox = findViewById(R.id.freelance_checkBox);
         internship_checkbox = findViewById(R.id.internship_checkbox);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
+
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedJobsList = getIntent().getParcelableArrayListExtra("selectedJobsList");
@@ -101,7 +101,7 @@ public class ApplicantCompanyDetailActivity extends BaseActivity {
     }
 
     void getLocationList() {
-        locationList.clear();
+        locationList = new ArrayList<>();
         if (remote_checkbox.isChecked()) {
             ModelApplicantJobs remoteJobSelected = new ModelApplicantJobs(1, "Remote", true);
             locationList.add(remoteJobSelected);
@@ -119,7 +119,7 @@ public class ApplicantCompanyDetailActivity extends BaseActivity {
     }
 
     void getInterestedJobTypeList() {
-        interestedJobTypeList.clear();
+        interestedJobTypeList = new ArrayList<>();
         if (checkbox_fullTime.isChecked()) {
             ModelApplicantJobs fullTimeJobSelected = new ModelApplicantJobs(1, "Full Time", true);
             interestedJobTypeList.add(fullTimeJobSelected);
@@ -146,12 +146,11 @@ public class ApplicantCompanyDetailActivity extends BaseActivity {
     void openNextScreen() {
 
         Intent intent = new Intent(ApplicantCompanyDetailActivity.this, ApplicantInterestInStageActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeValue);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);
         intent.putParcelableArrayListExtra("selectedDepartmentList", selectedDepartmentList);
-        intent.putParcelableArrayListExtra("selectedDepartmentList", selectedDepartmentList);
+        intent.putParcelableArrayListExtra("locationList", locationList);
         intent.putParcelableArrayListExtra("interestedJobTypeList", interestedJobTypeList);
         onProfileUpdateLauncher.launch(intent);
         overridePendingTransition(R.anim.left_in,R.anim.left_out);

@@ -1,6 +1,6 @@
 package com.antizon.uit_android.generic.activities;
 
-import androidx.appcompat.widget.AppCompatEditText;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,12 +15,16 @@ import com.antizon.uit_android.R;
 import com.antizon.uit_android.activities.home.ApplicantBottomNavigationActivity;
 import com.antizon.uit_android.company.utility.BaseActivity;
 import com.antizon.uit_android.activities.home.CompanyBottomNavigationActivity;
+import com.antizon.uit_android.company.welcome.CompanyCreationCongratulationActivity;
+import com.antizon.uit_android.company.welcome.CompanyInviteTeamMembersActivity;
+import com.antizon.uit_android.company.welcome.CompanySummaryActivity;
 import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.activities.home.UitAdminDashboardActivity;
 import com.antizon.uit_android.activities.home.UitMemberMainDashboardActivity;
 import com.antizon.uit_android.utilities.CustomCookieToast;
 import com.antizon.uit_android.utilities.Utilities;
+import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -33,7 +37,7 @@ public class SignInActivity extends BaseActivity {
     SessionManagement sessionManagement;
     ImageView backIcon;
     EditText username;
-    AppCompatEditText password;
+    TextInputEditText password;
     String usernameValue, passwordValue;
     TextView login, signUpNow;
 
@@ -47,13 +51,7 @@ public class SignInActivity extends BaseActivity {
         setListener();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
-    void setIds() {
+    private void setIds() {
         Log.d(TAG, "setIds: ");
         backIcon = findViewById(R.id.backIcon);
         login = findViewById(R.id.login);
@@ -62,14 +60,14 @@ public class SignInActivity extends BaseActivity {
         signUpNow = findViewById(R.id.signUpNow);
     }
 
-    void initialize() {
+    private void initialize() {
         Log.d(TAG, "initialize: ");
         progressDialog = new ProgressDialog(SignInActivity.this);
         sessionManagement = new SessionManagement(SignInActivity.this);
 
     }
 
-    void setListener() {
+    private void setListener() {
         Log.d(TAG, "setListener: ");
 
         backIcon.setOnClickListener(v -> onBackPressed());
@@ -176,14 +174,21 @@ public class SignInActivity extends BaseActivity {
                 int application_status = profileObject.getInt("application_status");
                 String access_token = accessTokenObject.getString("token");
 
-                sessionManagement.createLoginSession("" + id, email, name, passwordValue, website, profile_image,
-                        address, city, state, phone, "" + account_status, bio, dob, job_title, "" + role,
-                        access_token, "" + application_status);
+//                if (role ==  2 && account_status == 4) {
+//                    Intent intent = new Intent(SignInActivity.this, CompanyCreationCongratulationActivity.class);
+//                    startActivity(intent);
+//                    overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
+//                }else {
+                    sessionManagement.createLoginSession("" + id, email, name, passwordValue, website, profile_image,
+                            address, city, state, phone, "" + account_status, bio, dob, job_title, "" + role,
+                            access_token, "" + application_status);
 
-                Toast.makeText(SignInActivity.this, "User Successfully Signed In.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "User Successfully Signed In.", Toast.LENGTH_SHORT).show();
 
-                Log.d(TAG, "onResponseReceived: role: " + role);
-                openNextActivity(role);
+                    Log.d(TAG, "onResponseReceived: role: " + role);
+                    openNextActivity(role);
+//                }
+
 
             } else {
                 CustomCookieToast.showFailureToast(SignInActivity.this, message);

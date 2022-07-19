@@ -1,7 +1,5 @@
 package com.antizon.uit_android.company.welcome;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,20 +44,17 @@ public class DEIStatement extends BaseActivity {
     {
         Log.d(TAG, "setListener: ");
 
-        backIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        backIcon.setOnClickListener(v -> {
 
-                onBackPressed();
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);
-            }
+            onBackPressed();
+            overridePendingTransition(R.anim.right_in, R.anim.right_out);
         });
 
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(DEIStatement.this,DEIStatement2.class);
+                Intent intent = new Intent(DEIStatement.this, CompanyDEIStatementActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
@@ -68,7 +63,7 @@ public class DEIStatement extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(DEIStatement.this,DEIStatement2.class);
+                Intent intent = new Intent(DEIStatement.this, CompanyDEIStatementActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.left_out,R.anim.left_out);
             }

@@ -1,34 +1,33 @@
 package com.antizon.uit_android.company.fragment;
 
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.welcome.AdminFlaggedJobsActivity;
+import com.antizon.uit_android.generic.activities.AdminJobDetailActivity;
 import com.antizon.uit_android.generic.adapter.AdminAllJobsAdapter;
 import com.antizon.uit_android.generic.model.ModelAllJobs;
 import com.antizon.uit_android.generic.model.ModelApplicantDepartment;
 import com.antizon.uit_android.generic.model.ModelUser;
 import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,9 +37,8 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class CompanyJobsFragment extends BaseFragment {
-    private static final String TAG = CompanyJobsFragment.class.getSimpleName();
-
+public class CompanyJobsFragment extends BaseFragment implements AdminAllJobsAdapter.AdminAllJobsAdapterCallBack {
+    Context context;
     TextView listed, filled, closed, title, flagged;
     ImageView profilePicture;
     ConstraintLayout listedLayout, filledLayout, closedLayout;
@@ -49,41 +47,32 @@ public class CompanyJobsFragment extends BaseFragment {
     ProgressDialog progressDialog;
 
     AdminAllJobsAdapter adminAllJobsAdapter;
-    private List<ModelAllJobs> list;
-    private ModelAllJobs dataModel;
+    List<ModelAllJobs> list;
+    ModelAllJobs dataModel;
 
     EditText searchOffer;
-    Boolean isPendingSelected = true;
     String selectedJobStatus = "1";
     String role;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.company_fragment_job, container, false);
-
-        setIds(view);
-        initialize();
-//        initializeViewsAsPerRole();
-        setListener();
-        setUpListedJobsRecyclerView();
-        return view;
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.company_fragment_job, container, false);
+        initViews(view);
 
-//        case StatusOpened = 1;        // we are assuming listed means open
-//        case StatusClosed = 2;
-//        case StatusFilled = 3;
-//        case StatusPaused = 4;
-        Log.d(TAG, "onResume: ");
+        initialize();
+
+        setListener();
+        setUpListedJobsRecyclerView();
         sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
-
+        return view;
     }
-
-    void setIds(View view) {
-        Log.d(TAG, "setIds: ");
+    void initViews(View view) {
 
         flagged = view.findViewById(R.id.flagged);
         listed = view.findViewById(R.id.pending);
@@ -98,88 +87,42 @@ public class CompanyJobsFragment extends BaseFragment {
         profilePicture = view.findViewById(R.id.profilePicture);
     }
 
-    void initialize() {
-        Log.d(TAG, "initialize: ");
-        title.setText("All Jobs");
-        listed.setText("Listed");
-        filled.setText("Filled");
-        closed.setText("Closed");
+    private void initialize() {
+        title.setText(getString(R.string.allJobs));
+        listed.setText(getString(R.string.listed));
+        filled.setText(getString(R.string.filled));
+        closed.setText(getString(R.string.closed));
 
         sessionManagement = new SessionManagement(getContext());
         role = sessionManagement.getRole();
-        Log.d(TAG, "initialize: token: " + sessionManagement.getToken());
+
         progressDialog = new ProgressDialog(getContext());
         loadProfile(getContext(), sessionManagement.getProfileImage(), profilePicture);
 
         list = new ArrayList<>();
     }
 
-    void initializeViewsAsPerRole() {
-
-//        case UITAdmin = 1
-//        case Company = 2
-//        case UITMember = 3
-//        case CompanyMember = 4
-//        case Applicant = 5
-
-//        Set Visible to all the widgets (who are changing there)
-
-        if (role.equalsIgnoreCase("1")) {
 
 
-        } else if (role.equalsIgnoreCase("2")) {
-
-        } else if (role.equalsIgnoreCase("3")) {
-
-//            flaggedJobs.setVisibility(View.GONE);
-
-
-        } else if (role.equalsIgnoreCase("4")) {
-
-        } else if (role.equalsIgnoreCase("5")) {
-
-        }
-    }
-
-    void setListener() {
-        Log.d(TAG, "setListener: ");
-
-        flagged.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AdminFlaggedJobsActivity.class);
-                startActivity(intent);
-
-            }
+    private void setListener() {
+        flagged.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AdminFlaggedJobsActivity.class);
+            startActivity(intent);
+            requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
         });
-        listedLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: pending: ");
-
-                setListedLayout();
-                sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
-            }
+        listedLayout.setOnClickListener(view -> {
+            setListedLayout();
+            sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
         });
 
-        filledLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: filled: ");
-
-                setFilledLayout();
-                sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
-            }
+        filledLayout.setOnClickListener(view -> {
+            setFilledLayout();
+            sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
         });
 
-        closedLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: filled: ");
-
-                setClosedLayout();
-                sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
-            }
+        closedLayout.setOnClickListener(view -> {
+            setClosedLayout();
+            sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
         });
 
         searchOffer.addTextChangedListener(new TextWatcher() {
@@ -191,7 +134,7 @@ public class CompanyJobsFragment extends BaseFragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String searchedString = searchOffer.getText().toString().toLowerCase(Locale.getDefault());
-                Log.d(TAG, "onTextChanged: " + searchedString);
+
                 if (searchedString.isEmpty()) {
                     sendServerRequestGET(AppConstants.ADMIN_JOBS_LIST + "?job_status=" + selectedJobStatus + "&off_set=0", sessionManagement.getToken());
                 } else {
@@ -207,13 +150,11 @@ public class CompanyJobsFragment extends BaseFragment {
         });
     }
 
-    void setUpListedJobsRecyclerView() {
-        Log.d(TAG, "setUpRecyclerViewLinearLayout: ");
-
+    private void setUpListedJobsRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         jobsRecyclerview.setLayoutManager(linearLayoutManager);
 
-        adminAllJobsAdapter = new AdminAllJobsAdapter(list, getContext());
+        adminAllJobsAdapter = new AdminAllJobsAdapter(requireContext(), list, this);
         jobsRecyclerview.setAdapter(adminAllJobsAdapter);
     }
 
@@ -224,48 +165,26 @@ public class CompanyJobsFragment extends BaseFragment {
         progressDialog.show();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResponseReceived(String response, String urlCalled) {
         super.onResponseReceived(response, urlCalled);
-        Log.d(TAG, "onResponseReceived: urlCalled: " + urlCalled);
-//        Log.d(TAG, "onResponse: " + response);
         try {
 
             list.clear();
             progressDialog.dismiss();
             JSONObject jsonObject = new JSONObject(response);
-
-            Boolean status = jsonObject.getBoolean("status");
-            String message = jsonObject.getString("message");
-            Log.d(TAG, "onResponse: " + message);
+            boolean status = jsonObject.getBoolean("status");
             if (status) {
 
                 JSONArray dataArray = jsonObject.getJSONArray("data");
                 for (int i = 0; i < dataArray.length(); i++) {
 
-//                        "id": 20,
-//                            "job_title": "Hello",
-//
-//                        "city": "San Jose",
-//                            "state": "CA",
-//                            "location_status": 1,
-//                            "employment_type": 1,
-//                            "job_status": 1,
-//                            "min_salary": 50000,
-//                            "max_salary": 200000,
-//
-//                        "created_at": "2022-04-21T19:15:41.000000Z",
-//                            "reason_to_close": null,
-//                            "applications": [],
-//                        "total_applications": 0,
-//                            "match": null
-//                    }
-
                     JSONObject dataObject = dataArray.getJSONObject(i);
                     int id, locationStatus, employmentType, jobStatus, minSalary,
                             maxSalary, totalApplications, industryId;
-                    String city = "", jobTitle = "", state = "",
-                            createdAt = "", reasonToClose = "", match = "", industryName;
+                    String city, jobTitle, state,
+                            createdAt, reasonToClose, match, industryName;
 
                     id = dataObject.getInt("id");
                     jobTitle = dataObject.getString("job_title");
@@ -280,7 +199,6 @@ public class CompanyJobsFragment extends BaseFragment {
                     reasonToClose = dataObject.getString("reason_to_close");
                     totalApplications = dataObject.getInt("total_applications");
 
-                    Log.d(TAG, "onResponseReceived: match: isNull: " + dataObject.isNull("match"));
                     if (dataObject.isNull("match")) {
                         match = "";
                     } else {
@@ -304,11 +222,6 @@ public class CompanyJobsFragment extends BaseFragment {
 
                     dataModel.setSelectedJobStatus(selectedJobStatus);
 
-
-//                    "industry": {
-//                        "id": 53,
-//                                "name": "Health, Wellness & Fitness"
-//                    },
                     JSONObject industryObject = dataObject.getJSONObject("industry");
                     industryId = industryObject.getInt("id");
                     industryName = industryObject.getString("name");
@@ -318,18 +231,9 @@ public class CompanyJobsFragment extends BaseFragment {
                     industryDataModel.setName(industryName);
                     dataModel.setIndustryDataModel(industryDataModel);
 
-                    //                    "user": {
-//                        "id": 4,
-//                                "name": "Antzion",
-//                                "role": 2,
-//                                "profile_image": "http://www.zorroapp.tech/uit/storage/app/Images/RnHFBlhGG2ST53qrUqXPtwaStnmuqhU96a179fvF.jpg",
-//                                "job_title": "",
-//                                "user_id": 6,
-//                                "greenhouse_access_token": "token_greenhouse_access"
-//                    },
 
                     int userId, userRole, userUserId;
-                    String userName = "", userProfileImage = "", userJobTitle = "", userGreenhouseAccessToken = "";
+                    String userName, userProfileImage, userJobTitle, userGreenhouseAccessToken;
 
                     JSONObject userObject = dataObject.getJSONObject("user");
                     userId = userObject.getInt("id");
@@ -350,19 +254,8 @@ public class CompanyJobsFragment extends BaseFragment {
                     userDataModel.setGreenhouse_access_token(userGreenhouseAccessToken);
                     dataModel.setUserDataModel(userDataModel);
 
-                    //                        "company": {
-//                        "id": 4,
-//                                "name": "Antzion",
-//                                "role": 2,
-//                                "profile_image": "http://www.zorroapp.tech/uit/storage/app/Images/RnHFBlhGG2ST53qrUqXPtwaStnmuqhU96a179fvF.jpg",
-//                                "job_title": "",
-//                                "user_id": 6,
-//                                "greenhouse_access_token": "token_greenhouse_access"
-//                    },
-
-
                     int companyId, companyRole, companyUserId;
-                    String companyName = "", companyProfileImage = "", companyJobTitle = "", companyGreenhouseAccessToken = "";
+                    String companyName, companyProfileImage, companyJobTitle, companyGreenhouseAccessToken;
 
                     JSONObject companyObject = dataObject.getJSONObject("company");
                     companyId = companyObject.getInt("id");
@@ -383,24 +276,12 @@ public class CompanyJobsFragment extends BaseFragment {
                     companyDataModel.setGreenhouse_access_token(companyGreenhouseAccessToken);
                     dataModel.setCompanyDataModel(companyDataModel);
 
-//                    "applications": [
-//                    {
-//                        "id": 50,
-//                            "name": "Tal Rozenberg",
-//                            "role": 5,
-//                            "profile_image": "http://www.zorroapp.tech/uit/storage/app/Images/vIsqDCSwHxq3mbazLkQbcuXHlo3TA6T4Qfi3jrg5.jpg",
-//                            "job_title": "",
-//                            "user_id": 137,
-//                            "greenhouse_access_token": null
-//                    }
-//            ],
-
                     JSONArray applicantArray = dataObject.getJSONArray("applications");
                     List<ModelUser> applicantsList = new ArrayList<>();
                     for (int x = 0; x < applicantArray.length(); x++) {
 
                         int applicantId, applicantRole, applicantUserId;
-                        String applicantName = "", applicantProfileImage = "", applicantJobTitle = "", applicantGreenhouseAccessToken = "";
+                        String applicantName, applicantProfileImage, applicantJobTitle, applicantGreenhouseAccessToken;
 
                         JSONObject applicantObject = applicantArray.getJSONObject(x);
                         applicantId = applicantObject.getInt("id");
@@ -429,8 +310,7 @@ public class CompanyJobsFragment extends BaseFragment {
                 }
             }
             adminAllJobsAdapter.notifyDataSetChanged();
-        } catch (JSONException e) {
-            Log.d(TAG, "onResponseReceived: JSONException: " + e.getMessage());
+        } catch (JSONException ignored) {
         }
 
     }
@@ -439,39 +319,46 @@ public class CompanyJobsFragment extends BaseFragment {
     public void requestEndedWithError(VolleyError error) {
         super.requestEndedWithError(error);
         progressDialog.dismiss();
-        Log.d(TAG, "onErrorResponse: error: " + error);
     }
 
     void setListedLayout() {
         selectedJobStatus = "1";
-        listedLayout.setBackground(getResources().getDrawable(R.drawable.app_color_curved_background));
-        filledLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
-        closedLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
+        listedLayout.setBackgroundResource(R.drawable.app_color_curved_background);
+        filledLayout.setBackgroundResource(R.drawable.white_curved_background);
+        closedLayout.setBackgroundResource(R.drawable.white_curved_background);
 
-        listed.setTextColor(getResources().getColor(R.color.white));
-        filled.setTextColor(getResources().getColor(R.color.black));
-        closed.setTextColor(getResources().getColor(R.color.black));
+        listed.setTextColor(context.getColor(R.color.white));
+        filled.setTextColor(context.getColor(R.color.black));
+        closed.setTextColor(context.getColor(R.color.black));
     }
 
     void setFilledLayout() {
         selectedJobStatus = "2";
-        listedLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
-        filledLayout.setBackground(getResources().getDrawable(R.drawable.app_color_curved_background));
-        closedLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
-        listed.setTextColor(getResources().getColor(R.color.black));
-        filled.setTextColor(getResources().getColor(R.color.white));
-        closed.setTextColor(getResources().getColor(R.color.black));
+        listedLayout.setBackgroundResource(R.drawable.white_curved_background);
+        filledLayout.setBackgroundResource(R.drawable.app_color_curved_background);
+        closedLayout.setBackgroundResource(R.drawable.white_curved_background);
+        listed.setTextColor(context.getColor(R.color.black));
+        filled.setTextColor(context.getColor(R.color.white));
+        closed.setTextColor(context.getColor(R.color.black));
     }
 
     void setClosedLayout() {
         selectedJobStatus = "3";
-        listedLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
-        filledLayout.setBackground(getResources().getDrawable(R.drawable.white_curved_background));
-        closedLayout.setBackground(getResources().getDrawable(R.drawable.app_color_curved_background));
+        listedLayout.setBackgroundResource(R.drawable.white_curved_background);
+        filledLayout.setBackgroundResource(R.drawable.white_curved_background);
+        closedLayout.setBackgroundResource(R.drawable.app_color_curved_background);
 
-        listed.setTextColor(getResources().getColor(R.color.black));
-        filled.setTextColor(getResources().getColor(R.color.black));
-        closed.setTextColor(getResources().getColor(R.color.white));
+        listed.setTextColor(context.getColor(R.color.black));
+        filled.setTextColor(context.getColor(R.color.black));
+        closed.setTextColor(context.getColor(R.color.white));
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(context, AdminJobDetailActivity.class);
+        intent.putExtra("dataModel", list.get(position));
+        startActivity(intent);
+        requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
     }
 }

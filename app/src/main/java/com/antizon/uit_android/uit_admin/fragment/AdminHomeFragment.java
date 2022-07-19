@@ -11,8 +11,10 @@ import com.antizon.uit_android.R;
 import android.util.Log;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import com.antizon.uit_android.generic.activities.CommunityVideoOpen;
+import com.antizon.uit_android.generic.activities.SignInActivity;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.models.home.AdminHomeDataModel;
 import com.antizon.uit_android.models.home.AdminHomeResponseModel;
@@ -38,7 +40,7 @@ public class AdminHomeFragment extends Fragment {
     MaterialCardView companiesCardView, cardViewCompanies, cardViewMember, cardViewJob, cardViewJobMember, cardViewCommunity;
     SessionManagement sessionManagement;
 
-    TextView companiesCount, membersCount, applicantsCount, jobsCount, communityCount, uit_membersCount;
+    TextView text_logout, companiesCount, membersCount, applicantsCount, jobsCount, communityCount, uit_membersCount;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -53,7 +55,6 @@ public class AdminHomeFragment extends Fragment {
         service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
 
         setIds(view);
-        initialize();
         setListener();
 
         getAdminHomeData("Bearer " + sessionManagement.getToken());
@@ -61,9 +62,9 @@ public class AdminHomeFragment extends Fragment {
     }
 
 
-    void setIds(View view) {
+    private void setIds(View view) {
         Log.d(TAG, "setIds: ");
-
+        sessionManagement = new SessionManagement(getContext());
         companiesCount = view.findViewById(R.id.companiesCount);
         membersCount = view.findViewById(R.id.membersCount);
         applicantsCount = view.findViewById(R.id.applicantsCount);
@@ -76,31 +77,50 @@ public class AdminHomeFragment extends Fragment {
         cardViewJob = view.findViewById(R.id.cardViewJob);
         cardViewJobMember = view.findViewById(R.id.cardViewJob2);
         cardViewCommunity = view.findViewById(R.id.cardViewCommunity);
+        text_logout = view.findViewById(R.id.text_logout);
 
+        text_logout.setOnClickListener(v -> doYouWantToLogout());
     }
 
-    void initialize() {
-        Log.d(TAG, "initialize: ");
-        sessionManagement = new SessionManagement(getContext());
+    private void doYouWantToLogout(){
 
+        AlertDialog reportPostPopup;
+        AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.CustomDialog);
+        final View customLayout =  LayoutInflater.from(context).inflate(R.layout.popup_yes_no, null);
+        builder.setView(customLayout);
+        String sure = "Are you sure you want to logout ?";
+
+        TextView btn_yes = customLayout.findViewById(R.id.text_Yes);
+        TextView btn_cancel = customLayout.findViewById(R.id.text_No);
+        TextView text_sure = customLayout.findViewById(R.id.text_sure);
+
+        text_sure.setText(sure);
+
+        reportPostPopup = builder.create();
+        reportPostPopup.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        reportPostPopup.show();
+        reportPostPopup.setCancelable(false);
+        btn_cancel.setOnClickListener(v -> reportPostPopup.dismiss());
+
+        btn_yes.setOnClickListener(v -> {
+            // Clear SharedPref and send to login
+            sessionManagement.logoutUser();
+            reportPostPopup.dismiss();
+            requireActivity().finishAffinity();
+            Intent intent = new Intent(context, SignInActivity.class);
+            startActivity(intent);
+            requireActivity().overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+
+        });
     }
 
-    void setListener() {
-        Log.d(TAG, "setListener: ");
 
-        Log.d(TAG, "setListener: ");
-
+    private void setListener() {
         companiesCardView.setOnClickListener(v -> moveToNextScreen(PendingCompaniesActivity.class));
-
-
         cardViewCompanies.setOnClickListener(v -> moveToNextScreen(AdminApplicants.class));
-
         cardViewMember.setOnClickListener(v -> moveToNextScreen(AdminMembersActivity.class));
-
         cardViewJob.setOnClickListener(v -> moveToNextScreen(ListedJobsActivity.class));
-
         cardViewCommunity.setOnClickListener(v -> moveToNextScreen(CommunityVideoOpen.class));
-
         cardViewJobMember.setOnClickListener(v -> moveToNextScreen(UitMembers.class));
     }
 

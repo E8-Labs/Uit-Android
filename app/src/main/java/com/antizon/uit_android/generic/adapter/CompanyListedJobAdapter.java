@@ -3,32 +3,25 @@ package com.antizon.uit_android.generic.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.generic.activities.AdminJobDetail;
+import com.antizon.uit_android.generic.activities.AdminJobDetailActivity;
 import com.antizon.uit_android.generic.model.ModelAllJobs;
-import com.antizon.uit_android.generic.model.ModelUitAdminPending;
-import com.antizon.uit_android.generic_utils.TimeAgo;
-import com.antizon.uit_android.uit_admin.welcome.PendingProfile;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJobAdapter.MyViewHolder> {
@@ -49,7 +42,7 @@ public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJ
     public CompanyListedJobAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recruiter_listed_job, parent, false);
         Log.d(TAG, "onCreateViewHolder: ");
-        return new CompanyListedJobAdapter.MyViewHolder(view);
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -66,8 +59,7 @@ public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJ
         holder.companyTitle.setText(dataModel.getCompanyDataModel().getName());
         holder.address.setText(dataModel.getCity() + ", " + dataModel.getState());
 
-        holder.salary.setText("$" + prettyCount(dataModel.getMin_salary()) + " - $" +
-                prettyCount(dataModel.getMin_salary()));
+        holder.salary.setText("$" + prettyCount(dataModel.getMin_salary()) + " - $" + prettyCount(dataModel.getMin_salary()));
 
 //        java.util.Date dActive = dateConverterToLocal.parse(dataModel.getCreated_at());
 //        holder.timeAgo.setText(TimeAgo.getTimeAgo(dActive.getTime()));
@@ -79,15 +71,12 @@ public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJ
         setApplicants(holder, dataModel);
 
 
-        holder.adminJobsLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: accept: ");
-                Intent intent = new Intent(context, AdminJobDetail.class);
-                intent.putExtra("dataModel", dataModel);
-                context.startActivity(intent);
+        holder.itemView.setOnClickListener(view -> {
+            Log.d(TAG, "onClick: accept: ");
+            Intent intent = new Intent(context, AdminJobDetailActivity.class);
+            intent.putExtra("dataModel", dataModel);
+            context.startActivity(intent);
 
-            }
         });
     }
 
@@ -101,13 +90,13 @@ public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJ
         return list.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView jobPostedByTitle, postedByRole, timeAgo, address, salary, jobType, jobTitle, companyTitle, timeRange,totalApplicantsCount,
                 hiredText,moreHiredCountTitle,filled,closed;
         ImageView postedByImage, companyLogo,firstApplicant,secondApplicant,thirdApplicant,fourthApplicant,fifthApplicant
                 ,sixthApplicant,seventhApplicant,totalApplicantCount,hiredApplicant,moreHiredCount;
-        ConstraintLayout adminJobsLayout, applicantList, totalApplicantsLayout;
+        ConstraintLayout applicantList, totalApplicantsLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -147,7 +136,6 @@ public class CompanyListedJobAdapter extends RecyclerView.Adapter<CompanyListedJ
             timeRange = itemView.findViewById(R.id.timeRange);
             jobType = itemView.findViewById(R.id.jobType);
 
-            adminJobsLayout = itemView.findViewById(R.id.adminJobsLayout);
             applicantList = itemView.findViewById(R.id.applicantList);
             totalApplicantsLayout = itemView.findViewById(R.id.totalApplicantsLayout);
 

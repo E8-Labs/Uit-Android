@@ -38,7 +38,7 @@ public class ApplicantDepartmentActivity extends AppCompatActivity implements Ap
 
     ImageView backIcon, menYellow;
     TextView next;
-    String employeStatus = "", encodedImageData = "";
+    String employeStatus = "";
 
     ProgressDialog progressDialog;
     SessionManagement sessionManagement;
@@ -72,7 +72,7 @@ public class ApplicantDepartmentActivity extends AppCompatActivity implements Ap
         next = findViewById(R.id.next);
         menYellow = findViewById(R.id.menYellow);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
+
         employeStatus = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
 
@@ -102,7 +102,6 @@ public class ApplicantDepartmentActivity extends AppCompatActivity implements Ap
 
     private void moveToSelectApplicantJobs() {
         Intent intent = new Intent(ApplicantDepartmentActivity.this, SelectApplicantJobsActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeStatus);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedDepartmentList", selectedDepartmentList);

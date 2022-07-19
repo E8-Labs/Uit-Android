@@ -175,12 +175,10 @@ public class CommunityCreatePostActivity extends AppCompatActivity implements Ho
             }
         }
 
-
         RequestBody[] channelsRequestBody = new RequestBody[selectedIds.size()];
         for (int i = 0; i < selectedIds.size(); i++) {
             channelsRequestBody[i] = RequestBody.create(selectedIds.get(i), MediaType.parse("text/plain"));
         }
-
 
         RequestBody postTitleBody = RequestBody.create(post_title, MediaType.parse("text/plain"));
         RequestBody postDescriptionBody = RequestBody.create(post_description, MediaType.parse("text/plain"));

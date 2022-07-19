@@ -49,9 +49,8 @@ public class ActivityApplicantVeteranStatus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applicant_veteran_status);
-        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-
         Utilities.setWhiteBars(ActivityApplicantVeteranStatus.this);
+        service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         setIds();
         getIntentData();
         initialize();
@@ -84,7 +83,7 @@ public class ActivityApplicantVeteranStatus extends AppCompatActivity {
         Log.d(TAG, "initialize: ");
         progressDialog = new ProgressDialog(ActivityApplicantVeteranStatus.this);
         sessionManagement=new SessionManagement(ActivityApplicantVeteranStatus.this);
-        Utilities.loadImage(ActivityApplicantVeteranStatus.this, sessionManagement.getProfileImage(), menYellow);
+        Utilities.loadCircleImage(ActivityApplicantVeteranStatus.this, sessionManagement.getProfileImage(), menYellow);
     }
 
 

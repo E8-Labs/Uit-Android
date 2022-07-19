@@ -1,4 +1,4 @@
-package com.drudotstech.swiitapp.utils.cache;
+package com.antizon.uit_android.utilities.cache;
 
 import android.net.Uri;
 import android.util.Pair;
@@ -15,6 +15,7 @@ import com.google.android.exoplayer2.upstream.cache.CacheSpan;
 import com.google.android.exoplayer2.upstream.cache.ContentMetadata;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.PriorityTaskManager;
+
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.NavigableSet;

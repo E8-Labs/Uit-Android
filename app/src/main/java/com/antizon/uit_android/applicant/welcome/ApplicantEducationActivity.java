@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.antizon.uit_android.R;
-import com.antizon.uit_android.generic.adapter.EducationAdapter;
+import com.antizon.uit_android.generic.adapter.ApplicantEducationAdapter;
 import com.antizon.uit_android.generic.model.ApplicantEducationDataModel;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.utilities.CustomCookieToast;
@@ -28,19 +28,19 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplicantEducationActivity extends AppCompatActivity implements EducationAdapter.EducationAdapterCallBack {
+public class ApplicantEducationActivity extends AppCompatActivity implements ApplicantEducationAdapter.EducationAdapterCallBack {
     Context context;
 
     SessionManagement sessionManagement;
     RecyclerView applicantEducationRecyclerview;
-    EducationAdapter educationAdapter;
+    ApplicantEducationAdapter educationAdapter;
     ArrayList<ApplicantEducationDataModel> educationList;
     ImageView backIcon;
     ImageView plus;
     RoundedImageView menYellow;
     TextView next;
 
-    String encodedImageData, employeStatus;
+    String employeStatus;
 
     int updatedPosition;
     AlertDialog deleteDialog;
@@ -58,7 +58,7 @@ public class ApplicantEducationActivity extends AppCompatActivity implements Edu
 
 
     void initViews() {
-        encodedImageData = getIntent().getStringExtra("profilePic");
+
         employeStatus = getIntent().getStringExtra("employeStatus");
 
         educationList = new ArrayList<>();
@@ -141,20 +141,19 @@ public class ApplicantEducationActivity extends AppCompatActivity implements Edu
         deleteDialog = builder.create();
         deleteDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         deleteDialog.show();
-        deleteDialog.setCancelable(true);
+        deleteDialog.setCancelable(false);
     }
 
     private void showAllEducationsRecyclerview(RecyclerView recyclerView, ArrayList<ApplicantEducationDataModel> educationList) {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager =  new LinearLayoutManager(this ,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        educationAdapter = new EducationAdapter(context, educationList , this);
+        educationAdapter = new ApplicantEducationAdapter(context, educationList , this);
         recyclerView.setAdapter(educationAdapter);
     }
 
     void openNextScreen() {
         Intent intent = new Intent(ApplicantEducationActivity.this, ApplicantDepartmentActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeStatus);
         intent.putParcelableArrayListExtra("educationList", educationList);
         onProfileUpdateLauncher.launch(intent);

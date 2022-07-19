@@ -82,10 +82,8 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
     List<MultiSelectionModel> locationList;
     IndustriesList industriesList;
 
-    private double latitude;
-    private double longitude;
-    private MultiSelectionAdapter locationAdapter;
-    private MultiSelectionAdapter employeeAdapter;
+    double latitude, longitude;
+    MultiSelectionAdapter locationAdapter, employeeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,15 +153,12 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
                 }
             });
 
-            layout_location.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent selectionIntent = new Intent(context, SelectLocationActivity.class);
-                    selectionIntent.putExtra("latitude", latitude);
-                    selectionIntent.putExtra("longitude", longitude);
-                    onSelectedNewLocation.launch(selectionIntent);
-                    overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
-                }
+            layout_location.setOnClickListener(v -> {
+                Intent selectionIntent = new Intent(context, SelectLocationActivity.class);
+                selectionIntent.putExtra("latitude", latitude);
+                selectionIntent.putExtra("longitude", longitude);
+                onSelectedNewLocation.launch(selectionIntent);
+                overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
             });
         } catch (Exception e) {
             Toast.makeText(activity, "Exception in on create : " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -212,10 +207,14 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
     }
 
     private void moveToNext() {
+        ArrayList<String> filtersList = new ArrayList<>();
+
         String jobTitle = etTitle.getText().toString();
         String location = edit_location.getText().toString();
         int minSalary = rangeSlider.getValues().get(0).intValue();
         int maxSalary = rangeSlider.getValues().get(1).intValue();
+
+        filtersList.add(location);
 
         List<String> industryIds = new ArrayList<>();
         for (IndustryModel industry : tags) {
@@ -225,16 +224,25 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
 
         List<String> employmentIds = new ArrayList<>();
         for (MultiSelectionModel model : employmentList) {
-            if (model.isSelected())
+            if (model.isSelected()){
                 employmentIds.add(model.getValue() + "");
+                filtersList.add(model.getTitle());
+            }
+
         }
         String employmentIdsString = Utilities.getCommaSeparatedString(employmentIds);
 
         List<String> locationIds = new ArrayList<>();
         for (MultiSelectionModel model : locationList) {
-            if (model.isSelected())
+            if (model.isSelected()){
                 locationIds.add(model.getValue() + "");
+                filtersList.add(model.getTitle());
+            }
+
         }
+
+        filtersList.add("$" + minSalary + "k - $" + maxSalary + "k");
+
         String locationIdsString = Utilities.getCommaSeparatedString(locationIds);
 
         Intent intent = new Intent();
@@ -247,6 +255,8 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
         intent.putExtra("work_location", locationIdsString);//comma separated ids of work location types
         intent.putExtra("min_salary", minSalary);//int
         intent.putExtra("max_salary", maxSalary);//int
+        intent.putStringArrayListExtra("filtersList", filtersList);
+        intent.putExtra("filterApplied", true);
         setResult(RESULT_OK, intent);
         back();
     }
@@ -328,7 +338,7 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
     }
 
     private void setLocation() {
-        String address = MyMapUtils.getAddress(context, new LatLng(latitude, longitude));
+        String address = MyMapUtils.getCityCountry(context, new LatLng(latitude, longitude));
         edit_location.setText(address);
     }
 
@@ -432,7 +442,7 @@ public class ApplicantJobFilterActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> onSelectedNewLocation = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == Activity.RESULT_OK) {
             if (result.getData() != null) {
-                String selectedLocation = result.getData().getStringExtra("selectedAddress");
+                String selectedLocation = result.getData().getStringExtra("selectedLocation");
                 latitude = result.getData().getDoubleExtra("selectedLatitude", 31.5204);
                 longitude = result.getData().getDoubleExtra("selectedLongitude", 74.3587);
                 edit_location.setText(selectedLocation);

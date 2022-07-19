@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.os.Vibrator;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ import com.antizon.uit_android.network.RetrofitClientInstance;
 import com.antizon.uit_android.utilities.CustomCookieToast;
 import com.antizon.uit_android.utilities.Utilities;
 import com.google.gson.Gson;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.pusher.client.Pusher;
 import com.pusher.client.PusherOptions;
 import com.pusher.client.channel.Channel;
@@ -46,19 +49,20 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
     GetDataService service;
     Context context;
     SessionManagement sessionManagement;
+    ProgressDialog  progressDialog;
 
-    RelativeLayout btnBack;
+    RelativeLayout btnBack, btn_send;
     SwipeRefreshLayout swipe;
     RecyclerView recyclerview_comments;
     List<CommentDataModel> commentsList;
     CommentsAdapter commentsAdapter;
-
-    String postId;
-
     EditText edit_comment;
-    RelativeLayout btn_send;
+    ImageView uitImage;
+    RoundedImageView user_ProfileImage;
 
     Pusher pusher;
+    String postId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,7 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
         context = CommentsActivity.this;
         service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         sessionManagement = new SessionManagement(context);
+        progressDialog  = new ProgressDialog(context);
 
         postId = getIntent().getStringExtra("postId");
 
@@ -76,12 +81,20 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
         swipe = findViewById(R.id.swipe);
         edit_comment = findViewById(R.id.edit_comment);
         btn_send = findViewById(R.id.btn_send);
+        uitImage = findViewById(R.id.uitImage);
+        user_ProfileImage = findViewById(R.id.user_ProfileImage);
 
 
-        requestForPostComments("Bearer " + sessionManagement.getToken(), postId);
+        if (sessionManagement.getRole().equals("1")){
+            uitImage.setVisibility(View.VISIBLE);
+            user_ProfileImage.setVisibility(View.GONE);
+        }else {
+            uitImage.setVisibility(View.GONE);
+            user_ProfileImage.setVisibility(View.VISIBLE);
+            Utilities.loadImage(context, sessionManagement.getProfileImage(), user_ProfileImage);
+        }
 
         btnBack.setOnClickListener(v -> onBackPressed());
-
         swipe.setOnRefreshListener(this);
 
         btn_send.setOnClickListener(v -> {
@@ -91,6 +104,10 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
                 edit_comment.setText("");
             }
         });
+
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+        requestForPostComments("Bearer " + sessionManagement.getToken(), postId);
     }
 
     private void requestForPostComments(String authToken, String postId){
@@ -99,7 +116,7 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(@NotNull Call<CommentsResponseModel> call, @NotNull Response<CommentsResponseModel> response) {
-
+                progressDialog.dismiss();
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     boolean status = response.body().isStatus();
@@ -123,6 +140,7 @@ public class CommentsActivity extends AppCompatActivity implements CommentsAdapt
 
             @Override
             public void onFailure(@NotNull Call<CommentsResponseModel> call, @NotNull Throwable t) {
+                progressDialog.dismiss();
                 CustomCookieToast.showRequiredToast(CommentsActivity.this, t.getMessage());
             }
         });

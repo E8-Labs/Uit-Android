@@ -34,13 +34,9 @@ public class ApplicantPasswordActivity extends BaseActivity {
     ImageView menYellow, backIcon;
     TextView next;
     EditText passwordEditText;
-    String passwordEditTextValue = "";
-    String selectDobValue = "";
-    String phoneValue = "";
-    String emailAddressEditTextValue = "";
-    String applicantNameValue = "";
-    String encodedImageData = "";
-    String jobTitleValue = "android developer";
+    String passwordEditTextValue = "", selectDobValue = "", phoneValue = "", emailAddressEditTextValue = "",
+            applicantNameValue = "", encodedImageData = "", jobTitleValue = "";
+
     File file;
 
     @Override
@@ -72,6 +68,7 @@ public class ApplicantPasswordActivity extends BaseActivity {
             emailAddressEditTextValue = getIntent().getStringExtra("email");
             phoneValue = getIntent().getStringExtra("phoneNumber");
             selectDobValue = getIntent().getStringExtra("dob");
+            jobTitleValue = getIntent().getStringExtra("jobTitle");
             file = new File(getRealPathFromURI(Uri.parse(encodedImageData)));
         }
     }
@@ -190,7 +187,7 @@ public class ApplicantPasswordActivity extends BaseActivity {
         }
     }
 
-    void openNextScreen() {
+    private void openNextScreen() {
         finishAffinity();
         Intent intent = new Intent(ApplicantPasswordActivity.this, ApplicantBottomNavigationActivity.class);
         startActivity(intent);

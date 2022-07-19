@@ -1,10 +1,8 @@
 package com.antizon.uit_android.models.applicant.jobs;
 
-import com.antizon.uit_android.models.applicant.degree.ApplicantDegreeDataModel;
-import com.google.gson.annotations.SerializedName;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ApplicantJobsListResponseModel {
     @SerializedName("status")

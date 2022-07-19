@@ -61,10 +61,7 @@ public class UitMemberFullNameActivity extends BaseActivity {
     void setListener() {
         Log.d(TAG, "setListener: ");
 
-        backIcon.setOnClickListener(v -> {
-            onBackPressed();
-            overridePendingTransition(R.anim.right_in, R.anim.right_out);
-        });
+        backIcon.setOnClickListener(v -> onBackPressed());
 
         next.setOnClickListener(v -> {
             hideSoftKeyboard(UitMemberFullNameActivity.this, fullNameEditText);
@@ -143,5 +140,11 @@ public class UitMemberFullNameActivity extends BaseActivity {
             }
         }
         return name;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
     }
 }

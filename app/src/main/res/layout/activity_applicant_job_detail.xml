@@ -137,67 +137,75 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/address" />
 
-
-                <TextView
-                    android:id="@+id/dollar"
-                    android:layout_width="wrap_content"
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="24dp"
-                    android:background="@drawable/white_background"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:paddingStart="8dp"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="4dp"
-                    android:paddingEnd="8dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="4dp"
-                    android:text="@string/text_loading"
-                    android:textColor="@color/grayShadeThree"
-                    android:textSize="@dimen/_12sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/job" />
+                    app:layout_constraintTop_toBottomOf="@+id/job"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        >
+                        <TextView
+                            android:id="@+id/dollar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_background"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            android:paddingStart="8dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="8dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/text_loading"
+                            android:textColor="@color/grayShadeThree"
+                            android:textSize="@dimen/_12sdp"
+                            />
 
-                <TextView
-                    android:id="@+id/text_locationType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:background="@drawable/white_background"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="4dp"
-                    android:text="@string/text_loading"
-                    android:textColor="@color/grayShadeThree"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintBottom_toBottomOf="@+id/dollar"
-                    app:layout_constraintStart_toEndOf="@+id/dollar"
-                    app:layout_constraintTop_toTopOf="@+id/dollar" />
+                        <TextView
+                            android:id="@+id/text_locationType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/white_background"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/text_loading"
+                            android:textColor="@color/grayShadeThree"
+                            android:textSize="@dimen/_12sdp"
+                            />
 
-                <TextView
-                    android:id="@+id/text_employmentStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:background="@drawable/white_background"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="4dp"
-                    android:text="@string/text_loading"
-                    android:textColor="@color/grayShadeThree"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintBottom_toBottomOf="@+id/text_locationType"
-                    app:layout_constraintStart_toEndOf="@+id/text_locationType"
-                    app:layout_constraintTop_toTopOf="@+id/text_locationType" />
+                        <TextView
+                            android:id="@+id/text_employmentStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/white_background"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="@string/text_loading"
+                            android:textColor="@color/grayShadeThree"
+                            android:textSize="@dimen/_12sdp"
+                            />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -269,139 +277,137 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/member" />
+                app:layout_constraintTop_toBottomOf="@+id/member"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                />
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:id="@+id/firstLayout"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/white_curved_background"
-                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pendingApprovedLayout">
+                app:layout_constraintTop_toBottomOf="@+id/pendingApprovedLayout"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_white_7sdp_rounded"
+                    android:paddingVertical="@dimen/_10sdp"
+                    >
+                    <TextView
+                        android:id="@+id/jobDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="start"
+                        android:text="@string/jobDescription"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="start"
+                        android:text="@string/lorem"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/dot"
+                        app:layout_constraintTop_toBottomOf="@+id/jobDescription" />
+                </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:background="@drawable/bg_white_7sdp_rounded"
+                   android:paddingVertical="@dimen/_10sdp"
+                   android:layout_marginTop="@dimen/_10sdp"
+                   >
+                   <TextView
+                       android:id="@+id/response"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_12sdp"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:fontFamily="@font/poppins_semibold"
+                       android:gravity="start"
+                       android:text="@string/responsibilities"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_14sdp"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+                   <TextView
+                       android:id="@+id/responseDetail"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_12sdp"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:fontFamily="@font/poppins_medium"
+                       android:text="@string/lorem"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_12sdp"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toEndOf="@+id/dot"
+                       app:layout_constraintTop_toBottomOf="@+id/response" />
+
+               </LinearLayout>
+
 
                 <TextView
-                    android:id="@+id/jobDescription"
+                    android:id="@+id/btnFlagThisJob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="left"
-                    android:text="@string/jobDescription"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/dot"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/circle_black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/jobDescription" />
-
-                <TextView
-                    android:id="@+id/detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="left"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/dot"
-                    app:layout_constraintTop_toBottomOf="@+id/jobDescription" />
-
-                <TextView
-                    android:id="@+id/response"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="left"
-                    android:text="@string/responsibilities"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/detail" />
-
-                <ImageView
-                    android:id="@+id/dot2"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/circle_black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/response" />
-
-                <TextView
-                    android:id="@+id/responseDetail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:gravity="left"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/dot"
-                    app:layout_constraintTop_toBottomOf="@+id/response" />
-
-
-                <TextView
-                    android:id="@+id/btnFlagThisUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="32dp"
-                    android:layout_marginBottom="100dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:fontFamily="@font/poppins_medium"
-                    android:gravity="left"
-                    android:text="@string/flagThisUser"
+                    android:gravity="start"
+                    android:text="@string/flagThisJob"
                     android:textColor="@color/red"
                     android:textSize="@dimen/_12sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/responseDetail" />
+            </LinearLayout>
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:id="@+id/secondLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/white_curve"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pendingApprovedLayout">
+                app:layout_constraintTop_toBottomOf="@+id/pendingApprovedLayout"
+                android:orientation="vertical"
+                >
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/requirementsLayout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/white_curve"
+                    android:background="@drawable/bg_white_7sdp_rounded"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -414,61 +420,37 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left"
+                        android:gravity="start"
                         android:text="@string/education"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/dot3"
-                        android:layout_width="8dp"
-                        android:layout_height="8dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/circle_black"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/education" />
-
                     <TextView
                         android:id="@+id/educationDetail"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/poppins_medium"
-                        android:gravity="left"
+                        android:gravity="start"
                         android:text=""
                         android:textColor="@color/black"
                         android:textSize="@dimen/_12sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/dot3"
                         app:layout_constraintTop_toBottomOf="@+id/education" />
-
-
-                    <!--                    <ImageView-->
-                    <!--                        android:id="@+id/dot4"-->
-                    <!--                        android:layout_width="wrap_content"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:layout_marginTop="24dp"-->
-                    <!--                        android:src="@drawable/black"-->
-                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
-                    <!--                        app:layout_constraintTop_toBottomOf="@+id/dot3" />-->
-
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/experienceLayout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/white_curve"
+                    android:background="@drawable/bg_white_7sdp_rounded"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -482,7 +464,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left"
+                        android:gravity="start"
                         android:text="@string/experience"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
@@ -510,7 +492,7 @@
                             android:layout_marginTop="24dp"
                             android:fontFamily="@font/poppins_medium"
                             android:gravity="left"
-                            android:text=" "
+                            android:text=""
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -524,7 +506,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginBottom="24dp"
                             android:fontFamily="@font/poppins_medium"
-                            android:gravity="left"
+                            android:gravity="start"
                             android:text="Adobe XD"
                             android:textColor="@color/app_color"
                             android:textSize="@dimen/_12sdp"
@@ -556,16 +538,17 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/adoLayout"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginEnd="8dp"
-                        android:visibility="gone"
                         android:background="@drawable/adobe_background"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/adobeXdLayout">
+                        app:layout_constraintTop_toBottomOf="@+id/adobeXdLayout"
+                        android:visibility="gone"
+                        >
 
                         <TextView
                             android:id="@+id/three2"
@@ -624,13 +607,11 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/skillLayout"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="100dp"
-                    android:background="@drawable/white_curve"
+                    android:background="@drawable/bg_white_7sdp_rounded"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -763,7 +744,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -773,7 +754,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/white_curved_background"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -784,10 +764,8 @@
                     android:id="@+id/companyLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/white_curved_background"
+                    android:background="@drawable/bg_white_7sdp_rounded"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -832,10 +810,8 @@
                     android:id="@+id/websiteLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/white_curved_background"
+                    android:background="@drawable/bg_white_7sdp_rounded"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -880,9 +856,7 @@
                     android:id="@+id/diversityLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginBottom="100dp"
                     android:background="@drawable/white_curved_background"
                     android:visibility="visible"
@@ -927,6 +901,7 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -952,7 +927,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/delete"
+        android:id="@+id/btn_saveThisJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/apply_now"

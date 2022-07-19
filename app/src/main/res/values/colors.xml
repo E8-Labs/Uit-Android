@@ -74,10 +74,16 @@
     <color name="smokey_grey">#707070</color>
     <color name="dark_jungle_green">#1D1D1D</color>
     <color name="codGrey">#191919</color>
+    <color name="codGreyFiftyTransparent">#80191919</color>
     <color name="light_white">#61FFFFFF</color>
     <color name="grey">#F5F5F5</color>
     <color name="light_green">#30191919</color>
     <color name="dark_border_color">#9A9A9A</color>
     <color name="half_white">#D2D2D2</color>
     <color name="dark_grey">#806D6D6D</color>
+    <color name="white_smoke">#F6F6F6</color>
+    <color name="smoke">#24707070</color>
+    <color name="colorLightGrey">#B1B1B1</color>
+
+    <color name="app_color_transparent_10">#1A19999A</color>
 </resources>

@@ -194,22 +194,83 @@
             android:textSize="@dimen/UITMediumTextSize" />
 
 
-        <ImageView
-            android:id="@+id/addResume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:paddingStart="@dimen/_8sdp"
-            android:src="@drawable/resume"
+        <RelativeLayout
+            android:id="@+id/layout_addResume"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_110sdp"
             android:layout_below="@id/briefCompanyBio"
+            android:layout_marginTop="32dp"
             android:layout_centerHorizontal="true"
-            />
+            >
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/addResume"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/image_browse_ic"
+                app:riv_oval="true" />
+
+            <RelativeLayout
+                android:id="@+id/layout_pdfSelected"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                >
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular_progressbar_drawable"
+                    />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ic_pdfFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pdf_file_ic"
+                    android:padding="@dimen/_12sdp"
+                    app:riv_oval="true" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_doneIc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:background="@drawable/app_color_100dp_rounded"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/mark_done_ic"
+                        android:contentDescription="@string/text_todo"
+                        />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/how_to_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/addResume"
+            android:layout_below="@id/layout_addResume"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="32dp"

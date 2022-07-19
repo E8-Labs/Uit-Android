@@ -47,14 +47,11 @@ public class AccountType extends BaseActivity {
     {
         Log.d(TAG, "setListener: ");
 
-        cardViewApplicant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardViewApplicant.setOnClickListener(v -> {
 
-                Intent intent = new Intent(AccountType.this, CompanyValueProp.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+            Intent intent = new Intent(AccountType.this, CompanyValueProp.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
     }
 

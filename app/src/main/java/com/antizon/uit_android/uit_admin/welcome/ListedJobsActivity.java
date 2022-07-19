@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.utility.BaseActivity;
 import com.antizon.uit_android.company.welcome.AdminFlaggedJobsActivity;
+import com.antizon.uit_android.generic.activities.AdminJobDetailActivity;
 import com.antizon.uit_android.generic.adapter.AdminAllJobsAdapter;
 import com.antizon.uit_android.generic.model.ModelAllJobs;
 import com.antizon.uit_android.generic.model.ModelApplicantDepartment;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ListedJobsActivity extends BaseActivity {
+public class ListedJobsActivity extends BaseActivity implements AdminAllJobsAdapter.AdminAllJobsAdapterCallBack {
     private static final String TAG = ListedJobsActivity.class.getSimpleName();
 
     TextView pending, approved, paused,flaggedJobs;
@@ -205,7 +206,7 @@ public class ListedJobsActivity extends BaseActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         jobsRecyclerview.setLayoutManager(linearLayoutManager);
 
-        adminAllJobsAdapter = new AdminAllJobsAdapter(list, ListedJobsActivity.this);
+        adminAllJobsAdapter = new AdminAllJobsAdapter(ListedJobsActivity.this, list, this);
         jobsRecyclerview.setAdapter(adminAllJobsAdapter);
     }
 
@@ -445,5 +446,13 @@ public class ListedJobsActivity extends BaseActivity {
         approved.setTextColor(getColor(R.color.black));
         paused.setTextColor(getColor(R.color.white));
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(ListedJobsActivity.this, AdminJobDetailActivity.class);
+        intent.putExtra("dataModel", list.get(position));
+        startActivity(intent);
+        overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
     }
 }

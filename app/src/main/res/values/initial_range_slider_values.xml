@@ -5,4 +5,9 @@
         <item>200</item>
     </array>
 
+    <array name="percentage_slider_values">
+        <item>0</item>
+        <item>100</item>
+    </array>
+
 </resources>

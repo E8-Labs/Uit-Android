@@ -576,21 +576,27 @@
         <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_admin_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_member_maindashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Naeem Projects/uit-android/app/src/main/res/layout/uit_member_srandard_info_next.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/app_color_100dp_rounded.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/app_color_10dp_rounded.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/app_color_20dp_rounded.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/app_color_30dp_rounded.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/app_color_4dp_rounded.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/app_color_4dp_rounded_outline.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/app_color_5dp_rounded.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/app_color_6dp_rounded.xml" value="0.152" />
         <entry key="app/src/main/res/drawable/app_color_7dp_rounded.xml" value="0.148" />
+        <entry key="app/src/main/res/drawable/app_color_bottom_left_top_right_8dp_rounded.xml" value="0.1125" />
         <entry key="app/src/main/res/drawable/app_color_edit_text_focused.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/app_color_outline_rounded_50dp.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/app_color_transparent_8dp_rounded.xml" value="0.1125" />
         <entry key="app/src/main/res/drawable/app_icon.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/applicant_border.xml" value="0.152" />
         <entry key="app/src/main/res/drawable/bg_app_color_rounded_5dp.xml" value="0.148" />
         <entry key="app/src/main/res/drawable/bg_chat_receiver.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_dark_grey_rounded_50dp.xml" value="0.1195" />
         <entry key="app/src/main/res/drawable/bg_dark_jungle_green_outline_grey_rounded_70dp.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/bg_edit_text_rounded_15dp.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/bg_edittext_app_color_outline.xml" value="0.1235" />
         <entry key="app/src/main/res/drawable/bg_edittext_white.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/bg_grey_outline_rounded_100dp.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/bg_search_8sdp.xml" value="0.1" />
@@ -604,9 +610,13 @@
         <entry key="app/src/main/res/drawable/bg_white_rounded_5dp_outline.xml" value="0.148" />
         <entry key="app/src/main/res/drawable/bg_white_rounded_6dp.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/bg_white_rounded_8dp.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/bg_white_smoke_outline_smoke_rounded_16dp.xml" value="0.1195" />
         <entry key="app/src/main/res/drawable/bg_white_top_rounded_15dp.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/browse_ic.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/chat_sender_bg.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circular_progressbar_drawable.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/color_light_grey_rounded_outline.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/company_congratulation_ic.xml" value="0.1135" />
         <entry key="app/src/main/res/drawable/create_account_background.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/cross_ic.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/delete_ic.xml" value="0.1575" />
@@ -614,13 +624,16 @@
         <entry key="app/src/main/res/drawable/doted_rounded_10dp.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/drop_down_arrow.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/edit_ic.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/green_house_ic.xml" value="0.1335" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.112" />
         <entry key="app/src/main/res/drawable/ic_back_arrow.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/ic_baseline_sentiment_satisfied.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/ic_cancel.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/ic_comments.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/ic_gender_proporation.xml" value="0.137" />
         <entry key="app/src/main/res/drawable/ic_happiness.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/ic_icon_awesome_camera.xml" value="0.1195" />
         <entry key="app/src/main/res/drawable/ic_image_add_line.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/ic_menu_button.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/ic_message_send_arrow.xml" value="0.112" />
@@ -630,32 +643,45 @@
         <entry key="app/src/main/res/drawable/ic_subtraction_5.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/ic_warning_sign.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/ic_white_circle.xml" value="0.1505" />
+        <entry key="app/src/main/res/drawable/lgbtq_progress_ic.xml" value="0.137" />
         <entry key="app/src/main/res/drawable/light_gray_20dp_rounded.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/location_ic.xml" value="0.1495" />
+        <entry key="app/src/main/res/drawable/mark_done_ic.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/my_location_icon.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/new_app_icon.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/new_community_ic.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/next_ic.xml" value="0.1335" />
         <entry key="app/src/main/res/drawable/no_location.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/notifications_ic.xml" value="0.163" />
+        <entry key="app/src/main/res/drawable/pending_background.xml" value="0.1165" />
         <entry key="app/src/main/res/drawable/pick_location.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/post_placeholder_ic.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/share_ic.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.1195" />
+        <entry key="app/src/main/res/drawable/uit_team_member_ic.xml" value="0.1125" />
         <entry key="app/src/main/res/drawable/unlike_ic.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/white_background.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/white_background_10dp_rounded.xml" value="0.189" />
+        <entry key="app/src/main/res/drawable/white_bg_gray_border.xml" value="0.137" />
         <entry key="app/src/main/res/layout-v26/activity_sign_in.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_account_type.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_add_applicant_reference.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_add_applicant_work_experience.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_add_education.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_job_experience.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_add_team.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_team_invite_member.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_work_experience.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_admin_job_detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_admin_members.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_all_aplicants.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_all_companies.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_add_cover_letter.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_add_education.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_applicant_apply_job.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_apply_job_congrats.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/activity_applicant_bottom_navigation.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_applicant_bottom_navigation.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_applicant_company_detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_date_of_birth.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_department.xml" value="0.18177083333333333" />
@@ -666,16 +692,20 @@
         <entry key="app/src/main/res/layout/activity_applicant_job_detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_job_filter.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_applicant_job_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_job_title.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_applicant_location_permission.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_password.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_personal_info.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_phone_number.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/activity_applicant_resume.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_resume.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_applicant_saved_jobs.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/activity_applicant_select_degree.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_degree.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_department.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_select_gender_identity.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_select_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_language.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_applicant_select_race.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_applicant_select_skills.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_sexual_orientation.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_thank_you.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_applicant_value_prop.xml" value="0.18177083333333333" />
@@ -686,16 +716,37 @@
         <entry key="app/src/main/res/layout/activity_comments.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_community_create_post.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_community_new_channel.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_community_post_detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_community_video_open.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_add_green_house_account.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_company_bio.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_bottom_navigation_activity.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_company_connect_green_house.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_company_deistatement.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_company_detail.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_gender_proportion.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_company_headquaters.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/activity_company_in_size.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/activity_company_industry.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_company_invite_team_member.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_lead.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_company_name.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_password.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_company_post_job.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_company_post_job_review.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_company_post_job_step2.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_post_job_step3.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_company_summary.xml" value="0.2253066494512589" />
         <entry key="app/src/main/res/layout/activity_company_value_prop.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_verification_code.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_company_website.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_congrats.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_congratulation.xml" value="0.16944444444444445" />
         <entry key="app/src/main/res/layout/activity_congratulations.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_contact_us.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_cover_letter.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_deiinfo.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_deitraining.xml" value="0.16574074074074074" />
         <entry key="app/src/main/res/layout/activity_demo_info.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_dob.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_education.xml" value="0.18177083333333333" />
@@ -708,9 +759,11 @@
         <entry key="app/src/main/res/layout/activity_full_name.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_full_name2.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_gender_identity.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_gender_orientation.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_image_picker.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_industry.xml" value="0.23725671918443003" />
         <entry key="app/src/main/res/layout/activity_interestin_stage.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_invite.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_job_detail.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_job_filter.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_job_posting_description.xml" value="0.18177083333333333" />
@@ -738,14 +791,17 @@
         <entry key="app/src/main/res/layout/activity_race.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_select_applicant_jobs.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_select_company_industry.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_select_industry.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_select_location.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sexual_orientation.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_sign_in2.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_sign_up2.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_stage.xml" value="0.16574074074074074" />
+        <entry key="app/src/main/res/layout/activity_summary.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_thank_you.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_uit_admin_dashboard.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_uit_member_email_address.xml" value="0.18177083333333333" />
@@ -759,16 +815,19 @@
         <entry key="app/src/main/res/layout/activity_verification.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_verification_code.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_veteran_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/activity_website.xml" value="0.16574074074074074" />
         <entry key="app/src/main/res/layout/activity_webview.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/activity_work_experience.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/add_education_bottomsheet.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/add_later_nav.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/admin_team_members_item.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/applicant_proff_info.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/applicant_setfilter_reminder.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/applicant_standard_info_next.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/bottom_sheet_post_admin.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/bottom_sheet_post_other_user.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/community_zero_index_list_item.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/company_fragment_job.xml" value="0.16574074074074074" />
         <entry key="app/src/main/res/layout/company_listed_jobs_bottom_bar.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/complete_profile_bottomsheet.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/custom_banner.xml" value="0.18177083333333333" />
@@ -776,25 +835,38 @@
         <entry key="app/src/main/res/layout/fragment_admin_home.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_admin_jobs.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_applicant_job.xml" value="0.21213836669921876" />
+        <entry key="app/src/main/res/layout/fragment_applicant_profile.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_community.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_company_profile.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_job.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_member_home.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_member_team.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_post_job.xml" value="0.16574074074074074" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/fragment_team.xml" value="0.17897435897435898" />
         <entry key="app/src/main/res/layout/gallery_bottom_sheet.xml" value="0.25" />
         <entry key="app/src/main/res/layout/include_bottombar_uitmember.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/include_company_job.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/include_layout_for_status.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_all_applicants.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_applicant_department.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_applicant_education.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_applicant_jobs.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_applicant_race.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_applicant_work_experience.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_comment.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_company_invite.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_company_stage.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_flagged_user.xml" value="0.175" />
         <entry key="app/src/main/res/layout/item_latest_job.xml" value="0.165" />
         <entry key="app/src/main/res/layout/item_loading.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/layout/item_recruiter_listed_job.xml" value="0.16944444444444445" />
         <entry key="app/src/main/res/layout/item_reference.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/list_item_company_invite_team_member.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/list_item_job_filter.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/list_item_selected_job.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/popup_job_posted_successfully.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/popup_logout_user.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/popup_yes_no.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/receiver_item.xml" value="0.18072916666666666" />
@@ -804,6 +876,7 @@
         <entry key="app/src/main/res/layout/simple_appbar.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/simple_next.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/simple_skip.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/single_add_job_experience_list_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/single_item_add_channel_feed.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/single_item_channel_feed.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/single_item_comments.xml" value="0.25" />

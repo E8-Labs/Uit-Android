@@ -37,35 +37,24 @@ public class ApplicantDateOfBirthActivity extends BaseActivity {
         setContentView(R.layout.activity_applicant_date_of_birth);
         Utilities.setWhiteBars(ApplicantDateOfBirthActivity.this);
 
-        setIds();
-        getIntentData();
-        initialize();
-        setListener();
+        initViews();
     }
 
-
-    void setIds() {
+    @SuppressLint("ClickableViewAccessibility")
+    private void initViews() {
         backIcon = findViewById(R.id.backIcon);
         next = findViewById(R.id.next);
         text_dateOfBirth = findViewById(R.id.text_dateOfBirth);
         menYellow = findViewById(R.id.menYellow);
-    }
 
-    void getIntentData() {
         if (getIntent() != null) {
             encodedImageData = getIntent().getStringExtra("profilePic");
             applicantNameValue = getIntent().getStringExtra("applicantName");
             emailAddressEditTextValue = getIntent().getStringExtra("email");
             phoneValue = getIntent().getStringExtra("phoneNumber");
+
+            loadProfile(ApplicantDateOfBirthActivity.this, encodedImageData, menYellow);
         }
-    }
-
-    void initialize() {
-        loadProfile(ApplicantDateOfBirthActivity.this, encodedImageData, menYellow);
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
-    void setListener() {
 
         backIcon.setOnClickListener(v -> onBackPressed());
 
@@ -79,10 +68,10 @@ public class ApplicantDateOfBirthActivity extends BaseActivity {
                     int month = cal.get(Calendar.MONTH);
                     int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                    DatePickerDialog dialog = new DatePickerDialog(ApplicantDateOfBirthActivity.this,
-                            dateListener,
-                            year, month, day);
+                    DatePickerDialog dialog = new DatePickerDialog(ApplicantDateOfBirthActivity.this, dateListener, year, month, day);
                     dialog.show();
+
+                    dialog.getDatePicker().setMaxDate(System.currentTimeMillis() - 86400000);
                     break;
                 case MotionEvent.ACTION_UP:
                     break;
@@ -121,12 +110,12 @@ public class ApplicantDateOfBirthActivity extends BaseActivity {
             }
 
         };
-
     }
 
 
-    void openNextScreen() {
-        Intent intent = new Intent(ApplicantDateOfBirthActivity.this, ApplicantPasswordActivity.class);
+
+    private void openNextScreen() {
+        Intent intent = new Intent(ApplicantDateOfBirthActivity.this, ApplicantJobTitleActivity.class);
         intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("applicantName", applicantNameValue);
         intent.putExtra("email", emailAddressEditTextValue);

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantSelectLanguageActivity"
+    android:background="@color/white_dash"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/cross_ic" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_topBar"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Languages"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_16sdp" />
+    <TextView
+        android:id="@+id/text_languageDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_language"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:text="Select your language"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_12sdp"
+        android:fontFamily="@font/gotham_rounded_book"
+        android:layout_marginTop="@dimen/_5sdp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_languages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_languageDescription"
+        android:overScrollMode="never"
+        android:paddingTop="@dimen/_5sdp"
+        tools:listitem="@layout/single_item_select_degree" />
+
+</RelativeLayout>

@@ -46,7 +46,7 @@ public class ApplicantInterestInSizeActivity extends AppCompatActivity implement
     CompanyStageAdapter companyStageAdapter;
     ArrayList<ModelCompanySize> companyInterestInSizeList;
 
-    String employeValue = "", encodedImageData = "";
+    String employeValue = "";
 
     ArrayList<ModelCompanySize> selectedCompanyInterestInSizeList;
     ArrayList<ModelCompanySize> selectedCompanyInterestInStageList;
@@ -75,7 +75,6 @@ public class ApplicantInterestInSizeActivity extends AppCompatActivity implement
         skip = findViewById(R.id.skip);
         redNoah2 = findViewById(R.id.redNoah2);
 
-        encodedImageData = getIntent().getStringExtra("profilePic");
         employeValue = getIntent().getStringExtra("employeStatus");
         educationList = getIntent().getParcelableArrayListExtra("educationList");
         selectedJobsList = getIntent().getParcelableArrayListExtra("selectedJobsList");
@@ -152,7 +151,6 @@ public class ApplicantInterestInSizeActivity extends AppCompatActivity implement
 
     void openNextScreen() {
         Intent intent = new Intent(ApplicantInterestInSizeActivity.this, ApplicantProfessionalInterestActivity.class);
-        intent.putExtra("profilePic", encodedImageData);
         intent.putExtra("employeStatus", employeValue);
         intent.putParcelableArrayListExtra("educationList", educationList);
         intent.putParcelableArrayListExtra("selectedJobsList", selectedJobsList);

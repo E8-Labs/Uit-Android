@@ -56,6 +56,8 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
 
     FeatureJobAdapter featureJobAdapter;
     LatestJobAdapter latestJobAdapter;
+    LatestJobAdapter recommendedJobAdapter;
+
     List<ApplicantHomeJobDataModel> latestList, featuredList, recommendedList;
 
     ImageView dashboardNotification, dashboardMen;
@@ -79,8 +81,6 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
         if (!sessionManagement.getKeyApplicationStatus().equals("3")){
             completeProfileBottomSheet();
         }
-        
-        
         return rootView;
     }
 
@@ -109,13 +109,14 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
 
         searchOffer.setOnClickListener(v -> {
             Intent intent = new Intent(context, ApplicantJobSearchActivity.class);
+            intent.putExtra("filterApplied", false);
             startActivity(intent);
             requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
         });
 
         dashboardMen.setOnClickListener(v -> {
             Intent intent = new Intent(context, ApplicantJobFilterActivity.class);
-            startActivity(intent);
+            onFilterAppliedLauncher.launch(intent);
             requireActivity().overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
         });
         
@@ -142,12 +143,14 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
                             latestList = new ArrayList<>();
                             featuredList = new ArrayList<>();
                             recommendedList = new ArrayList<>();
+
                             latestList = applicantHomeResponseDataModel.getLatestJobsList();
                             featuredList = applicantHomeResponseDataModel.getFeaturedJobList();
                             recommendedList = applicantHomeResponseDataModel.getRecommendedJobsList();
 
                             setUpFeatureJobRecyclerview(feature_recyclerview, featuredList);
                             setUpLatestJobRecyclerview(latest_jobs_recyclerview, latestList);
+                            setRecommendedJobRecyclerview(recommended_recyclerview, recommendedList);
                         }
 
 
@@ -180,6 +183,13 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
         recyclerView.setLayoutManager(linearLayoutManager);
         latestJobAdapter = new LatestJobAdapter(context, latestList, this);
         recyclerView.setAdapter(latestJobAdapter);
+    }
+
+    void setRecommendedJobRecyclerview(RecyclerView recyclerView, List<ApplicantHomeJobDataModel> latestList) {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recommendedJobAdapter = new LatestJobAdapter(context, latestList, this);
+        recyclerView.setAdapter(recommendedJobAdapter);
     }
 
 
@@ -225,6 +235,22 @@ public class ApplicantJobFragment extends Fragment implements FeatureJobAdapter.
 
     ActivityResultLauncher<Intent> onApplyJobLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == Activity.RESULT_OK) {
+            getApplicantHomeData("Bearer " + sessionManagement.getToken(), "10", "10");
+        }
+    });
+
+    ActivityResultLauncher<Intent> onFilterAppliedLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent resultIntent = result.getData();
+            if (resultIntent !=null){
+                ArrayList<String> filtersList = resultIntent.getStringArrayListExtra("filtersList");
+
+                Intent intent = new Intent(context, ApplicantJobSearchActivity.class);
+                intent.putExtra("filterApplied", true);
+                intent.putStringArrayListExtra("filtersList", filtersList);
+                startActivity(intent);
+                requireActivity().overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
+            }
 
         }
     });

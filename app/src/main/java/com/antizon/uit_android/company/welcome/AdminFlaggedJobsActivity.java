@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.android.volley.VolleyError;
 import com.antizon.uit_android.R;
 import com.antizon.uit_android.company.utility.BaseActivity;
@@ -20,11 +18,9 @@ import com.antizon.uit_android.generic.model.ModelFlaggedJob;
 import com.antizon.uit_android.generic_utils.AppConstants;
 import com.antizon.uit_android.generic_utils.SessionManagement;
 import com.antizon.uit_android.utilities.Utilities;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -73,12 +69,8 @@ public class AdminFlaggedJobsActivity extends BaseActivity {
 
     }
 
-    void setListener() {
-        Log.d(TAG, "setListener: ");
-        backIcon.setOnClickListener(view -> {
-            onBackPressed();
-            overridePendingTransition(R.anim.right_in, R.anim.right_out);
-        });
+    private void setListener() {
+        backIcon.setOnClickListener(view -> onBackPressed());
 
         searchOffer.addTextChangedListener(new TextWatcher() {
             @Override
@@ -280,4 +272,9 @@ public class AdminFlaggedJobsActivity extends BaseActivity {
         Log.d(TAG, "onErrorResponse: error: " + error);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.activity_enter, R.anim.activity_exit);
+    }
 }
