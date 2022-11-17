@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white_dash"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Chats"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_bold"
+            />
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_topBar"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_inbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/_4sdp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            tools:listitem="@layout/design_inbox" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_noMessage"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/app_color_10dp_rounded"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/phoneBackground"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Messages\nYet"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/poppins_bold"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

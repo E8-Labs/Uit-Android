@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_8sdp"
+    android:background="@drawable/bg_white_dash_outline_rounded_4dp"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingTop="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_3sdp"
+    >
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="San Francisco, CA"
+        android:textColor="@color/codGreyFiftyTransparent"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="@dimen/_8sdp" />
+
+</RelativeLayout>

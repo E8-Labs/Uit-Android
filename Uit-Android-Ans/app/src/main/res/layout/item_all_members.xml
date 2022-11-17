@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/adminMemberLayout"
+    android:background="@drawable/white_curved_background">
+
+
+    <ImageView
+        android:id="@+id/menYellow"
+        android:layout_width="88dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="@dimen/_8sdp"
+        android:src="@drawable/glasses_men"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noahNega"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="Noah Nega"
+
+        android:textColor="@color/blackShadeOne"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toStartOf="@+id/messageIcon"
+        app:layout_constraintStart_toEndOf="@+id/menYellow"
+        app:layout_constraintTop_toTopOf="@+id/menYellow" />
+
+
+    <TextView
+        android:id="@+id/softwareDeveloper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/softwareDeveloper"
+
+        android:textColor="@color/app_color"
+
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toStartOf="@+id/messageIcon"
+        app:layout_constraintStart_toEndOf="@+id/menYellow"
+        app:layout_constraintTop_toBottomOf="@+id/noahNega" />
+
+
+    <TextView
+        android:id="@+id/employed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/employed"
+        android:textColor="@color/grayShadeThree"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/menYellow"
+        app:layout_constraintEnd_toEndOf="@+id/softwareDeveloper"
+        app:layout_constraintStart_toEndOf="@+id/menYellow"
+        app:layout_constraintTop_toBottomOf="@+id/softwareDeveloper"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/messageIcon"
+        android:layout_width="65dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/messeage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

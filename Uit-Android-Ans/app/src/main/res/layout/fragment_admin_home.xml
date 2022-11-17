@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".uit_admin.fragment.AdminHomeFragment"
+    android:background="@color/white_dash"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scrollbarThumbVertical="@null"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/includeDashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        >
+                        <ImageView
+                            android:id="@+id/profilePicture"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/app_icon"
+                            />
+
+                        <TextView
+                            android:id="@+id/text_logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/logout"
+                            android:textColor="@color/app_color"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <ImageView
+                            android:id="@+id/dashboardNotification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/text_todo"
+                            android:src="@drawable/notifications_ic" />
+
+                    </RelativeLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/includeDashboard">
+
+                        <TextView
+                            android:id="@+id/welcome"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="left"
+                            android:text="@string/welcome"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11sdp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/continueAs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="left"
+                            android:text="@string/mainDashboard"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_22sdp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="5dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/companiesCardView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintEnd_toStartOf="@+id/view"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/continueAs"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp"
+                            android:focusable="true">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutApplicant"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:paddingBottom="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:id="@+id/applicantImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+                                    android:src="@drawable/companies_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/applicantText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/companies"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/applicantImage" />
+
+                                <TextView
+                                    android:id="@+id/companiesCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/applicantText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardViewMember"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toBottomOf="@+id/continueAs"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutMember"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingLeft="@dimen/_12sdp"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingRight="@dimen/_12sdp"
+                                android:paddingBottom="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:id="@+id/memberImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+                                    android:src="@drawable/member_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/memberText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/managers"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/memberImage" />
+
+                                <TextView
+                                    android:id="@+id/membersCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/memberText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardViewCompanies"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintEnd_toStartOf="@+id/view"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/companiesCardView"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutCompanies"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:id="@+id/companiesImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+                                    android:src="@drawable/applicants_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/companiesText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/members"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/companiesImage" />
+
+                                <TextView
+                                    android:id="@+id/applicantsCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/companiesText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardViewJob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toBottomOf="@+id/cardViewMember"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutJob"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingBottom="@dimen/_12sdp"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/jobImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+                                    android:src="@drawable/jobs_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/jobText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/totalJobs"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/jobImage" />
+
+                                <TextView
+                                    android:id="@+id/jobsCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/jobText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardViewCommunity"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cardViewJob2"
+                            app:layout_constraintEnd_toStartOf="@+id/view"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardViewCompanies"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutCompanies2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingBottom="@dimen/_12sdp"
+                                android:paddingHorizontal="@dimen/_5sdp"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/companiesImage2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+                                    android:src="@drawable/applicants_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/companiesText2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/channels"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/companiesImage2" />
+
+                                <TextView
+                                    android:id="@+id/communityCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/companiesText2" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardViewJob2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="32dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/view"
+                            app:layout_constraintTop_toBottomOf="@+id/cardViewJob"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/layoutJob2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:animateLayoutChanges="true"
+                                android:paddingLeft="@dimen/_12sdp"
+                                android:paddingTop="@dimen/_12sdp"
+                                android:paddingRight="@dimen/_12sdp"
+                                android:paddingBottom="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:id="@+id/jobImage2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginTop="4dp"
+
+                                    android:src="@drawable/member_icon"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/jobText2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:text="@string/uitMember"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/UITNormalTextSize"
+
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/jobImage2" />
+
+                                <TextView
+                                    android:id="@+id/uitMembersCount"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="32dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="0"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/jobText2" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

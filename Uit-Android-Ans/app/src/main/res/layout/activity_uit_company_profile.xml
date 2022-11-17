@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company.activities.UitCompanyProfileActivity"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null">
+
+        <RelativeLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_60sdp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/layout_background"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/profile_upper">
+
+                <RelativeLayout
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/_37sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_margin="@dimen/_10sdp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.25"
+                        android:background="@drawable/black_color_8dp_rounded" />
+
+                    <ImageView
+                        android:id="@+id/back_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/text_todo"
+                        android:src="@drawable/back_ic"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/userProfileImage"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_below="@id/layout_background"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_minus60sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/noah_admin"
+                app:riv_oval="true" />
+
+
+            <TextView
+                android:id="@+id/text_profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userProfileImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="AirBnB"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_16sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_industries"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_profileName"
+                android:layout_centerHorizontal="true"
+                tools:itemCount="1"
+                tools:listitem="@layout/company_profile_industry_list_item" />
+
+            <TextView
+                android:id="@+id/text_userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerview_industries"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Airbnb@gmail.com"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/text_userLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_userEmail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="313, Weston street London UK"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/text_totalTeamMembers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_userLocation"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Team Members(20)"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_companyTeamMembers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_totalTeamMembers"
+                tools:itemCount="1"
+                tools:listitem="@layout/design_job_people" />
+
+            <TextView
+                android:id="@+id/text_companyBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerview_companyTeamMembers"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Company Description"
+                android:textColor="@color/dark_jungle_green"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/text_companyBioDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_companyBio"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Praesent eu dolor eu orci vehicula euismod. Vivamus sed sollicitudin libero, vel malesuada velit. Nullam et maximus lorem. Suspendisse maximus dolor quis consequat volutpat. Donec vehicula elit eu erat pulvinar, vel congue ex egestas. Praesent egestas purus dolor, a porta arcu pharetra quis. Sed vestibulum semper ligula, id accumsan orci ornare ut. Donec id pharetra nunc, ut sollicitudin mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam dapibus nisl at diam scelerisque luctus. Nam mattis, velit in malesuada maximus, erat ligula eleifend eros, et lacinia nunc ante vel odio."
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible"
+                />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text_companyBioDescription"
+                android:background="@color/white_dash">
+
+                <RelativeLayout
+                    android:id="@+id/layout_companySize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/text_companySize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Company Size"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:id="@+id/text_companySizeName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_companySize"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="51 - 200 Employees"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_companyWeb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:layout_below="@+id/layout_companySize">
+
+                    <TextView
+                        android:id="@+id/text_companyWeb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Company Website"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:id="@+id/text_companyWebsite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_companyWeb"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="https://www.airbnb.com"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:id="@+id/text_visitSite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_companyWeb"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Visit Site"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_companyStage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_companyWeb"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/text_companyStage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Company Stage"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/text_companyStageName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_companyStage"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Series A-B"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_greenhouseAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_companyStage"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/text_greenhouseAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Greenhouse Account"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/text_greenHouse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_greenhouseAccount"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Greenhouse"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/text_greenHouseConnect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_greenhouseAccount"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Connect"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_allJobs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_greenhouseAccount"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/allJobs"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RelativeLayout
+                        android:id="@+id/btnAllJobs"
+                        android:layout_width="@dimen/_47sdp"
+                        android:layout_height="@dimen/_43sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/app_color_7dp_rounded">
+
+                        <ImageView
+                            android:layout_width="@dimen/_7sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/text_todo"
+                            android:src="@drawable/next_ic" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_demographicInformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_allJobs"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/text_demographicInformation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Demographic Information"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RelativeLayout
+                        android:id="@+id/btnDemoGraphicInformation"
+                        android:layout_width="@dimen/_47sdp"
+                        android:layout_height="@dimen/_43sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/app_color_7dp_rounded">
+
+                        <ImageView
+                            android:layout_width="@dimen/_7sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/text_todo"
+                            android:src="@drawable/next_ic" />
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_deiInformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_demographicInformation"
+                    android:background="@color/white"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_deiInformation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="DEI Information"
+                        android:textColor="@color/codGrey"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <RelativeLayout
+                        android:id="@+id/btnDeiInformation"
+                        android:layout_width="@dimen/_47sdp"
+                        android:layout_height="@dimen/_43sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/app_color_7dp_rounded">
+
+                        <ImageView
+                            android:layout_width="@dimen/_7sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_centerInParent="true"
+                            android:contentDescription="@string/text_todo"
+                            android:src="@drawable/next_ic" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layout_acceptReject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/btnReject"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:background="@drawable/red_color_7dp_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="@string/reject"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/btnApprove"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/app_color_7dp_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_25sdp"
+            android:text="@string/approve"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/shadow_View"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.35"
+            android:focusable="true"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/grayShadeSix"
+            android:visibility="visible" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loading"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            app:indicatorColor="@color/app_color"
+            app:indicatorName="BallPulseIndicator" />
+
+    </RelativeLayout>
+</RelativeLayout>

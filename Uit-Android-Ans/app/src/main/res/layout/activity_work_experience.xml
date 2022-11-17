@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantWorkExperienceActivity"
+    android:background="@color/white"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <include
+                android:id="@+id/includeEducation"
+                layout="@layout/applicant_proff_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="86dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeEducation">
+
+                <ImageView
+                    android:id="@+id/firstCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/secondCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/firstCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/thirdCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/secondCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/fourCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/thirdCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/fiveCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/fourCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/sixCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/fiveCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/sevenCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sixCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/eightCircle2"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/app_color_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sevenCircle2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <TextView
+                    android:id="@+id/education"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/workExperience"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/UITLargeTextSize"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/education"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/addYourWorkHistoryBelow"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/UITMediumTextSize" />
+
+                <ImageView
+                    android:id="@+id/plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/add_education_ic"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/experienceRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:nestedScrollingEnabled="false"
+                />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
+

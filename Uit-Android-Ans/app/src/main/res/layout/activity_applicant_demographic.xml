@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.activities.ApplicantDemographicActivity"
+    android:background="@color/white_dash"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_50sdp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:contentDescription="@string/text_todo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_upper" />
+
+                <ImageView
+                    android:id="@+id/iv_bookmark"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/black_color_50_transparent_rounded_10dp"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/save_icon"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/black_color_50_transparent_rounded_10dp"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/back_ic"
+                    app:tint="@color/white" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/_64sdp"
+                    android:layout_height="@dimen/_64sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/noah"
+                    app:riv_oval="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/text_loading"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tv_profession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Jr Android Developer"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Demographic Information"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_13sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_italic"
+                    android:text="Only you can see this"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Racial Identity"
+                        android:textColor="@color/companyLogo"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/btnEditRacialIdentity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Edit"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tag_container_races"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_4sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@android:color/transparent"
+                    android:visibility="visible"
+                    app:container_background_color="@android:color/transparent"
+                    app:container_border_color="@android:color/transparent"
+                    app:container_border_radius="0dp"
+                    app:container_enable_drag="false"
+                    app:horizontal_interval="@dimen/_6sdp"
+                    app:tag_background_color="@color/white"
+                    app:tag_border_color="@color/grayShadeNine"
+                    app:tag_clickable="false"
+                    app:tag_corner_radius="@dimen/_5sdp"
+                    app:tag_cross_color="@color/gray"
+                    app:tag_enable_cross="false"
+                    app:tag_horizontal_padding="@dimen/_11sdp"
+                    app:tag_text_color="@color/gray"
+                    app:tag_text_size="@dimen/_10sdp"
+                    app:tag_theme="none"
+                    app:tag_vertical_padding="@dimen/_8sdp"
+                    app:vertical_interval="@dimen/_8sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_italic"
+                    android:text="Only you can see this"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Gender Identity"
+                        android:textColor="@color/companyLogo"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/btnEditGenderIdentity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Edit"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Male"
+                    android:textColor="@color/blackShadeOne"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_italic"
+                    android:text="Only you can see this"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Sexual Orientation"
+                        android:textColor="@color/companyLogo"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/btnEditSexualOrientation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Edit"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="LGBTQ+"
+                        android:textColor="@color/blackShadeOne"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_sexual_orientation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Yes"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_italic"
+                    android:text="Only you can see this"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Veteran Status"
+                        android:textColor="@color/companyLogo"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_centerVertical="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/btnEditVeteranStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Edit"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_14sdp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_veteran_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Yes"
+                    android:textColor="@color/blackShadeOne"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layout_hiring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_15sdp">
+
+        <TextView
+            android:id="@+id/btnReject"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:background="@drawable/app_color_7dp_rounded"
+            android:backgroundTint="@color/red_light"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="Reject"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+        <TextView
+            android:id="@+id/btnHire"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/app_color_7dp_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_25sdp"
+            android:text="Hire"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

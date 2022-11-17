@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/app_color_transparent_8dp_rounded"
+    >
+
+    <TextView
+        android:id="@+id/text_experience_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/app_color_bottom_left_top_right_8dp_rounded"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:text="Required"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/text_experience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="3 Years"
+        android:textColor="@color/codGrey" />
+
+    <TextView
+        android:id="@+id/text_experience_industry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Development"
+        android:textColor="@color/app_color"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_below="@id/text_experience"
+        />
+
+    <TextView
+        android:id="@+id/text_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:textColor="@color/red"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_below="@id/text_experience_industry"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        />
+
+
+
+</RelativeLayout>

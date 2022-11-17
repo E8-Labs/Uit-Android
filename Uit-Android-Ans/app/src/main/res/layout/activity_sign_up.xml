@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".generic.activities.SignUpActivity"
+    android:background="@color/app_color"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_lining"
+            android:layout_width="@dimen/_236sdp"
+            android:layout_height="@dimen/_204sdp"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-150dp"
+            android:contentDescription="@string/text_todo"
+            android:src="@drawable/signup_lining_circle" />
+
+        <ImageView
+            android:id="@+id/image_circle"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_220sdp"
+            android:layout_marginStart="-200dp"
+            android:layout_marginTop="-68dp"
+            android:contentDescription="@string/text_todo"
+            android:src="@drawable/ic_white_circle" />
+
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_below="@id/image_lining"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/new_app_icon"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:contentDescription="@string/text_todo"/>
+
+        <ImageView
+            android:id="@+id/image_subtraction"
+            android:layout_width="@dimen/_44sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/image_logo"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-15dp"
+            android:contentDescription="@string/text_todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_subtraction_5" />
+
+
+        <ImageView
+            android:id="@+id/image_subtraction_4"
+            android:layout_width="@dimen/_44sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="-30dp"
+            android:contentDescription="@string/text_todo"
+            android:rotation="145"
+            android:src="@drawable/ic_subtraction_5"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_20sdp"
+            />
+
+
+        <ImageView
+            android:id="@+id/image_liningBottom"
+            android:layout_width="@dimen/_236sdp"
+            android:layout_height="@dimen/_204sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="-110dp"
+            android:layout_marginBottom="-95dp"
+            android:contentDescription="@string/text_todo"
+            android:rotation="15"
+            android:src="@drawable/signup_lining_circle"
+            app:tint="@color/yellow" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="US in Technology"
+        android:textColor="@color/white"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/createAccountLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createAccountLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/byTapping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginEnd="96dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/buildIndustry"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/createAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/create_account_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_32sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingRight="@dimen/_32sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@string/createAccount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/UITMediumTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/orSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/my_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/UITNormalTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/createAccount"
+            app:layout_constraintStart_toStartOf="@+id/createAccount"
+            app:layout_constraintTop_toBottomOf="@+id/createAccount" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/byTapping"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="142dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions"
+        android:textColor="@color/white"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

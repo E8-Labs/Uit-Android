@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.home.CompanyTeamMemberBottomNavigationActivity"
+    android:background="@color/white_dash"
+    >
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/horizontal_line"
+        />
+
+
+    <View
+        android:id="@+id/horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/bottomBar"
+        android:background="@color/gray"
+        android:alpha="0.25"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true"
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/layout_jobs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:id="@+id/jobs_ic"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/new_job_ic"
+                    android:contentDescription="@string/text_todo"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:id="@+id/text_jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_9sdp"
+                    android:fontFamily="@font/gotham_rounded_medium"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_team"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/team_ic"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/uit_team_member_ic"
+                    />
+
+                <TextView
+                    android:id="@+id/text_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_rounded_medium"
+                    android:text="Team"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_9sdp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_postJob"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/post_job_ic"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/post_job_ic"
+                    />
+
+                <TextView
+                    android:id="@+id/text_addJob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/gotham_rounded_medium"
+                    android:text="Post Job"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_9sdp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:id="@+id/chat_ic"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/new_chat_ic"
+                    android:contentDescription="@string/text_todo"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:id="@+id/text_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_9sdp"
+                    android:fontFamily="@font/gotham_rounded_medium"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                >
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profileIcon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@color/app_color"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true"
+                    />
+
+                <TextView
+                    android:id="@+id/text_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_9sdp"
+                    android:fontFamily="@font/gotham_rounded_medium"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

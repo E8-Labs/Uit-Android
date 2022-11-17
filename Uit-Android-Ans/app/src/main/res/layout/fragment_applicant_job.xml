@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.fragment.ApplicantJobFragment"
+    android:background="@color/white_dash"
+    >
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_applicantHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_item_recommended_job"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_permissionDenied"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            >
+            <ImageView
+                android:id="@+id/permissionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/no_location"
+                android:contentDescription="@string/text_todo"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/text_enableLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable Location"
+                android:layout_below="@id/permissionImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_enableLocation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="By allowing location you will be able to see \n nearby jobs"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnSettings"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/app_color_4dp_rounded"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="GO TO SETTINGS"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp" />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

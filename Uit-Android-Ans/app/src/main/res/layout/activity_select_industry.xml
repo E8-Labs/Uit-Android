@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.jobs.SelectIndustryActivity"
+    android:background="@color/white_dash"
+    >
+    <RelativeLayout
+        android:id="@+id/layout_topBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/cross_ic" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_degree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_topBar"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Select Industry"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_16sdp" />
+    <TextView
+        android:id="@+id/text_degreeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_degree"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:text="Select your industry you are intersted in"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_12sdp"
+        android:fontFamily="@font/gotham_rounded_book"
+        android:layout_marginTop="@dimen/_5sdp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_industry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_degreeDescription"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null"
+        tools:itemCount="6"
+        tools:listitem="@layout/single_item_industry" />
+
+
+</RelativeLayout>

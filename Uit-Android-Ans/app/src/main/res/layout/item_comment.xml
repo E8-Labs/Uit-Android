@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/_48sdp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="8dp"
+        android:src="@drawable/recruiter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="John"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="Content for this post is inspiring and always entertaining each time I read"
+        android:textColor="@color/companyLogo"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="20 mins ago"
+        android:textColor="@color/grayShadeFour"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <ImageView
+        android:id="@+id/fire_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/fire_icon"
+        app:layout_constraintStart_toStartOf="@+id/state"
+        app:layout_constraintTop_toBottomOf="@+id/state" />
+
+    <TextView
+        android:id="@+id/totalFire"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="left"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/fire_icon"
+        app:layout_constraintStart_toEndOf="@+id/fire_icon"
+        app:layout_constraintTop_toTopOf="@+id/fire_icon" />
+
+    <ImageView
+        android:id="@+id/reply_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/replies"
+        app:layout_constraintBottom_toBottomOf="@+id/totalFire"
+        app:layout_constraintStart_toEndOf="@+id/totalFire"
+        app:layout_constraintTop_toTopOf="@+id/totalFire" />
+    <TextView
+        android:id="@+id/totalReply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="left"
+        android:text="03 replies"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/reply_icon"
+        app:layout_constraintStart_toEndOf="@+id/reply_icon"
+        app:layout_constraintTop_toTopOf="@+id/reply_icon" />
+
+    <TextView
+        android:id="@+id/replyToComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="left"
+        android:text="Reply To Comment"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalReply" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.jobs.TeamMemberHiredActivity">
+    <RelativeLayout
+        android:id="@+id/layout_backArrow"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/bg_white_rounded_10dp"
+        android:elevation="@dimen/_1sdp"
+        >
+
+        <ImageView
+            android:id="@+id/image_backArrow"
+            android:layout_width="@dimen/_7sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/text_todo"
+            android:src="@drawable/ic_back_arrow" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_backArrow"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Hooray!"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_18sdp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_profile"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_105sdp"
+        android:layout_below="@id/text_profileName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/user_ProfileImage"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noah_admin"
+            app:riv_oval="true" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/app_color_100dp_rounded"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/mark_done_ic"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_profileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_profile"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/text_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kevin Valdez"
+            android:textColor="@color/codGrey"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <TextView
+            android:id="@+id/text_jobTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App Developer"
+            android:textColor="@color/smokey_grey"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/poppins_medium"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congrats on your hire, we’ll notify the candidate shortly! 🎉"
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_below="@+id/layout_profileName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:gravity="center"
+        />
+
+    <RelativeLayout
+        android:id="@+id/btn_goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_description"
+        android:paddingHorizontal="@dimen/_70sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/app_color_4dp_rounded"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Go Back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

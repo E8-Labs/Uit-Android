@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.jobs.ListedJobApplicantsListActivity"
+    android:background="@color/white_dash"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_50sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_bottom_curved_background"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/bg_white_7sdp_rounded"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/back_ic"
+                        app:tint="@color/black" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/iv_profile"
+                        android:layout_width="@dimen/_77sdp"
+                        android:layout_height="@dimen/_77sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_32sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@color/app_color"
+                        app:riv_corner_radius="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/text_loading"
+                        android:textColor="@color/companyLogo"
+                        android:textSize="@dimen/_8sdp" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/text_loading"
+                    android:textColor="@color/app_color"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/tv_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/text_loading"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/text_loading"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp" />
+
+                <TextView
+                    android:id="@+id/postedByName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/text_loading"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/postedByJobTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/jobTitle"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_9sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                     android:clipToPadding="false"
+                    android:paddingStart="@dimen/_8sdp"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/design_job_tag" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_bottom_curved_background"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/allApplicants"
+                    android:textColor="@color/codGrey"
+                    android:textSize="@dimen/_13sdp"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_allApplicants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/single_item_listed_job_applicant" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

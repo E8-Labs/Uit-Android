@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantLocationPermissionActivity"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/includeLocation"
+        layout="@layout/back_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/congratulationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="@dimen/_22sdp"
+        android:paddingTop="@dimen/_11sdp"
+        android:paddingRight="@dimen/_22sdp"
+        android:paddingBottom="@dimen/_11sdp"
+        android:src="@drawable/location_permission"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeLocation" />
+
+
+    <TextView
+        android:id="@+id/locationPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/locationPermission"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITLargeTextSize"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/congratulationImage" />
+
+    <TextView
+        android:id="@+id/allowLocationPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/allowLocationPermission"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationPermission" />
+
+
+    <TextView
+        android:id="@+id/please"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/please"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allowLocationPermission" />
+
+    <TextView
+        android:id="@+id/allowLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/login_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_46sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_46sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="@string/allowLocation"
+        android:textColor="@color/white"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/please" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recruiter.welcome.RecruiterCongratulationsActivity"
+    android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/congratulationImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/company_congratulation_ic"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/text_todo"
+            />
+
+        <TextView
+            android:id="@+id/verificationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/congratulation"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITLargeTextSize"
+            android:layout_below="@id/congratulationImage"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/verificationEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/thankYouForCreatingAccount"
+            android:textAlignment="center"
+            android:textColor="@color/congrats"
+            android:textSize="@dimen/UITMediumTextSize"
+            android:layout_below="@id/verificationCode"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verificationEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/login_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_65sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/UITNormalTextSize" />
+    </RelativeLayout>
+
+</ScrollView>

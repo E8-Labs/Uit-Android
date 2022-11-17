@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/bg_white_7sdp_rounded"
+    android:paddingVertical="@dimen/_15sdp"
+    android:elevation="@dimen/_1sdp"
+
+    >
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/company_profileImage"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        app:riv_oval="true"
+        android:src="@color/app_color"
+        android:layout_marginStart="@dimen/_10sdp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_toEndOf="@id/company_profileImage"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        >
+
+        <TextView
+            android:id="@+id/text_companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:maxLines="1"
+            />
+        <TextView
+            android:id="@+id/text_companyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:maxLines="1"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

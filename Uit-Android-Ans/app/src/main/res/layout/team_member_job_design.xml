@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/bg_white_rounded_6dp"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_profile"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/noah_admin"
+                app:riv_oval="true" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_sub_profile"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/noah"
+                app:riv_oval="true" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_toStartOf="@id/tv_time"
+            android:layout_toEndOf="@id/rl_profile"
+            android:fontFamily="@font/poppins_medium"
+            android:text="By Robert Osborn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/tv_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_toStartOf="@id/tv_time"
+            android:layout_toEndOf="@id/rl_profile"
+            android:fontFamily="@font/poppins_medium"
+            android:text="UI Designer"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_8sdp" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="10 days ago"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_8sdp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Senior Product Designer and developer"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_13sdp" />
+
+    <TextView
+        android:id="@+id/tv_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="AirBnB"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="San Francisco, CA"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_9sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="1"
+        tools:listitem="@layout/design_job_tag" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_no_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="No applicants to show"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_9sdp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="1"
+            tools:listitem="@layout/design_job_people" />
+    </RelativeLayout>
+</LinearLayout>

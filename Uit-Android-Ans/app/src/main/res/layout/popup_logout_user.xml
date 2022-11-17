@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/_1sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_7sdp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_15sdp"
+        >
+
+        <TextView
+            android:id="@+id/text_blockThisPerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="Swiit"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
+
+        <TextView
+            android:id="@+id/text_sure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_blockThisPerson"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Are you sure you want to logout?"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <View
+            android:id="@+id/horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@id/text_sure"
+            android:background="@color/codGrey"
+            android:alpha="0.05"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@id/horizontal_line"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <TextView
+                android:id="@+id/text_No"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.99"
+                android:text="No"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="@dimen/_12sdp"
+                />
+            <View
+                android:id="@+id/vertical_line"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:background="@color/codGrey"
+                android:alpha="0.05"
+                />
+            <TextView
+                android:id="@+id/text_Yes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.99"
+                android:text="Yes"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/red"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/_12sdp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

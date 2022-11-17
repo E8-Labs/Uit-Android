@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".utilities.UitApplicationClass"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UIT"
+        android:usesCleartextTraffic="true"
+        tools:ignore="DataExtractionRules">
+
+        <activity
+            android:name=".generic.activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".applicant.welcome.SelectApplicantJobsActivity"
+            android:exported="true" >
+
+        </activity>
+
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recruiter.welcome.CompanyTeamMemberAddGreenHouseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recruiter.welcome.CompanyTeamMemberConnectGreenHouseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ImageViewerActivity"
+            android:exported="true"
+            android:theme="@style/DefaultAnimation" />
+        <activity
+            android:name=".activities.jobs.TeamMemberHiredActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".notifications.activities.NotificationsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activities.PdfViewerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.jobs.CompanyAndTeamJobsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recruiter.welcome.CompanyTeamMemberProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.CompanyTeamMembersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".uit_members.welcome.UitTeamMemberProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.activities.ApplicantDemographicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.activities.ApplicantProfessionalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.activities.ApplicantProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.ListedJobApplicantsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.FilledJobDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.CloseJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.JobDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.home.CompanyTeamMemberBottomNavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.CompanyProfileDeiInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.CompanyProfileDemoGraphicInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.UitCompanyProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.activities.postjob.CompanyPostJobReviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.activities.postjob.AddJobExperienceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.postjob.CompanyPostJobStep3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.postjob.CompanyPostJobStep2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantSelectLanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.activities.postjob.CompanyPostJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.welcome.CompanyAddGreenHouseAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.welcome.CompanyConnectGreenHouseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantJobTitleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantSelectDepartmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".company.welcome.SelectCompanyIndustryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.community.CommunityPostDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantResumeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantSelectSkillsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.ApplicantSelectJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.SelectIndustryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.ApplicantJobFilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.jobs.FlagJobUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.AddApplicantReferenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ActivityAddApplicantWorkExperience"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantAddEducationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".applicant.welcome.ApplicantSelectDegreeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.community.CommunityCreatePostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.chat.MessagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.comments.CommentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.community.CommunityNewChannelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".generic.activities.SelectLocationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".generic.activities.CommunityVideoOpen"
+            android:exported="true" />
+        <activity
+            android:name=".uit_admin.welcome.AdminUitTeamMembersActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".applicant.welcome.ApplicantCompanyDetailActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".uit_admin.welcome.AdminAllCompanyMembersActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".applicant.activities.ActivityApplicantApplyJobCongrats"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.AdminFlaggedJobsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityContactUs"
+            android:exported="true" />
+
+        <activity
+            android:name=".applicant.activities.ActivityApplicantApplyJob"
+            android:exported="true" />
+        <activity
+            android:name=".uit_admin.welcome.DemographicInformation"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".uit_admin.welcome.AdminAllJobsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.activities.ActivityApplicantJobDetail"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantJobSearchActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".applicant.activities.ApplicantSavedJobsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterPhoneNumberActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterVerificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyInSizeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.SelectCompanyStageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantAddCoverLetterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.ActivityAddTeamInviteMember"
+            android:exported="true" />
+        <activity
+            android:name=".uit_admin.welcome.AdminCompaniesListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_admin.welcome.FlaggedApplicantsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.home.ApplicantBottomNavigationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterCongratulationsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterEmailAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantNotificationPermissionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantProfessionalInterestActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".applicant.welcome.ApplicantDepartmentActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".applicant.welcome.ApplicantWorkExperienceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterSelectJobActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterFullNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".recruiter.welcome.RecruiterProfilePicActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".recruiter.welcome.RecruiterFindCompanyActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".company.welcome.CompanySummaryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyInviteTeamMembersActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".uit_admin.welcome.AdminApplicantsListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.home.UitAdminDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantThankYouActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyCreationCongratulationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantLocationPermissionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantEducationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantBioActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityApplicantJobStatus"
+            android:exported="true" />
+
+        <activity
+            android:name=".activities.home.UitMemberMainDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.UitMemberPendingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.UitMemberPasswordActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".uit_members.welcome.UitMemberPhoneNumberActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.UitMemberVerificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.UitMemberEmailAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.UitMemberFullNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".uit_members.welcome.ProfilePictureActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityApplicantSelectGenderIdentity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityApplicantVeteranStatus"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityApplicantSexualOrientation"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ActivityApplicantSelectRace"
+            android:exported="true" />
+
+        <activity
+            android:name=".company.welcome.CompanyGenderOrientationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyGenderProportionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyDEITrainingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyDEIProgrammingActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".company.welcome.CompanyErgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyLeadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyDEIStatementActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".company.welcome.CompanyPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyVerificationCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyEmailAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyWebsiteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyHeadquatersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantInterestInSizeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantInterestInStageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyIndustryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyBioActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.UploadCompanyLogoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantDateOfBirthActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantPhoneNumberActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantVerificationCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantEmailAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantFullNameActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantPersonalInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".applicant.welcome.ApplicantValuePropActivity"
+            android:exported="true" />
+        <activity
+            android:name=".company.welcome.CompanyValuePropActivity"
+            android:exported="true" />
+        <activity
+            android:name=".generic.activities.WebViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".generic.activities.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".generic.activities.SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".generic.activities.AccountTypeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.home.CompanyBottomNavigationActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".generic_utils.ImagePickerActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.UIT" />
+
+        <provider
+            android:name=".generic_utils.ExternalFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

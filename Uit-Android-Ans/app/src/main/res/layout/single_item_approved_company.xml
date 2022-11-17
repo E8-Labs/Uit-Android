@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/bg_white_7sdp_rounded"
+    android:paddingVertical="@dimen/_10sdp"
+    android:elevation="@dimen/_1sdp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_profile"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:scaleType="centerCrop"
+        android:src="@color/app_color"
+        app:riv_oval="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/image_profile"
+        android:layout_toStartOf="@+id/btnMessage"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/text_profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Airbnb"
+            android:textColor="@color/codGrey"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/text_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_profileName"
+            android:fontFamily="@font/poppins_medium"
+            android:text="San Francisco, US"
+            android:textColor="@color/smokey_grey"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/text_activeMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_location"
+            android:fontFamily="@font/poppins_medium"
+            android:text="28 active members"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_9sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnMessage"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/app_color_7dp_rounded">
+
+        <ImageView
+            android:id="@+id/image_plus"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/text_todo"
+            android:src="@drawable/new_chat_ic"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

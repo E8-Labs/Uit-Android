@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!-- *********** Developed by Drudots Technology ************ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_3sdp"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:background="@drawable/bg_white_7sdp_rounded"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="This is Industry"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp" />
+
+
+</LinearLayout>

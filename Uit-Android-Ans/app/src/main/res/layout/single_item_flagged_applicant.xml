@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/bg_white_7sdp_rounded"
+    android:paddingVertical="@dimen/_10sdp"
+    android:elevation="@dimen/_1sdp">
+
+    <RelativeLayout
+        android:id="@+id/layout_profileAImage"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginStart="@dimen/_10sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/flaggedByApplicantProfile"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:scaleType="centerCrop"
+            android:src="@color/app_color"
+            app:riv_oval="true" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/flaggedApplicantProfile"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:scaleType="centerCrop"
+            android:src="@color/yellow"
+            app:riv_oval="true"
+            app:riv_border_color="@color/app_color"
+            app:riv_border_width="@dimen/_2sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/layout_profileAImage"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_7sdp">
+
+        <TextView
+            android:id="@+id/text_flaggedByApplicantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Roger Lawson"
+            android:textColor="@color/codGrey"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/text_flaggedApplicantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_flaggedByApplicantName"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Flagged James Jefferson"
+            android:textColor="@color/smokey_grey"
+            android:textSize="@dimen/_13sdp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

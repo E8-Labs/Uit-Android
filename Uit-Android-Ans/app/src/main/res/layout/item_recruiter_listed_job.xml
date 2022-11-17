@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/adminJobsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_4sdp"
+
+    android:background="@drawable/white_curved_background">
+
+    <ImageView
+        android:id="@+id/postedByImage"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/noah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="40dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="@dimen/_8sdp"
+        android:src="@drawable/community_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/postedByImage"
+        app:layout_constraintStart_toStartOf="@+id/postedByImage"
+        app:layout_constraintTop_toTopOf="@+id/postedByImage" />
+
+    <TextView
+        android:id="@+id/jobPostedByTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/applicantAccount"
+        android:textColor="@color/blackShadeOne"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toStartOf="@+id/timeAgo"
+        app:layout_constraintStart_toEndOf="@+id/postedByImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeAgo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text=""
+        android:textColor="@color/grayShadeThree"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postedByRole"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/uiDesign"
+        android:textColor="@color/grayShadeThree"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/postedByImage"
+        app:layout_constraintTop_toBottomOf="@+id/jobPostedByTitle" />
+
+    <TextView
+        android:id="@+id/jobTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/seniorProductDesignerAndDeveloper"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintStart_toStartOf="@+id/postedByImage"
+        app:layout_constraintTop_toBottomOf="@+id/postedByImage" />
+
+    <TextView
+        android:id="@+id/companyTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+        android:text="@string/uiDesign"
+        android:textColor="@color/grayShadeFour"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="@+id/jobTitle"
+        app:layout_constraintTop_toBottomOf="@+id/jobTitle" />
+
+    <RelativeLayout
+        android:id="@+id/layout_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/companyTitle"
+        >
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/layout_jobStatus"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="2"
+            android:text="@string/longLoremIpsum"
+            android:textColor="@color/grayShadeFour"
+            android:textSize="@dimen/_12sdp" />
+        <RelativeLayout
+            android:id="@+id/layout_jobStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            >
+            <TextView
+                android:id="@+id/filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Filled"
+                android:paddingLeft="@dimen/_14sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingRight="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:background="@drawable/filled_background"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/closed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/closed_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:paddingLeft="@dimen/_14sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingRight="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Closed"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/feature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:text="Featured"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/white_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:paddingTop="8dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="8dp"
+        android:text=""
+        android:textColor="@color/grayShadeFour"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_address" />
+
+    <TextView
+        android:id="@+id/jobType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/white_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:paddingTop="8dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="8dp"
+        android:text="@string/remote"
+        android:textColor="@color/grayShadeFour"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/salary"
+        app:layout_constraintStart_toEndOf="@+id/salary"
+        app:layout_constraintTop_toTopOf="@+id/salary" />
+
+    <TextView
+        android:id="@+id/timeRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/white_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:paddingTop="8dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="8dp"
+        android:text="@string/fullTime"
+        android:textColor="@color/grayShadeFour"
+        android:textSize="@dimen/UITSmallTextSize"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/jobType"
+        app:layout_constraintStart_toEndOf="@+id/jobType"
+        app:layout_constraintTop_toTopOf="@+id/jobType" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/applicantList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salary">
+
+        <ImageView
+            android:id="@+id/firstApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:src="@drawable/girl"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/secondApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/firstApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/thirdApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fourthApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/thirdApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fifthApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fourthApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sixthApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fifthApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/seventhApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sixthApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/totalApplicantCount"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/seventhApplicant"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/totalApplicantsCount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_circle_with_gray_border"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="+3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/totalApplicantCount"
+            app:layout_constraintEnd_toEndOf="@+id/totalApplicantCount"
+            app:layout_constraintStart_toEndOf="@+id/seventhApplicant"
+            app:layout_constraintTop_toTopOf="@+id/totalApplicantCount" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/totalApplicantsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salary">
+
+        <TextView
+            android:id="@+id/hiredText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Laurel and 3 others were hired"
+            android:textColor="@color/firstBenefit"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/hiredApplicant"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/hiredApplicant"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/moreHiredCount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/moreHiredCount"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/moreHiredCountTitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_circle_with_gray_border"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="+3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/moreHiredCount"
+            app:layout_constraintEnd_toEndOf="@+id/moreHiredCount"
+            app:layout_constraintStart_toEndOf="@+id/moreHiredCount"
+            app:layout_constraintTop_toTopOf="@+id/moreHiredCount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

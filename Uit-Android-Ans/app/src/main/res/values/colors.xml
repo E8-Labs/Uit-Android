@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="coverLetter">#f6f6f6</color>
+    <color name="colorPrimary">#91050F</color>
+    <color name="colorPrimaryDark">#91050F</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="close_job">#FFeaea</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#1D1D1D</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteShadeOne">#F2F4FA</color>
+    <color name="applicantBlue">#1F81F0</color>
+    <color name="memberGreen">#00e22d</color>
+    <color name="companies">#ff13b8</color>
+    <color name="totalJobs">#7d119d</color>
+    <color name="primaryBlueShade">#0066CC</color>
+    <color name="red">#FC3414</color>
+    <color name="gray">#6D6D6D</color>
+    <color name="companyLogo">#454545</color>
+    <color name="congrats">#707070</color>
+    <color name="notifications">#c5e5e5</color>
+    <color name="darkPrimaryBlueShade">#0248B4</color>
+    <color name="navTransparent">#88000000</color>
+    <color name="app_color">#19999A</color>
+
+    <color name="signUpBackground">#009C9B</color>
+
+
+    <color name="blueShadeTextColor">#003D7A</color>
+    <color name="blueShadeOne">#024AB6</color>
+    <color name="blueShadeTwo">#132460</color>
+    <color name="grayShadeOne">#8E8E8E</color>
+    <color name="grayShadeTwo">#676767</color>
+    <color name="grayShadeThree">#707070</color>
+    <color name="grayShadeFour">#959595</color>
+    <color name="grayShadeFive">#D1D1D1</color>
+    <color name="grayShadeSix">#B7B7B7</color>
+    <color name="grayShadeSeven">#E9EAEB</color>
+    <color name="phoneBackground">#f4f4f4</color>
+    <color name="grayShadeEight">#E4E4E4</color>
+    <color name="grayShadeNine">#CBCBCB</color>
+    <color name="grayShadeTen">#BABABA</color>
+    <color name="grayShadeEleven">#D5D5D5</color>
+    <color name="grayCircle">#E5E5E5</color>
+    <color name="grayShadeTwelve">#D8D8D8</color>
+    <color name="grayShadeThirteen">#9F9F9F</color>
+    <color name="white_dash">#F9F9f9</color>
+    <color name="grayShadeFourteen">#A8A8A8</color>
+    <color name="verificationBorder">#B5B5B5</color>
+    <color name="progressBarColor">#003D7A</color>
+    <color name="blueTextColor">#024AB6</color>
+    <color name="blueTextColorShadeTwo">#0046C9</color>
+    <color name="blueTextColorShadeThree">#6A97FD</color>
+    <color name="darkBlueTextColor">#132460</color>
+    <color name="appRed">#FE0101</color>
+    <color name="subscriptionPointsColor">#4E4E4E</color>
+    <color name="blackShadeOne">#444444</color>
+    <color name="grayback">#575757</color>
+    <color name="yellow">#D6B226</color>
+    <color name="firstBenefit">#6D6D6D</color>
+
+    <color name="dollar">#addadb</color>
+    <color name="fullTime">#3ca7a8</color>
+    <color name="dashboardBackground">#f5f5f5</color>
+    <color name="orange">#f0811f</color>
+
+    <color name="textColor">#19999A</color>
+    <color name="adobe">#e7f5f5</color>
+
+    <color name="black_color_32_transparent">#52000000</color>
+    <color name="smokey_grey">#707070</color>
+    <color name="dark_jungle_green">#1D1D1D</color>
+    <color name="codGrey">#191919</color>
+    <color name="codGreyFiftyTransparent">#80191919</color>
+    <color name="blackFiftyTransparent">#80000000</color>
+    <color name="light_white">#61FFFFFF</color>
+    <color name="grey">#F5F5F5</color>
+    <color name="light_green">#30191919</color>
+    <color name="dark_border_color">#9A9A9A</color>
+    <color name="half_white">#D2D2D2</color>
+    <color name="dark_grey">#806D6D6D</color>
+    <color name="white_smoke">#F6F6F6</color>
+    <color name="smoke">#24707070</color>
+    <color name="colorLightGrey">#B1B1B1</color>
+    <color name="app_color_light_transparent">#8035E1E3</color>
+    <color name="notification_unread">#C5E5E5</color>
+    <color name="red_light">#FF4444</color>
+    <color name="red_light_11_alpha">#1CFF4444</color>
+    <color name="color_white_16_transparent">#29FFFFFF</color>
+    <color name="icon_outline_color">#070707</color>
+
+    <color name="app_color_transparent_10">#1A19999A</color>
+    <color name="app_color_transparent_18">#2E19999A</color>
+</resources>

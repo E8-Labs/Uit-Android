@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/_5sdp"
+        >
+
+        <include
+            android:id="@+id/includeFindMember"
+            layout="@layout/find_company_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/searchOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/includeFindMember"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/search_user_border"
+            android:drawablePadding="@dimen/_8sdp"
+            android:hint="Search Users"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="24dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:drawableEndCompat="@drawable/ic_baseline_search_24"
+            android:importantForAutofill="no" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_noCompanyFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_search"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        >
+
+
+        <ImageView
+            android:id="@+id/no_company_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:src="@drawable/no_company"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/text_todo"
+            />
+
+        <TextView
+            android:id="@+id/companyNotRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/companyNotRegister"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/UITMediumTextSize"
+            android:layout_below="@id/no_company_ic" />
+
+        <TextView
+            android:id="@+id/btnCreateCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/login_background"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="@dimen/_30sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_30sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/createCompanyProfile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/UITMediumTextSize"
+            android:layout_below="@id/companyNotRegister"/>
+    </RelativeLayout>
+</RelativeLayout>

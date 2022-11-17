@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_10sdp"
+    android:id="@+id/bottom_sheet_hire_options"
+    >
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_rounded_10dp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="What would you like to do?"
+            android:textColor="@color/codGrey"
+            android:textSize="@dimen/_11sdp" />
+
+        <RelativeLayout
+            android:id="@+id/btnHireAndContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/app_color_7dp_rounded"
+            android:paddingVertical="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/_50sdp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Hire and continue"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnHireAndClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/light_red_7dp_rounded"
+            android:paddingVertical="@dimen/_10sdp"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/_50sdp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Hire and close job"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottom_sheet_option"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/bg_white_rounded_10dp"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Cancel"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

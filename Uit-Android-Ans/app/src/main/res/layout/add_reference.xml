@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_450sdp">
+
+
+    <TextView
+        android:id="@+id/addReferenceTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/addReference"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameOfReferenceText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="left"
+        android:text="@string/nameOfReference"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addReferenceTitle" />
+
+    <EditText
+        android:id="@+id/nameOfReference"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/white_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:maxLines="1"
+        android:hint="@string/johnDoe"
+        android:paddingLeft="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingRight="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfReferenceText" />
+
+
+    <TextView
+        android:id="@+id/jobTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="left"
+        android:text="@string/jobTitle"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfReference" />
+
+
+    <EditText
+        android:id="@+id/selectJob"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/white_background"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:maxLines="1"
+        android:hint="@string/department"
+        android:paddingLeft="@dimen/_8sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobTitle" />
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/selectCountryCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/white_background"
+        android:drawablePadding="@dimen/_8sdp"
+        android:hint="Phone Number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:ccp_defaultNameCode="US"
+        app:ccp_showFlag="true"
+        app:ccp_showNameCode="true"
+        app:ccp_showPhoneCode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectJob" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:maxLines="1"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/white_background"
+        android:drawablePadding="@dimen/_8sdp"
+        android:hint="Phone Number"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/selectCountryCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectCountryCode"
+        app:layout_constraintTop_toTopOf="@+id/selectCountryCode" />
+
+    <TextView
+        android:id="@+id/cancelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/cancel"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/addReference"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/addReference"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

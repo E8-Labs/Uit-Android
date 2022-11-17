@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_600sdp">
+
+
+    <include
+        android:id="@+id/includeEducation"
+        layout="@layout/save_cut"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeEducation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/addEducation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/addExperience"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/companyTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/company"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addEducation" />
+
+
+            <EditText
+                android:id="@+id/company"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:hint="@string/google"
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/companyTitle" />
+
+            <TextView
+                android:id="@+id/jobTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/company"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company" />
+
+            <EditText
+                android:id="@+id/job"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="left"
+                android:hint="@string/jobTitle"
+                android:paddingLeft="@dimen/_12sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingRight="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jobTitle" />
+
+            <TextView
+                android:id="@+id/startYearTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/startDate"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toStartOf="@+id/endDateTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/job" />
+
+
+            <TextView
+                android:id="@+id/endDateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/endDate"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/graduationDay"
+                app:layout_constraintTop_toBottomOf="@+id/job" />
+
+            <TextView
+                android:id="@+id/startYear"
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/white_background"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="@string/startDate"
+
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="16dp"
+                android:singleLine="true"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startYearTitle" />
+
+
+            <TextView
+                android:id="@+id/graduationDay"
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="@string/endDate"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="16dp"
+                android:singleLine="true"
+                android:textColorHint="@color/grayShadeFour"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/workingStatus"
+                app:layout_constraintTop_toBottomOf="@+id/endDateTitle" />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/datePickerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC000000"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <CheckBox
+                android:id="@+id/workingStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="42dp"
+                android:buttonTint="@color/app_color"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="@dimen/_8sdp"
+                android:shadowColor="@color/app_color"
+                android:text="@string/iStillWorkThere"
+                android:textColor="@color/grayShadeThree"
+                android:textSize="@dimen/UITMediumTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/startYear" />
+
+
+            <TextView
+                android:id="@+id/roleTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/roleAndResponsibilities"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/workingStatus" />
+
+            <EditText
+                android:id="@+id/roleText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="top"
+                android:hint="Type here"
+                android:maxLines="1"
+                android:padding="@dimen/_8sdp"
+                android:paddingLeft="8dp"
+                android:paddingTop="16dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/roleTitle" />
+
+
+            <TextView
+                android:id="@+id/departmentTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/department"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/roleText" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/departmentTitle">
+
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/departmentSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/grayShadeFour"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownSelector="@color/white"
+                    android:entries="@array/selectMonth"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/UITSmallTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/skillGainedTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/skillGained"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/department" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/skillLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/skillGainedTitle">
+
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/skillSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/grayShadeFour"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownSelector="@color/white"
+                    android:entries="@array/selectLanguage"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/UITSmallTextSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/softwareSkillTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left"
+                android:text="@string/softwareSkill"
+                android:textColor="@color/grayShadeFour"
+                android:textSize="@dimen/UITSmallTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/skillLayout" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/softwareSkillLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_background"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/softwareSkillTitle">
+
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/softwareSkillSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/grayShadeFour"
+                    android:drawSelectorOnTop="true"
+                    android:dropDownSelector="@color/white"
+                    android:entries="@array/selectLanguage"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/UITSmallTextSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/addReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/text_addReference"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/softwareSkillLayout" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/reference_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReference" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

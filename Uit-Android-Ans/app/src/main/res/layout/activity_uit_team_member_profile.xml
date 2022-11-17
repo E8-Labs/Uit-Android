@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uit_members.welcome.UitTeamMemberProfileActivity"
+    android:background="@color/white_dash"
+    >
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@null"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:src="@drawable/profile_upper"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/text_todo"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_bookmark"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:background="@drawable/black_color_50_transparent_rounded_10dp"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/save_icon"
+                    app:tint="@color/white"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/black_color_50_transparent_rounded_10dp"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/back_ic"
+                    app:tint="@color/white" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/_64sdp"
+                    android:layout_height="@dimen/_64sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/noah"
+                    app:riv_oval="true" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/text_loading"
+                android:textColor="@color/companyLogo"
+                android:textSize="@dimen/_12sdp"
+                android:textAlignment="center"
+                android:paddingVertical="@dimen/_10sdp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_8sdp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Contact Information"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Email"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="username@gmail.com"
+                    android:textColor="@color/blackShadeOne"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Phone Number"
+                    android:textColor="@color/companyLogo"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="+1 483 48343 4739"
+                    android:textColor="@color/blackShadeOne"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_33sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:background="@drawable/app_color_7dp_rounded"
+        android:backgroundTint="@color/red_light"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:text="Delete"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp" />
+
+</RelativeLayout>

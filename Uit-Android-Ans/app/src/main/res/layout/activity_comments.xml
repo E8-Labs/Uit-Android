@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.comments.CommentsActivity"
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/_7sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_back_arrow" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:textColor="@color/codGrey"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            />
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_bottom"
+        android:layout_below="@id/layout_main">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="@dimen/_10sdp"
+            tools:itemCount="1"
+            tools:listitem="@layout/single_item_comments" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_reply_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/app_color"
+            >
+
+            <TextView
+                android:id="@+id/tv_replying_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Replying to @user_name"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/iv_close_reply"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/cross_ic"
+                app:tint="@color/white"
+                android:contentDescription="@string/text_todo"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_reply_to"
+            >
+            <RelativeLayout
+                android:id="@+id/btn_logo"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/app_color_30dp_rounded">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/user_ProfileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true" />
+
+                <ImageView
+                    android:id="@+id/uitImage"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/new_app_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:background="@drawable/bg_edit_text_rounded_15dp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:layout_toEndOf="@id/btn_logo"
+                >
+
+                <EditText
+                    android:id="@+id/edit_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toStartOf="@id/btn_send"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Write comment"
+                    android:paddingVertical="@dimen/_7sdp"
+                    android:textColor="@color/codGrey"
+                    android:textColorHint="@color/smokey_grey"
+                    android:textSize="@dimen/_12sdp" />
+
+                <RelativeLayout
+                    android:id="@+id/btn_send"
+                    android:layout_width="@dimen/_42sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignBottom="@id/edit_comment"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/white_background_10dp_rounded">
+
+                    <ImageView
+                        android:layout_width="@dimen/_21sdp"
+                        android:layout_height="@dimen/_21sdp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/text_todo"
+                        android:src="@drawable/ic_message_send_arrow" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/_1sdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_7sdp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_30sdp"
+        >
+        <ImageView
+            android:id="@+id/job_success_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/job_success_ic"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/text_congratulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_below="@id/job_success_ic"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Congratulation"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
+
+        <TextView
+            android:id="@+id/text_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_congratulation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Your job is now live on UIT Platform."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9sdp" />
+
+        <TextView
+            android:id="@+id/btnGotIt"
+            android:layout_width="@dimen/_93sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_below="@id/text_detail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/app_color_7dp_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="Got It"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cookie"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_20sdp">
+
+    <LinearLayout
+        android:id="@+id/ll_cookie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/app_color_10dp_rounded"
+        android:elevation="@dimen/_1sdp"
+        android:padding="@dimen/_12sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/ic_warning_sign" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_toStartOf="@id/btn_action"
+                android:layout_toEndOf="@id/iv_icon"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Title!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_toStartOf="@id/btn_action"
+                android:layout_toEndOf="@id/iv_icon"
+                android:fontFamily="@font/poppins_regular"
+                android:text="This is the message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                />
+
+
+            <TextView
+                android:id="@+id/btn_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Yes"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

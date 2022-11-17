@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantVerificationCodeActivity"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/simple_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/btnUserProfile"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4"
+        >
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="80"
+            android:progressDrawable="@drawable/circular_progressbar_app_color_drawable"
+            />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/logoImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/_11sdp"
+            android:scaleType="centerCrop"
+            android:src="@color/black"
+            app:riv_corner_radius="@dimen/_50sdp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/verificationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/verificationCode"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUserProfile" />
+
+    <TextView
+        android:id="@+id/verificationEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="admin@airbnb.com"
+        android:textAlignment="center"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verificationCode" />
+
+    <TextView
+        android:id="@+id/enterCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_23sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/enterCode"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITNormalTextSize"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verificationEmail" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/resendLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterCode">
+
+        <TextView
+            android:id="@+id/receiveCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/receiveCode"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/resend"
+            android:textAlignment="center"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/UITMediumTextSize"
+            app:layout_constraintBottom_toBottomOf="@+id/receiveCode"
+            app:layout_constraintStart_toEndOf="@+id/receiveCode"
+            app:layout_constraintTop_toTopOf="@+id/receiveCode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/centerView"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/boxesText1"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/verification_boxes_border"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/boxesText2"
+        app:layout_constraintTop_toBottomOf="@+id/resendLayout" />
+
+    <EditText
+        android:id="@+id/boxesText2"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/verification_boxes_border"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/centerView"
+        app:layout_constraintTop_toBottomOf="@+id/resendLayout" />
+
+    <EditText
+        android:id="@+id/boxesText3"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/verification_boxes_border"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintStart_toEndOf="@+id/centerView"
+        app:layout_constraintTop_toBottomOf="@+id/resendLayout" />
+
+    <EditText
+        android:id="@+id/boxesText4"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/verification_boxes_border"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintStart_toEndOf="@+id/boxesText3"
+        app:layout_constraintTop_toBottomOf="@+id/resendLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

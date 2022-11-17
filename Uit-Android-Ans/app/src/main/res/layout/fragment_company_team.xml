@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company.fragment.CompanyTeamFragment"
+    android:background="@color/white_dash"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:id="@+id/layout_top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/user_ProfileImage"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/red_noah"
+                    app:riv_oval="true" />
+
+                <ImageView
+                    android:id="@+id/dashboardNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/notifications_ic" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_teamMember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                >
+
+                <TextView
+                    android:id="@+id/text_teamMember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Team Members"
+                    android:textColor="@color/codGrey"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_centerVertical="true"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/btn_inviteMember"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:src="@drawable/send_invite_team_ic"
+                    android:contentDescription="@string/text_todo"
+                    />
+
+            </RelativeLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_white_7sdp_rounded"
+                app:tabBackground="@drawable/tab_background_selector"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/TabTextAppearance"
+                app:tabIndicator="@null"
+                app:tabTextColor="@color/black"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_companyTeamMembers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:scrollbarThumbVertical="@null"
+                tools:itemCount="1"
+                tools:listitem="@layout/single_item_company_approved_team_member" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

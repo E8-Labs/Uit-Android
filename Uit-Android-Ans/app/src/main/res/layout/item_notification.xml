@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/bg_green_light"
+    android:paddingHorizontal="@dimen/_6sdp"
+    android:paddingVertical="@dimen/_15sdp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_profile"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noah"
+            app:riv_oval="true" />
+
+        <RelativeLayout
+            android:id="@+id/btnNotificationType"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/app_color_30dp_rounded"
+            >
+
+            <ImageView
+                android:id="@+id/image_notificationType"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/text_todo"
+                android:src="@drawable/new_chat_ic"
+                app:tint="@color/white"
+                />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_toStartOf="@id/tv_time"
+        android:layout_toEndOf="@id/rl_profile"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Robert sent you a message"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="10 days ago"
+        android:textColor="@color/blackShadeOne"
+        android:textSize="@dimen/_8sdp" />
+
+
+</RelativeLayout>

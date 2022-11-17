@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".applicant.welcome.ApplicantThankYouActivity"
+    android:background="@color/white"
+    >
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firstLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/uitCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_101sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/uit_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/thirdLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/uitYellowCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_81sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/uit_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/yellowCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_136sdp"
+            android:layout_marginStart="64dp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/congratulationLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_33sdp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uitYellowCircle">
+
+            <TextView
+                android:id="@+id/congrats"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/congrats"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="@dimen/_19sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/verificationEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/nextLetsMove"
+                android:textAlignment="center"
+                android:textColor="@color/grayShadeThree"
+                android:textSize="@dimen/_14sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/congrats" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:background="@drawable/login_background"
+            android:layout_marginTop="52dp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_26sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_26sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/continueCongrats"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/congratulationLayout" />
+
+
+        <TextView
+            android:id="@+id/create_an_account_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="162dp"
+
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/notNow"
+            android:textAllCaps="false"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/logout"
+            app:layout_constraintStart_toStartOf="@+id/logout"
+            app:layout_constraintTop_toBottomOf="@+id/logout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fourLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/animation_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/uitYellowTickCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_81sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/uit_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/yellowTickCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_136sdp"
+            android:layout_marginStart="60dp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/tick_yellow"
+            app:layout_constraintEnd_toEndOf="@+id/uitYellowTickCircle"
+            app:layout_constraintStart_toStartOf="@+id/uitYellowTickCircle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/congratulationLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_33sdp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uitYellowTickCircle">
+
+            <TextView
+                android:id="@+id/congrats4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/congrats"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="@dimen/_19sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/career"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="22dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/nextLetsMove"
+                android:textAlignment="center"
+                android:textColor="@color/grayShadeThree"
+                android:textSize="@dimen/_14sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/congrats4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/continueCongrats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:background="@drawable/login_background"
+            android:layout_marginTop="52dp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_26sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_26sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/continueCongrats"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/congratulationLayout4" />
+
+
+        <TextView
+            android:id="@+id/notNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/notNow"
+            android:textAllCaps="false"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp"
+
+            app:layout_constraintEnd_toEndOf="@+id/continueCongrats"
+            app:layout_constraintStart_toStartOf="@+id/continueCongrats"
+            app:layout_constraintTop_toBottomOf="@+id/continueCongrats" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fiveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/animation_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/animation_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/uitYellowTickCircle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/uit_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/animation_2" />
+
+        <ImageView
+            android:id="@+id/yellowTickCircle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:paddingLeft="@dimen/_22sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingRight="@dimen/_22sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:src="@drawable/tick_yellow"
+            app:layout_constraintBottom_toBottomOf="@+id/uitYellowTickCircle2"
+            app:layout_constraintEnd_toEndOf="@+id/uitYellowTickCircle2"
+            app:layout_constraintStart_toStartOf="@+id/uitYellowTickCircle2" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/congratulationLayout5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_33sdp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uitYellowTickCircle2">
+
+            <TextView
+                android:id="@+id/congrats5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/congrats"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="@dimen/_19sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/career5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/nextLetsMove"
+                android:textAlignment="center"
+                android:textColor="@color/grayShadeThree"
+                android:textSize="@dimen/_14sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/congrats5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/continueCongratsFive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:background="@drawable/login_background"
+            android:layout_marginTop="52dp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_26sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_26sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/continueCongrats"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/congratulationLayout5" />
+
+        <TextView
+            android:id="@+id/notNowFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/notNow"
+            android:textAllCaps="false"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp"
+
+            app:layout_constraintEnd_toEndOf="@+id/continueCongratsFive"
+            app:layout_constraintStart_toStartOf="@+id/continueCongratsFive"
+            app:layout_constraintTop_toBottomOf="@+id/continueCongratsFive" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

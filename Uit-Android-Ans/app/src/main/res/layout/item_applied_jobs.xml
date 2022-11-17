@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutApplicant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="24dp"
+
+        android:animateLayoutChanges="true"
+        android:background="@drawable/pending_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/applicantImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/red_noah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/uiDesign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="@string/uiDesigner"
+            android:textColor="@color/grayShadeFour"
+
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@+id/applicantImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/google"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="AirBnB"
+            android:textColor="@color/grayShadeFour"
+
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@+id/applicantImage"
+            app:layout_constraintTop_toBottomOf="@+id/uiDesign" />
+
+        <TextView
+            android:id="@+id/sanFrancisco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="San Francisco, CA"
+            android:textColor="@color/grayShadeFour"
+
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toEndOf="@+id/applicantImage"
+            app:layout_constraintTop_toBottomOf="@+id/google" />
+
+        <TextView
+            android:id="@+id/match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@color/yellow"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text="80% Match"
+            android:textColor="@color/white"
+
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/uiDesign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiDesign"
+            app:layout_constraintTop_toTopOf="@+id/uiDesign" />
+
+        <TextView
+            android:id="@+id/dollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/white_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp"
+            android:text="$300k-$340k"
+            android:textColor="@color/grayShadeFour"
+
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applicantImage" />
+
+        <TextView
+            android:id="@+id/fullTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/white_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp"
+            android:text="@string/industry"
+            android:textColor="@color/grayShadeFour"
+            android:textSize="@dimen/_12sdp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/dollar"
+            app:layout_constraintStart_toEndOf="@+id/dollar"
+            app:layout_constraintTop_toTopOf="@+id/dollar" />
+
+        <TextView
+            android:id="@+id/industry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/white_background"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp"
+            android:text="@string/fullTime"
+            android:textColor="@color/grayShadeFour"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/fullTime"
+            app:layout_constraintStart_toEndOf="@+id/fullTime"
+            app:layout_constraintTop_toTopOf="@+id/fullTime" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

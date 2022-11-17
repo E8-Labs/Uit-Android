@@ -1,0 +1,14 @@
+<resources>
+
+
+    <dimen name="UITXSmallTextSize">10sp</dimen>
+    <dimen name="UITSmallTextSize">12sp</dimen>
+    <dimen name="UITMediumTextSize">15sp</dimen>
+    <dimen name="UITNormalTextSize">18sp</dimen>
+    <dimen name="UITBigTextSize">20sp</dimen>
+    <dimen name="UITLargeTextSize">22sp</dimen>
+    <dimen name="UITXLargeTextSize">24sp</dimen>
+    <dimen name="UITXXLargeTextSize">27sp</dimen>
+    <dimen name="tool_bar_height">35dp</dimen>
+
+</resources>

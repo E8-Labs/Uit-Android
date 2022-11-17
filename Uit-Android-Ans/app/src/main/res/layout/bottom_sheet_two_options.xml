@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/bottom_sheet_option"
+    android:padding="@dimen/_8sdp"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_rounded_8dp"
+        >
+        <LinearLayout
+            android:id="@+id/btn_selectImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            >
+
+            <TextView
+                android:id="@+id/text_selectImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Select Image"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/smokey_grey"
+            android:alpha="0.1"
+            />
+
+        <LinearLayout
+            android:id="@+id/btn_selectVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            >
+
+            <TextView
+                android:id="@+id/text_selectVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Select Video"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/bg_white_rounded_8dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Cancel"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_11sdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

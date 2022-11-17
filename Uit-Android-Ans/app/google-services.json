@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "891238641539",
+    "firebase_url": "https://us-in-tech-default-rtdb.firebaseio.com",
+    "project_id": "us-in-tech",
+    "storage_bucket": "us-in-tech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891238641539:android:17021f437a8fa88df390b6",
+        "android_client_info": {
+          "package_name": "com.antizon.uit_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891238641539-di1rvrfds7u0ro0rl2g6savrlge24gmu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.antizon.uit_android",
+            "certificate_hash": "24a5e70e16ad015a4c03c504de4cae160c39fc6c"
+          }
+        },
+        {
+          "client_id": "891238641539-mkehf7rc3mgnnj12ccnpp0jrq2h5h41t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHnPA_w2a5TJLu2SPOxM7kcUTkxXgMYD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891238641539-mkehf7rc3mgnnj12ccnpp0jrq2h5h41t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "891238641539-7to7slkv6od2sl6l4g1n38158gnghkhb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.e8labs.UIT1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recruiter.welcome.CompanyTeamMemberAddGreenHouseActivity"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/includePassword"
+        layout="@layout/simple_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noahLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/includePassword">
+
+        <ImageView
+            android:id="@+id/redNoah2"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="8dp"
+            android:paddingStart="@dimen/_8sdp"
+            android:src="@drawable/red_noah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/text_todo"
+            />
+
+        <TextView
+            android:id="@+id/companyAccount2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start"
+            android:text="@string/teamMemberAccount"
+            android:textColor="@color/blackShadeOne"
+
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/diversity2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="left"
+            android:text="@string/standardInformation"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah2"
+            app:layout_constraintTop_toBottomOf="@+id/companyAccount2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah2"
+            app:layout_constraintTop_toBottomOf="@+id/diversity2">
+
+            <ImageView
+                android:id="@+id/firstCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/secondCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/firstCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/thirdCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secondCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fourCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thirdCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fiveCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fourCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/sixCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fiveCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/sevenCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sixCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/eightCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sevenCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/nineCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/eightCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_greenHouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/greenHouseAccount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITLargeTextSize"
+        android:layout_below="@+id/noahLayout2" />
+
+    <TextView
+        android:id="@+id/text_greenHouseDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start"
+        android:text="@string/connect_your_green_house"
+        android:textColor="@color/companyLogo"
+        android:textSize="@dimen/UITSmallTextSize"
+        android:layout_below="@id/text_greenHouse" />
+
+    <EditText
+        android:id="@+id/edit_greenHouseAccountToken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_greenHouseDetail"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/text_here_border"
+        android:hint="Enter greenhouse account token"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITMediumTextSize"
+        app:layout_constraintEnd_toEndOf="parent" />
+</RelativeLayout>

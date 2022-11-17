@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:background="@drawable/app_color_7dp_rounded"
+    >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        android:text="Finance"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:maxLength="25"
+        android:textSize="@dimen/_8sdp" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:src="@drawable/ic_cancel"
+        android:contentDescription="@string/text_todo"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_gravity="center_vertical"
+        />
+
+</LinearLayout>

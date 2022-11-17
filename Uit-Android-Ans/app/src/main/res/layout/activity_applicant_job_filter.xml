@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.jobs.ApplicantJobFilterActivity"
+    android:background="@color/white"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/layout_top"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <RelativeLayout
+                    android:id="@+id/layout_cancel"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/text_todo"
+                        android:src="@drawable/cross_ic" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_industry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_top"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Industry"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:id="@+id/layout_industry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_industry"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_edittext_white"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/tv_select_industry"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_vertical"
+                    android:hint="Select the Industry"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:textColor="@color/codGrey"
+                    android:textSize="@dimen/_10sdp" />
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tag_container_industries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:layout_marginVertical="@dimen/_4sdp"
+                    android:background="@android:color/transparent"
+                    app:container_background_color="@android:color/transparent"
+                    app:container_border_color="@android:color/transparent"
+                    app:container_border_radius="0dp"
+                    app:container_enable_drag="false"
+                    app:horizontal_interval="@dimen/_6sdp"
+                    app:tag_background_color="@color/app_color"
+                    app:tag_border_color="@color/app_color"
+                    app:tag_clickable="false"
+                    app:tag_corner_radius="@dimen/_5sdp"
+                    app:tag_cross_color="@color/white"
+                    app:tag_enable_cross="true"
+                    app:tag_horizontal_padding="@dimen/_11sdp"
+                    app:tag_text_color="@color/white"
+                    app:tag_text_size="@dimen/_10sdp"
+                    app:tag_theme="none"
+                    app:tag_vertical_padding="@dimen/_8sdp"
+                    app:vertical_interval="@dimen/_8sdp"
+                    android:visibility="gone"
+                    />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="1"
+                    android:visibility="gone"
+                    android:overScrollMode="never"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/list_item_selected_job" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_jobTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_industry"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Job Title "
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <RelativeLayout
+                android:id="@+id/layout_jobTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@id/text_jobTitle"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_edittext_white">
+
+                <EditText
+                    android:id="@+id/edit_productDesigner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Product Designer"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:textColor="@color/codGrey"
+                    android:textSize="@dimen/_10sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_jobTitle"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Location"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/text_currentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_jobTitle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="Current Location"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <View
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@id/text_currentLocation"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-15dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@color/app_color" />
+
+            <RelativeLayout
+                android:id="@+id/layout_location"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@id/text_location"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_edittext_white">
+
+                <TextView
+                    android:id="@+id/edit_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:maxLines="2"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:textColor="@color/codGrey"
+                    android:textSize="@dimen/_8sdp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_employmentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_location"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Employment Type"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_employment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text_employmentType"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:clipToPadding="false"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:overScrollMode="never"
+                android:scrollbarThumbHorizontal="@null"
+                tools:itemCount="1"
+                tools:listitem="@layout/single_item_horizontal_selection" />
+
+
+            <TextView
+                android:id="@+id/text_workLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_employment"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Work Location"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/text_workLocation"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:clipToPadding="false"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:scrollbarThumbHorizontal="@null"
+                tools:itemCount="1"
+                tools:listitem="@layout/single_item_horizontal_selection" />
+
+            <TextView
+                android:id="@+id/text_salary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_location"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Salary"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rangeSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_salary"
+                android:stepSize="1"
+                android:theme="@style/ThemeOverlay.App.Slider"
+                android:valueFrom="50"
+                android:valueTo="400"
+                app:haloColor="@color/grey"
+                app:thumbColor="@color/app_color"
+                app:thumbElevation="@dimen/_2sdp"
+                app:thumbRadius="@dimen/_12sdp"
+                app:thumbStrokeColor="@color/white"
+                app:thumbStrokeWidth="@dimen/_4sdp"
+                app:trackColorActive="@color/app_color"
+                app:trackColorInactive="@color/half_white"
+                app:trackHeight="@dimen/_9sdp"
+                app:values="@array/initial_range_slider_values"
+                app:labelBehavior="withinBounds"
+                />
+
+
+            <TextView
+                android:id="@+id/text_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rangeSlider"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Min"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <TextView
+                android:id="@+id/text_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rangeSlider"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Max"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:id="@+id/layout_resetFilter"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_below="@id/text_min"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/app_color_10dp_rounded">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Rest Filter"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_applyFilter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_below="@id/text_min"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_toEndOf="@id/layout_resetFilter"
+                android:background="@drawable/app_color_10dp_rounded"
+                android:backgroundTint="@color/app_color"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Apply Filter"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_enable_location"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/location_ic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Allow Location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="By allowing location permission and enabling GPS\n You will be able to filter the jobs"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_7sdp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_allow_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_32sdp"
+            android:background="@drawable/bg_app_color_rounded_5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="Allow Permission"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

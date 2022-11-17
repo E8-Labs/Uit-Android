@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company.welcome.CompanyDEITrainingActivity"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/includeTraining"
+        layout="@layout/simple_skip"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noahLayout2"
+        android:layout_width="0dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeTraining">
+
+        <ImageView
+            android:id="@+id/redNoah"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:src="@drawable/red_noah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/companyAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="left"
+            android:text="@string/companyAccount"
+            android:textColor="@color/blackShadeOne"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/diversity2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="left"
+            android:text="@string/profile"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toBottomOf="@+id/companyAccount" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toBottomOf="@+id/diversity2">
+
+            <ImageView
+                android:id="@+id/firstCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/secondCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/firstCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/thirdCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secondCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fourCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thirdCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fiveCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fourCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/sixCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fiveCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/sevenCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sixCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/eightCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sevenCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/nineCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/eightCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/deiStatement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/training"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITLargeTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noahLayout2" />
+
+    <TextView
+        android:id="@+id/doesYour7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/doesTraining"
+        android:textColor="@color/companyLogo"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deiStatement" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/yesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/industry_borders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doesYour7">
+
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_58sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_58sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/yes"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/industry_borders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yesLayout">
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_58sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_58sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

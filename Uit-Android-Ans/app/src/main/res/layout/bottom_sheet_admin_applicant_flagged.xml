@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_5sdp"
+    android:id="@+id/layout_bottomSheetFlagged"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/layout_profileImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_marginTop="@dimen/_15sdp"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            >
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/flaggedByApplicantProfile"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@color/app_color"
+                app:riv_oval="true" />
+
+            <TextView
+                android:id="@+id/text_flaggedByApplicantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/flaggedByApplicantProfile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Jame Jefferson"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_10sdp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_flaggedByPersonType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_flaggedByApplicantName"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Applicant"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/btnMessageFlaggedByApplicant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textColor="@color/app_color"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_below="@+id/text_flaggedByPersonType"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_30sdp">
+
+            <TextView
+                android:id="@+id/text_flagged"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Flagged"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_12sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            >
+
+            <RelativeLayout
+                android:id="@+id/layout_profileFlag"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_centerHorizontal="true"
+                >
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/flaggedApplicantProfile"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:src="@color/app_color"
+                    app:riv_oval="true" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:contentDescription="@string/text_todo"
+                    android:src="@drawable/flag_ic" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_flaggedApplicantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_profileFlag"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Jame Jefferson"
+                android:textColor="@color/codGrey"
+                android:textSize="@dimen/_10sdp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/text_flaggedPersonType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_flaggedApplicantName"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Applicant"
+                android:textColor="@color/smokey_grey"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/btnMessageFlaggedApplicant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textColor="@color/app_color"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_below="@+id/text_flaggedPersonType"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_forFlagging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Reason For Flagging."
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_14sdp" />
+
+    <TextView
+        android:id="@+id/text_flaggedComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_forFlagging"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="This user shared inappropriate content on a thread which I find offensive."
+        android:textColor="@color/codGrey"
+        android:textSize="@dimen/_12sdp" />
+
+</RelativeLayout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company.welcome.CompanyGenderOrientationActivity"
+    android:background="@color/white_dash"
+    >
+
+    <include
+        android:id="@+id/include_gender_orientation"
+        layout="@layout/simple_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/noahLayout2"
+        android:layout_width="0dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_gender_orientation">
+
+        <ImageView
+            android:id="@+id/redNoah"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginStart="8dp"
+            android:paddingStart="@dimen/_8sdp"
+            android:src="@drawable/red_noah"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/companyAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="left"
+            android:text="@string/companyAccount"
+            android:textColor="@color/blackShadeOne"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/diversity2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="left"
+
+            android:text="@string/demographicInformation"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toBottomOf="@+id/companyAccount" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redNoah"
+            app:layout_constraintTop_toBottomOf="@+id/diversity2">
+
+            <ImageView
+                android:id="@+id/firstCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/secondCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/firstCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/thirdCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secondCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fourCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/thirdCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fiveCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fourCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/sixCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fiveCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/sevenCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/app_color_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sixCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/eightCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sevenCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/nineCircle2"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/eightCircle2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/deiStatement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="left"
+        android:text="@string/lgbtq"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITLargeTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noahLayout2" />
+
+    <TextView
+        android:id="@+id/doesYour9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="left"
+        android:text="@string/sexualOrientation"
+        android:textColor="@color/companyLogo"
+        android:textSize="@dimen/UITSmallTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deiStatement" />
+
+
+    <TextView
+        android:id="@+id/LGBTQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="LGBTQ+"
+        android:textColor="@color/black"
+        android:textSize="@dimen/UITNormalTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doesYour9" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_lgbtq"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LGBTQ"
+        android:theme="@style/ThemeOverlay.App.Slider"
+        android:valueFrom="0"
+        android:valueTo="100"
+        app:haloColor="@color/grey"
+        app:thumbColor="@color/app_color"
+        app:thumbElevation="@dimen/_2sdp"
+        app:thumbRadius="@dimen/_12sdp"
+        app:thumbStrokeColor="@color/white"
+        app:thumbStrokeWidth="@dimen/_4sdp"
+        app:trackColorActive="@color/app_color"
+        app:trackColorInactive="@color/half_white"
+        app:trackHeight="@dimen/_9sdp"
+        app:labelBehavior="withinBounds"
+        />
+
+    <TextView
+        android:id="@+id/notSure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/notSure"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
